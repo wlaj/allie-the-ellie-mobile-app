@@ -35,7 +35,7 @@ You can now run the project
 ```
 
 
-For any errors or missing files, check out our [documentation](https://doc.clickup.com/d/h/4dfbj-36/61c329e7efb5985)
+For any errors or missing files, check out our [documentation](https://doc.clickup.com/d/h/4dfbj-330/193b9af9b6fc1e7)
 
 
 ## References
@@ -51,25 +51,29 @@ For any errors or missing files, check out our [documentation](https://doc.click
 
 ## Features
 
-- **Inloggen**: omschrijving van de feature
-- **Registreren**: omschrijving van de feature
-- **Data via een serverless database**: omschrijving van de feature
-- **CRUD operatie**: omschrijving van de feature
+> **Movement**: walking, sprinting, jumping, sitting
+
+> **Interacting**: playing puzzles and interacting with random props
+
+> **Content**: large variety of maps, character customization and props
 
  
 ## User stories
 
-Voor het project is het noodzakelijk user stories op te stellen, met **[deze link](https://doc.clickup.com/p/h/4dfbj-120/ef452d00afdfd7b)** zijn deze duidelijk in te zien.
-
-
-## Dependencies
-
-De Pokimoto applicatie is gemaakt met de Expo CLI in React Native. Meer hierover is te zien in ons [testplan]()
+| As an     | I want to    | So I |
+| ------------- |:-------------:| -----:|
+| User | have multiple seasons | feel like the worlds are intuitive |
+| User | walk, sprint, sit and jump | can work through the levels |
+| User | interact with props and items | can solve the puzzle or level |
+| User | have instructive levels | can learn something from playing |
+| User | see the creator's logo before playing | know who made the game |
+| User | set a timer or track time | know when to stop playing |
+| User | able to turn off the volume | don't have to turn off the device's volume |
 
 
 ## Structure
 
-Hieronder is de structuur van het project te zien. 
+The current structure of the application. Please use it for reference when cloning or downloading the repository
 
 ```
 mobile/
