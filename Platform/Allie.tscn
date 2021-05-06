@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://allie_spriteframes.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Allie.gd" type="Script" id=2]
+[ext_resource path="res://assets/sounds/Allie_Walk.wav" type="AudioStream" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 29.6222
+height = 81.4131
+
+[node name="Allie" type="KinematicBody2D"]
+position = Vector2( 0.176773, -0.353554 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 34.574 )
+scale = Vector2( 0.217512, 0.215942 )
+frames = ExtResource( 1 )
+animation = "idle"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -4.87683, 42.3579 )
+shape = SubResource( 1 )
+
+[node name="SoundWalk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -8.0
