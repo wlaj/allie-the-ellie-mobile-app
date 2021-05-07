@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://allie_spriteframes.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Allie.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 29.6222
 height = 81.4131
+
+[sub_resource type="RectangleShape2D" id=2]
 
 [node name="Allie" type="KinematicBody2D"]
 position = Vector2( 0.176773, -0.353554 )
@@ -26,3 +28,26 @@ shape = SubResource( 1 )
 [node name="SoundWalk" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 volume_db = -8.0
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="TouchScreenLeft" type="TouchScreenButton" parent="Node2D"]
+position = Vector2( -283.845, -10.253 )
+scale = Vector2( 10.28, 5.48 )
+shape = SubResource( 2 )
+passby_press = true
+action = "left"
+
+[node name="TouchScreenRight" type="TouchScreenButton" parent="Node2D"]
+position = Vector2( 73.9515, -10.9601 )
+scale = Vector2( 10.28, 5.48 )
+shape = SubResource( 2 )
+passby_press = true
+action = "right"
+
+[node name="TouchScreenUp" type="TouchScreenButton" parent="Node2D"]
+position = Vector2( -111.664, -147.432 )
+scale = Vector2( 10.28, 5.48 )
+shape = SubResource( 2 )
+passby_press = true
+action = "jump"
