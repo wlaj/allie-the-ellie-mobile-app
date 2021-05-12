@@ -32,23 +32,23 @@ volume_db = -8.0
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="TouchScreenLeft" type="TouchScreenButton" parent="Node2D"]
-position = Vector2( -645.845, -29.253 )
-scale = Vector2( -21.7291, 31.7373 )
+position = Vector2( -1591.34, -43.3648 )
+scale = Vector2( 62.8207, 31.632 )
 shape = SubResource( 2 )
 passby_press = true
 action = "left"
 visibility_mode = 1
 
 [node name="TouchScreenRight" type="TouchScreenButton" parent="Node2D"]
-position = Vector2( 654.951, -38.9601 )
-scale = Vector2( 22.2764, 32.0651 )
+position = Vector2( 338.8, -42.1349 )
+scale = Vector2( 62.4219, 31.887 )
 shape = SubResource( 2 )
 passby_press = true
 action = "right"
 
 [node name="TouchScreenUp" type="TouchScreenButton" parent="Node2D"]
-position = Vector2( -111.664, -147.432 )
-scale = Vector2( 10.28, 5.48 )
+position = Vector2( -335.488, -122.034 )
+scale = Vector2( 32.8036, -63.8678 )
 shape = SubResource( 2 )
 passby_press = true
 action = "jump"
