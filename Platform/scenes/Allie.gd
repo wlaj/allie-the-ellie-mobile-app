@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var velocity = Vector2(0,0)
 var coins = 0
-const SPEED = 200
+const SPEED = 250
 const GRAVITY = 35
 const JUMPFORCE = -900
 
@@ -34,9 +34,16 @@ func _physics_process(delta):
 
 
 func _on_Fallzone_body_entered(body):
-	get_tree().change_scene("res://scenes/Level1.tscn")
+	get_tree().change_scene("res://scenes/large/Fall-lvl.tscn")
 
 
+func _on_Starthouse_body_entered(body):
+	get_tree().change_scene("res://scenes/small/Cave-lvl.tscn")
 
-func _on_Endhouse_body_entered(body):
-	get_tree().change_scene("res://scenes/Level2.tscn")
+
+func _on_Cave_body_entered():
+	get_tree().change_scene("res://scenes/small/Cave-lvl.tscn")
+
+
+func _on_Area2D_body_entered(body):
+	get_tree().change_scene("res://scenes/large/Fall-lvl.tscn")
