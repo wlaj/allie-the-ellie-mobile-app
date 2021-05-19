@@ -36,14 +36,14 @@ func _physics_process(delta):
 func _on_Fallzone_body_entered(body):
 	get_tree().change_scene("res://scenes/large/Fall-lvl.tscn")
 
-
 func _on_Starthouse_body_entered(body):
 	get_tree().change_scene("res://scenes/small/Cave-lvl.tscn")
-
 
 func _on_Cave_body_entered():
 	get_tree().change_scene("res://scenes/small/Cave-lvl.tscn")
 
 
-func _on_Area2D_body_entered(body):
-	get_tree().change_scene("res://scenes/large/Fall-lvl.tscn")
+
+
+func _on_Startingpoint_body_shape_entered(body_id, body, body_shape, local_shape):
+	get_tree().change_scene("res://scenes/large/Winter-lvl.tscn")
