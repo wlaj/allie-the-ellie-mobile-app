@@ -140,7 +140,7 @@ shape = SubResource( 5 )
 disabled = true
 
 [node name="Allie" parent="." instance=ExtResource( 2 )]
-position = Vector2( -520.721, 30.646 )
+position = Vector2( -526.06, -327.091 )
 z_index = 2
 
 [node name="Camera2D" type="Camera2D" parent="Allie"]
