@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://autoloads/Pause.gd" type="Script" id=1]
+[ext_resource path="res://assets/tiles/grond2.png" type="Texture" id=2]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.509804 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.396851
+margin_top = 1.5874
+margin_right = -0.396851
+margin_bottom = 1.5874
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -77.3599
+margin_top = -10.0
+margin_right = -8.35986
+margin_bottom = 10.0
+text = "Continue"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 14.2394
+margin_top = -9.60315
+margin_right = 59.2394
+margin_bottom = 10.3969
+text = "Mute"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="MusicButton" to="." method="_on_MusicButton_pressed"]

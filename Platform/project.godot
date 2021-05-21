@@ -14,6 +14,11 @@ config/name="Allie-the-ellie-godot"
 run/main_scene="res://scenes/Menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Pause="*res://autoloads/Pause.tscn"
+MusicController="*res://autoloads/MusicController.tscn"
+
 [debug]
 
 settings/stdout/verbose_stdout=true

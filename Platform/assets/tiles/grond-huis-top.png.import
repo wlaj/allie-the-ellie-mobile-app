@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/play_block1.png-d05fbb42c30746be42b4281e7daf8f50.stex"
+path="res://.import/grond-huis-top.png-aca63db73430475352ad497c896541f5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/props/block/play_block1.png"
-dest_files=[ "res://.import/play_block1.png-d05fbb42c30746be42b4281e7daf8f50.stex" ]
+source_file="res://assets/tiles/grond-huis-top.png"
+dest_files=[ "res://.import/grond-huis-top.png-aca63db73430475352ad497c896541f5.stex" ]
 
 [params]
 

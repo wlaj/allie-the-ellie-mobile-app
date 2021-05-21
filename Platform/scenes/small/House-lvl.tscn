@@ -1,0 +1,141 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scenes/Allie.tscn" type="PackedScene" id=1]
+[ext_resource path="res://world_tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/props/house/house-bed.png" type="Texture" id=3]
+[ext_resource path="res://assets/props/house/house-drawer.png" type="Texture" id=4]
+[ext_resource path="res://assets/props/house/house-window.png" type="Texture" id=5]
+[ext_resource path="res://assets/backgrounds/achtergrond-huis.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 328.607, 156.608 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 609.837, 522.331 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 47.2529, 146.025 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 1155.34, 202.284 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 10, 145.014 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+[node name="Winter level" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 65518, 14, 0, 26, 14, 0, 131054, 14, 0, 65562, 14, 0, 196590, 14, 0, 131098, 14, 0, 262126, 14, 0, 196634, 14, 0, 327662, 14, 0, 262170, 14, 0, 393198, 14, 0, 327706, 14, 0, 458734, 14, 0, 393242, 14, 0, 524270, 14, 0, 458778, 14, 0, 589806, 14, 0, 589807, 13, 0, 589808, 13, 0, 589809, 13, 0, 589810, 13, 0, 589811, 13, 0, 589812, 13, 0, 589813, 13, 0, 589814, 13, 0, 589815, 13, 0, 589816, 13, 0, 589817, 13, 0, 589818, 13, 0, 589819, 13, 0, 589820, 13, 0, 589821, 13, 0, 589822, 13, 0, 589823, 13, 0, 524288, 13, 0, 524289, 13, 0, 524290, 13, 0, 524291, 13, 0, 524292, 13, 0, 524293, 13, 0, 524294, 13, 0, 524295, 13, 0, 524296, 13, 0, 524297, 13, 0, 524298, 13, 0, 524299, 13, 0, 524300, 13, 0, 524301, 13, 0, 524302, 13, 0, 524303, 13, 0, 524304, 13, 0, 524305, 13, 0, 524306, 13, 0, 524307, 13, 0, 524308, 13, 0, 524309, 13, 0, 524310, 13, 0, 524311, 13, 0, 524312, 13, 0, 524313, 14, 0, 524314, 14, 0, 655342, 14, 0, 655343, 14, 0, 655344, 14, 0, 655345, 14, 0, 655346, 14, 0, 655347, 14, 0, 655348, 14, 0, 655349, 14, 0, 655350, 14, 0, 655351, 14, 0, 655352, 14, 0, 655353, 14, 0, 655354, 14, 0, 655355, 14, 0, 655356, 14, 0, 655357, 14, 0, 655358, 14, 0, 655359, 14, 0, 589824, 14, 0, 589825, 14, 0, 589826, 14, 0, 589827, 14, 0, 589828, 14, 0, 589829, 14, 0, 589830, 14, 0, 589831, 14, 0, 589832, 14, 0, 589833, 14, 0, 589834, 14, 0, 589835, 14, 0, 589836, 14, 0, 589837, 14, 0, 589838, 14, 0, 589839, 14, 0, 589840, 14, 0, 589841, 14, 0, 589842, 14, 0, 589843, 14, 0, 589844, 14, 0, 589845, 14, 0, 589846, 14, 0, 589847, 14, 0, 589848, 14, 0, 589849, 14, 0, 589850, 14, 0, 720878, 14, 0, 720879, 14, 0, 720880, 14, 0, 720881, 14, 0, 720882, 14, 0, 720883, 14, 0, 720884, 14, 0, 720885, 14, 0, 720886, 14, 0, 720887, 14, 0, 720888, 14, 0, 720889, 14, 0, 720890, 14, 0, 720891, 14, 0, 720892, 14, 0, 720893, 14, 0, 720894, 14, 0, 720895, 14, 0, 655360, 14, 0, 655361, 14, 0, 655362, 14, 0, 655363, 14, 0, 655364, 14, 0, 655365, 14, 0, 655366, 14, 0, 655367, 14, 0, 655368, 14, 0, 655369, 14, 0, 655370, 14, 0, 655371, 14, 0, 655372, 14, 0, 655373, 14, 0, 655374, 14, 0, 655375, 14, 0, 655376, 14, 0, 655377, 14, 0, 655378, 14, 0, 655379, 14, 0, 655380, 14, 0, 655381, 14, 0, 655382, 14, 0, 655383, 14, 0, 655384, 14, 0, 655385, 14, 0, 655386, 14, 0 )
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Bed" type="StaticBody2D" parent="Props"]
+position = Vector2( -618.268, 458.971 )
+scale = Vector2( 0.36, 0.36 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/Bed"]
+position = Vector2( -17.5277, 47.4116 )
+scale = Vector2( 0.380194, 0.380194 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Bed"]
+position = Vector2( -16.7459, 75.9945 )
+shape = SubResource( 3 )
+
+[node name="Window" type="StaticBody2D" parent="Props"]
+position = Vector2( -342.967, 312.466 )
+scale = Vector2( 0.2, 0.2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/Window"]
+position = Vector2( -26.3104, 40.0699 )
+scale = Vector2( 0.724998, 0.724998 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Window"]
+position = Vector2( -7.5, 27.5 )
+shape = SubResource( 7 )
+disabled = true
+
+[node name="Drawer" type="StaticBody2D" parent="Props"]
+position = Vector2( -790.991, 474.668 )
+scale = Vector2( 0.439999, 0.439999 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/Drawer"]
+position = Vector2( -16.7577, -10.345 )
+scale = Vector2( 0.343333, 0.343333 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Drawer"]
+position = Vector2( -18.5096, -9.95196 )
+shape = SubResource( 2 )
+
+[node name="Allie" parent="." instance=ExtResource( 1 )]
+position = Vector2( -912.865, 397.424 )
+
+[node name="Camera2D" type="Camera2D" parent="Allie"]
+current = true
+limit_left = -1088
+limit_bottom = 700
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+editor_draw_limits = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1280, 960 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 0, -43.074 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Fallzone" type="Area2D" parent="."]
+position = Vector2( 8.73181, 995.119 )
+collision_layer = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Fallzone"]
+shape = SubResource( 4 )
+
+[node name="Startingpoint" type="Area2D" parent="."]
+position = Vector2( 28.329, 496.138 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Startingpoint"]
+position = Vector2( 1.23938, -135.303 )
+shape = SubResource( 5 )
+
+[node name="Endpoint" type="Area2D" parent="."]
+position = Vector2( -1073.21, 364.411 )
+scale = Vector2( 1, 14.56 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Endpoint"]
+shape = SubResource( 6 )
+
+[connection signal="body_entered" from="Fallzone" to="Allie" method="_on_Fallzone_body_entered"]
+[connection signal="body_shape_entered" from="Startingpoint" to="Allie" method="_on_Startingpoint_body_shape_entered"]
+[connection signal="body_shape_entered" from="Endpoint" to="Allie" method="_on_Endpoint_body_shape_entered"]

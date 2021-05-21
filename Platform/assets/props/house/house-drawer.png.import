@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Logo.png-cb5912ab42ab8c6230b3e82cf723bb44.stex"
+path="res://.import/house-drawer.png-5ccc9ca3ee0cab6ce3b3b8c75079caa7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/Logo.png"
-dest_files=[ "res://.import/Logo.png-cb5912ab42ab8c6230b3e82cf723bb44.stex" ]
+source_file="res://assets/props/house/house-drawer.png"
+dest_files=[ "res://.import/house-drawer.png-5ccc9ca3ee0cab6ce3b3b8c75079caa7.stex" ]
 
 [params]
 

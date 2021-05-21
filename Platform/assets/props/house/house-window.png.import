@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/achtergrond-grot-revised.png-305a96e70c844718af9353d5e79c32f7.stex"
+path="res://.import/house-window.png-3796edd115af6565cbf893e3dbc69c1e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/achtergrond-grot-revised.png"
-dest_files=[ "res://.import/achtergrond-grot-revised.png-305a96e70c844718af9353d5e79c32f7.stex" ]
+source_file="res://assets/props/house/house-window.png"
+dest_files=[ "res://.import/house-window.png-3796edd115af6565cbf893e3dbc69c1e.stex" ]
 
 [params]
 
