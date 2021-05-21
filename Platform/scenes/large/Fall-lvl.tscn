@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Allie.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://assets/props/nature/Paddenstoel.png" type="Texture" id=11]
 [ext_resource path="res://assets/backgrounds/Achtergrond.png" type="Texture" id=12]
 [ext_resource path="res://scenes/props/Bush-prop.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/props/cave/sleepingbat.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 46.23, 63.2881 )
@@ -138,6 +139,15 @@ texture = ExtResource( 6 )
 position = Vector2( -32.7517, 15.0169 )
 shape = SubResource( 5 )
 disabled = true
+
+[node name="Node2D" type="Node2D" parent="Props"]
+position = Vector2( 577.651, 25.4846 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/Node2D"]
+texture = ExtResource( 14 )
 
 [node name="Allie" parent="." instance=ExtResource( 2 )]
 position = Vector2( -526.06, -327.091 )
