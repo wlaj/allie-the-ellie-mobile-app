@@ -6,6 +6,6 @@ func _ready():
 	pass
 
 func play_music():
-	
 	$Music.stream = battle_music
 	$Music.play()
+
