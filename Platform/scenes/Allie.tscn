@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 29.6222
-height = 81.4131
+height = 76.3721
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -31,20 +31,19 @@ volume_db = -8.0
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="TouchScreenLeft" type="TouchScreenButton" parent="Node2D"]
-position = Vector2( -1453.73, -39.2593 )
-scale = Vector2( 69.572, 31.5488 )
-shape = SubResource( 2 )
-passby_press = true
-action = "left"
-visibility_mode = 1
-
 [node name="TouchScreenRight" type="TouchScreenButton" parent="Node2D"]
 position = Vector2( 56.5777, -39.6151 )
-scale = Vector2( 69.6044, 31.5692 )
+scale = Vector2( 93.6044, 31.9292 )
 shape = SubResource( 2 )
 passby_press = true
 action = "right"
+
+[node name="TouchScreenLeft" type="TouchScreenButton" parent="Node2D"]
+position = Vector2( -1937.42, -40.6151 )
+scale = Vector2( 93.6044, 31.9292 )
+shape = SubResource( 2 )
+passby_press = true
+action = "left"
 
 [node name="TouchScreenUp" type="TouchScreenButton" parent="Node2D"]
 position = Vector2( -335.488, -55.2582 )
