@@ -1,0 +1,279 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://scenes/Allie.tscn" type="PackedScene" id=1]
+[ext_resource path="res://world_tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/props/house/winter/candy_cane.png" type="Texture" id=3]
+[ext_resource path="res://assets/props/house/winter/decorated_christmas_tree_book.png" type="Texture" id=4]
+[ext_resource path="res://assets/props/house/winter/wreath.png" type="Texture" id=5]
+[ext_resource path="res://assets/props/house/winter/curtains_open.png" type="Texture" id=6]
+[ext_resource path="res://assets/props/house/winter/snow_globe.png" type="Texture" id=7]
+[ext_resource path="res://assets/backgrounds/christmashouse.png" type="Texture" id=8]
+[ext_resource path="res://assets/props/house/winter/fireplace.png" type="Texture" id=9]
+[ext_resource path="res://assets/props/house/winter/brush.png" type="Texture" id=10]
+[ext_resource path="res://assets/props/house/winter/pencil.png" type="Texture" id=11]
+[ext_resource path="res://assets/props/house/winter/hot_chocolate.png" type="Texture" id=12]
+[ext_resource path="res://assets/props/house/winter/empty_table.png" type="Texture" id=13]
+[ext_resource path="res://assets/props/house/winter/plank.png" type="Texture" id=14]
+[ext_resource path="res://assets/props/house/winter/Muffin.png" type="Texture" id=15]
+[ext_resource path="res://assets/props/house/winter/gingerbread.png" type="Texture" id=16]
+[ext_resource path="res://assets/props/house/winter/candy_cane_reverse.png" type="Texture" id=17]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1155.34, 202.284 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 145.014 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[node name="Winter level" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( -18, 15, 0, -65520, 15, 0, -65519, 15, 0, -65518, 15, 0, -65517, 15, 0, -65516, 15, 0, 65518, 15, 0, 16, 15, 0, 17, 15, 0, 18, 15, 0, 19, 15, 0, 20, 15, 0, 131054, 15, 0, 65552, 15, 0, 65553, 15, 0, 65554, 15, 0, 65555, 15, 0, 65556, 15, 0, 196590, 15, 0, 131088, 15, 0, 131089, 15, 0, 131090, 15, 0, 131091, 15, 0, 131092, 15, 0, 262126, 15, 0, 196624, 15, 0, 196625, 15, 0, 196626, 15, 0, 196627, 15, 0, 196628, 15, 0, 327662, 15, 0, 262160, 15, 0, 262161, 15, 0, 262162, 15, 0, 262163, 15, 0, 262164, 15, 0, 393198, 15, 0, 327696, 15, 0, 327697, 15, 0, 327698, 15, 0, 327699, 15, 0, 327700, 15, 0, 458734, 15, 0, 393232, 15, 0, 393233, 15, 0, 393234, 15, 0, 393235, 15, 0, 393236, 15, 0, 524270, 15, 0, 458768, 15, 0, 458769, 15, 0, 458770, 15, 0, 458771, 15, 0, 458772, 15, 0, 589806, 15, 0, 589807, 16, 0, 589808, 16, 0, 589809, 16, 0, 589810, 16, 0, 589811, 16, 0, 589812, 16, 0, 589813, 16, 0, 589814, 16, 0, 589815, 16, 0, 589816, 16, 0, 589817, 16, 0, 589818, 16, 0, 589819, 16, 0, 589820, 16, 0, 589821, 16, 0, 589822, 16, 0, 589823, 16, 0, 524288, 16, 0, 524289, 16, 0, 524290, 16, 0, 524291, 16, 0, 524292, 16, 0, 524293, 16, 0, 524294, 16, 0, 524295, 16, 0, 524296, 16, 0, 524297, 16, 0, 524298, 16, 0, 524299, 16, 0, 524300, 16, 0, 524301, 16, 0, 524302, 16, 0, 524303, 16, 0, 524304, 15, 0, 524305, 15, 0, 524306, 15, 0, 524307, 15, 0, 524308, 15, 0, 655342, 15, 0, 655343, 15, 0, 655344, 15, 0, 655345, 15, 0, 655346, 15, 0, 655347, 15, 0, 655348, 15, 0, 655349, 15, 0, 655350, 15, 0, 655351, 15, 0, 655352, 15, 0, 655353, 15, 0, 655354, 15, 0, 655355, 15, 0, 655356, 15, 0, 655357, 15, 0, 655358, 15, 0, 655359, 15, 0, 589824, 15, 0, 589825, 15, 0, 589826, 15, 0, 589827, 15, 0, 589828, 15, 0, 589829, 15, 0, 589830, 15, 0, 589831, 15, 0, 589832, 15, 0, 589833, 15, 0, 589834, 15, 0, 589835, 15, 0, 589836, 15, 0, 589837, 15, 0, 589838, 15, 0, 589839, 15, 0, 589840, 15, 0, 589841, 15, 0, 589842, 15, 0, 589843, 15, 0, 589844, 15, 0, 720878, 15, 0, 720879, 15, 0, 720880, 15, 0, 720881, 15, 0, 720882, 15, 0, 720883, 15, 0, 720884, 15, 0, 720885, 15, 0, 720886, 15, 0, 720887, 15, 0, 720888, 15, 0, 720889, 15, 0, 720890, 15, 0, 720891, 15, 0, 720892, 15, 0, 720893, 15, 0, 720894, 15, 0, 720895, 15, 0, 655360, 15, 0, 655361, 15, 0, 655362, 15, 0, 655363, 15, 0, 655364, 15, 0, 655365, 15, 0, 655366, 15, 0, 655367, 15, 0, 655368, 15, 0, 655369, 15, 0, 655370, 15, 0, 655371, 15, 0, 655372, 15, 0, 655373, 15, 0, 655374, 15, 0, 655375, 15, 0, 655376, 15, 0, 655377, 15, 0, 655378, 15, 0, 655379, 15, 0, 655380, 15, 0 )
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="snowglobe" type="StaticBody2D" parent="Props"]
+position = Vector2( -918.132, 260.661 )
+scale = Vector2( 0.2, 0.2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/snowglobe"]
+position = Vector2( -138.738, 186.699 )
+scale = Vector2( 0.407138, 0.407138 )
+texture = ExtResource( 7 )
+
+[node name="candy_cane" type="StaticBody2D" parent="Props"]
+position = Vector2( -776.141, 257.294 )
+scale = Vector2( 0.2, 0.2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/candy_cane"]
+position = Vector2( -134.529, 283.373 )
+scale = Vector2( 0.263674, 0.263674 )
+texture = ExtResource( 17 )
+
+[node name="Fireplace" type="StaticBody2D" parent="Props"]
+position = Vector2( -973.188, 442.993 )
+scale = Vector2( 0.36, 0.36 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/Fireplace"]
+position = Vector2( 251.499, -177.724 )
+scale = Vector2( 0.896561, 0.896561 )
+texture = ExtResource( 9 )
+
+[node name="Window" type="StaticBody2D" parent="Props"]
+position = Vector2( -189.023, 291.701 )
+scale = Vector2( 0.2, 0.2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/Window"]
+position = Vector2( -15.001, 30.6312 )
+scale = Vector2( 1.8131, 1.8131 )
+texture = ExtResource( 6 )
+
+[node name="gingerbread" type="StaticBody2D" parent="Props"]
+position = Vector2( 167.359, 133.509 )
+scale = Vector2( 0.2, 0.2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/gingerbread"]
+position = Vector2( -524.89, 721.604 )
+scale = Vector2( 0.462224, 0.462224 )
+texture = ExtResource( 16 )
+
+[node name="muffin" type="StaticBody2D" parent="Props"]
+position = Vector2( 269.107, 133.509 )
+scale = Vector2( 0.2, 0.2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/muffin"]
+position = Vector2( -602.673, 746.429 )
+scale = Vector2( 0.408549, 0.408549 )
+texture = ExtResource( 15 )
+
+[node name="candycane1" type="StaticBody2D" parent="Props"]
+position = Vector2( 343.052, 133.509 )
+scale = Vector2( 0.2, 0.2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/candycane1"]
+position = Vector2( -602.673, 746.429 )
+scale = Vector2( 0.408549, 0.408549 )
+texture = ExtResource( 3 )
+
+[node name="candycane2" type="StaticBody2D" parent="Props"]
+position = Vector2( 384.432, 133.509 )
+scale = Vector2( 0.2, 0.2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/candycane2"]
+position = Vector2( -602.673, 746.429 )
+scale = Vector2( 0.408549, 0.408549 )
+texture = ExtResource( 17 )
+
+[node name="plank" type="StaticBody2D" parent="Props"]
+position = Vector2( 167.359, 329.73 )
+scale = Vector2( 0.2, 0.2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/plank"]
+position = Vector2( -15.001, 30.6312 )
+scale = Vector2( 1.8131, 1.8131 )
+texture = ExtResource( 14 )
+
+[node name="wrath" type="StaticBody2D" parent="Props"]
+position = Vector2( -894.875, 197.742 )
+scale = Vector2( 0.2, 0.2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/wrath"]
+position = Vector2( -16.6697, 70.03 )
+scale = Vector2( 0.746687, 0.746687 )
+texture = ExtResource( 5 )
+
+[node name="christmas_tree" type="StaticBody2D" parent="Props"]
+position = Vector2( -428.339, 503.209 )
+scale = Vector2( 0.439999, 0.439999 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/christmas_tree"]
+position = Vector2( 129.191, -258.731 )
+scale = Vector2( 0.840602, 0.840602 )
+z_index = 1
+texture = ExtResource( 4 )
+
+[node name="table" type="StaticBody2D" parent="Props"]
+position = Vector2( 438.138, 639.28 )
+scale = Vector2( 0.439999, 0.439999 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/table"]
+position = Vector2( 98.1776, -244.414 )
+scale = Vector2( 0.749117, 0.749117 )
+z_index = 1
+texture = ExtResource( 13 )
+
+[node name="hot_choco" type="StaticBody2D" parent="Props"]
+position = Vector2( 422.092, 498.643 )
+scale = Vector2( 0.439999, 0.439999 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/hot_choco"]
+position = Vector2( 8.08032, -95.084 )
+scale = Vector2( 0.213886, 0.213886 )
+z_index = 1
+texture = ExtResource( 12 )
+
+[node name="pencil" type="StaticBody2D" parent="Props"]
+position = Vector2( -500.042, 513.881 )
+scale = Vector2( 0.439999, 0.439999 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/pencil"]
+position = Vector2( 32.6582, 72.0086 )
+rotation = 1.309
+scale = Vector2( 0.171089, 0.171089 )
+texture = ExtResource( 11 )
+
+[node name="brush" type="StaticBody2D" parent="Props"]
+position = Vector2( -567.278, 508.54 )
+scale = Vector2( 0.439999, 0.439999 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/brush"]
+position = Vector2( 32.6582, 72.0086 )
+rotation = -0.261799
+scale = Vector2( 0.171089, 0.171089 )
+texture = ExtResource( 10 )
+
+[node name="Allie" parent="." instance=ExtResource( 1 )]
+position = Vector2( -912.865, 397.424 )
+
+[node name="Camera2D" type="Camera2D" parent="Allie"]
+current = true
+limit_left = -1088
+limit_bottom = 700
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+editor_draw_limits = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1280, 960 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 0, -43.074 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Fallzone" type="Area2D" parent="."]
+position = Vector2( 8.73181, 995.119 )
+collision_layer = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Fallzone"]
+shape = SubResource( 1 )
+
+[node name="Startingpoint" type="Area2D" parent="."]
+position = Vector2( 985.087, 477.938 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Startingpoint"]
+position = Vector2( 1.23938, -135.303 )
+shape = SubResource( 2 )
+
+[node name="Endpoint" type="Area2D" parent="."]
+position = Vector2( -1061.86, 354.4 )
+scale = Vector2( 1, 14.56 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Endpoint"]
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="Fallzone" to="Allie" method="_on_Fallzone_body_entered"]
+[connection signal="body_shape_entered" from="Startingpoint" to="Allie" method="_on_Startingpoint_body_shape_entered"]
+[connection signal="body_shape_entered" from="Endpoint" to="Allie" method="_on_Endpoint_body_shape_entered"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/iglo.png-798cb02a58ee7c9029518590a84e5293.stex"
+path="res://.import/candy_cane_reverse.png-453b337da3c295b3b65d6a1f0cd98fac.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/props/nature/winter/iglo.png"
-dest_files=[ "res://.import/iglo.png-798cb02a58ee7c9029518590a84e5293.stex" ]
+source_file="res://assets/props/house/winter/candy_cane_reverse.png"
+dest_files=[ "res://.import/candy_cane_reverse.png-453b337da3c295b3b65d6a1f0cd98fac.stex" ]
 
 [params]
 
