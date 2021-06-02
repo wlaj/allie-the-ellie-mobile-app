@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Allie-the-Ellie_Walk20.png-4bd65d8d9c273909250cdff00974f246.stex"
+path="res://.import/Kransuit.png-dd84f169606c34ef0c9faee6bbe6a6a2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/players/Allie-the-Ellie_Walk20.png"
-dest_files=[ "res://.import/Allie-the-Ellie_Walk20.png-4bd65d8d9c273909250cdff00974f246.stex" ]
+source_file="res://assets/props/house/winter/Kransuit.png"
+dest_files=[ "res://.import/Kransuit.png-dd84f169606c34ef0c9faee6bbe6a6a2.stex" ]
 
 [params]
 

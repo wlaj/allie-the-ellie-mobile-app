@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scenes/Allie.tscn" type="PackedScene" id=1]
 [ext_resource path="res://world_tileset.tres" type="TileSet" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://assets/props/house/winter/Muffin.png" type="Texture" id=15]
 [ext_resource path="res://assets/props/house/winter/gingerbread.png" type="Texture" id=16]
 [ext_resource path="res://assets/props/house/winter/candy_cane_reverse.png" type="Texture" id=17]
+[ext_resource path="res://scenes/small/Christmas-House-lvl.gd" type="Script" id=18]
+[ext_resource path="res://assets/props/house/winter/Kransuit.png" type="Texture" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1155.34, 202.284 )
@@ -26,7 +28,8 @@ extents = Vector2( 10, 145.014 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
-[node name="Winter level" type="Node2D"]
+[node name="Christmas house" type="Node2D"]
+script = ExtResource( 18 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -143,17 +146,27 @@ position = Vector2( -15.001, 30.6312 )
 scale = Vector2( 1.8131, 1.8131 )
 texture = ExtResource( 14 )
 
-[node name="wrath" type="StaticBody2D" parent="Props"]
-position = Vector2( -894.875, 197.742 )
-scale = Vector2( 0.2, 0.2 )
+[node name="wreath" type="Control" parent="Props"]
+margin_left = -930.762
+margin_top = 161.606
+margin_right = -930.762
+margin_bottom = 161.606
+rect_scale = Vector2( 1.87522, 1.87522 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="Props/wrath"]
-position = Vector2( -16.6697, 70.03 )
-scale = Vector2( 0.746687, 0.746687 )
-texture = ExtResource( 5 )
+[node name="TextureButton" type="TextureButton" parent="Props/wreath"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.0800024, 0.0800024 )
+toggle_mode = true
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="christmas_tree" type="StaticBody2D" parent="Props"]
 position = Vector2( -428.339, 503.209 )

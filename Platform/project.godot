@@ -17,6 +17,7 @@ run/main_scene="res://scenes/Menu.tscn"
 
 Pause="*res://autoloads/Pause.tscn"
 MusicController="*res://autoloads/MusicController.tscn"
+Checkpoint="*res://autoloads/Checkpoint.gd"
 
 [debug]
 

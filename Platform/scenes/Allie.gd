@@ -17,9 +17,9 @@ func _physics_process(delta):
 		$AnimationPlayer.play("Walk")
 		$Spritesheet.flip_h = true
 	else:
-		$Sprite.play("idle")
+		$AnimationPlayer.play("Walk")
 	if not is_on_floor():
-		$Sprite.play("air")
+		$AnimationPlayer.play("Walk")
 	
 	velocity.y = velocity.y + GRAVITY
 	
