@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/props/drag/lijst.png" type="Texture" id=1]
+[ext_resource path="res://scenes/minigames/dragndrop/Dropzone.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Dropzone" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="CenterContainer"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenterContainer/Area2D"]
+shape = SubResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Area2D"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -230.0
+margin_right = 250.0
+margin_bottom = 254.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -23,6 +23,7 @@ font_data = ExtResource( 2 )
 script = ExtResource( 3 )
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 margin_left = 26.0
 margin_top = 23.0
 margin_right = 263.0
@@ -34,9 +35,9 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = 40.5892
-margin_top = 47.1892
+margin_top = 46.1892
 margin_right = 100.589
-margin_bottom = 107.189
+margin_bottom = 106.189
 texture = ExtResource( 1 )
 expand = true
 __meta__ = {
