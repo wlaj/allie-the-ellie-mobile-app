@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scenes/Allie.tscn" type="PackedScene" id=1]
 [ext_resource path="res://world_tileset.tres" type="TileSet" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://assets/props/house/winter/candy_cane_reverse.png" type="Texture" id=17]
 [ext_resource path="res://scenes/small/Christmas-House-lvl.gd" type="Script" id=18]
 [ext_resource path="res://assets/props/house/winter/Kransuit.png" type="Texture" id=19]
+[ext_resource path="res://assets/props/house/winter/GingerbreadmannetjeKnipoog.png" type="Texture" id=20]
+[ext_resource path="res://assets/props/house/winter/muffin_with_spickles.png" type="Texture" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1155.34, 202.284 )
@@ -28,7 +30,7 @@ extents = Vector2( 10, 145.014 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
-[node name="Christmas house" type="Node2D"]
+[node name="Christmas house" type="Node"]
 script = ExtResource( 18 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -86,29 +88,40 @@ position = Vector2( -15.001, 30.6312 )
 scale = Vector2( 1.8131, 1.8131 )
 texture = ExtResource( 6 )
 
-[node name="gingerbread" type="StaticBody2D" parent="Props"]
-position = Vector2( 167.359, 133.509 )
-scale = Vector2( 0.2, 0.2 )
+[node name="gingerbread" type="Control" parent="Props"]
+margin_left = 31.498
+margin_top = 241.366
+margin_right = 31.498
+margin_bottom = 241.366
+rect_scale = Vector2( 0.08, 0.08 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="Props/gingerbread"]
-position = Vector2( -524.89, 721.604 )
-scale = Vector2( 0.462224, 0.462224 )
-texture = ExtResource( 16 )
+[node name="GingerbreadButton" type="TextureButton" parent="Props/gingerbread"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 20 )
 
-[node name="muffin" type="StaticBody2D" parent="Props"]
-position = Vector2( 269.107, 133.509 )
-scale = Vector2( 0.2, 0.2 )
+[node name="muffin" type="Control" parent="Props"]
+margin_left = 121.061
+margin_top = 248.318
+margin_right = 121.061
+margin_bottom = 248.318
+rect_scale = Vector2( 0.0799991, 0.0799991 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="Props/muffin"]
-position = Vector2( -602.673, 746.429 )
-scale = Vector2( 0.408549, 0.408549 )
-texture = ExtResource( 15 )
+[node name="TextureButton" type="TextureButton" parent="Props/muffin"]
+margin_right = 40.0
+margin_bottom = 40.0
+toggle_mode = true
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 21 )
 
 [node name="candycane1" type="StaticBody2D" parent="Props"]
 position = Vector2( 343.052, 133.509 )
@@ -157,7 +170,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="Props/wreath"]
+[node name="WreathButton" type="TextureButton" parent="Props/wreath"]
 margin_right = 40.0
 margin_bottom = 40.0
 rect_scale = Vector2( 0.0800024, 0.0800024 )
