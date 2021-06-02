@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scenes/large/Fall-lvl.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Allie.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://assets/props/nature/Paddenstoel.png" type="Texture" id=11]
 [ext_resource path="res://assets/backgrounds/Achtergrond.png" type="Texture" id=12]
 [ext_resource path="res://scenes/props/Bush-prop.tscn" type="PackedScene" id=13]
+[ext_resource path="res://autoloads/PauseButton.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 46.23, 63.2881 )
@@ -211,6 +212,8 @@ tile_data = PoolIntArray( 65518, 3, 0, 131054, 3, 0, 196590, 3, 0, 262126, 3, 0,
 
 [node name="Node2D" parent="." instance=ExtResource( 13 )]
 position = Vector2( -377.221, 563.413 )
+
+[node name="TextureButton" parent="." instance=ExtResource( 14 )]
 
 [connection signal="body_entered" from="Props/Starthouse" to="Allie" method="_on_Starthouse_body_entered"]
 [connection signal="body_entered" from="Props/Cave" to="Allie" method="_on_Cave_body_entered"]
