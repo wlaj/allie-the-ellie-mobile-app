@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://autoloads/Pause.gd" type="Script" id=1]
-[ext_resource path="res://assets/tiles/grond2.png" type="Texture" id=2]
+[ext_resource path="res://assets/pause/pause.png" type="Texture" id=2]
+[ext_resource path="res://assets/pause/Home.png" type="Texture" id=3]
+[ext_resource path="res://assets/pause/Play.png" type="Texture" id=4]
+[ext_resource path="res://assets/pause/Musicon.png" type="Texture" id=5]
+[ext_resource path="res://assets/pause/Musicoff.png" type="Texture" id=6]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 pause_mode = 2
@@ -11,43 +15,50 @@ script = ExtResource( 1 )
 modulate = Color( 1, 1, 1, 0.509804 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -0.396851
-margin_top = 2.38202
-margin_right = -0.396851
-margin_bottom = 2.38202
+margin_left = 1.19055
+margin_top = 2.23184
+margin_right = 1.19055
+margin_bottom = 2.23187
 texture = ExtResource( 2 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -77.3599
-margin_top = -10.0
-margin_right = -8.35986
-margin_bottom = 10.0
-text = "Continue"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.943848
+margin_right = 0.943848
 
-[node name="CheckButton" type="CheckButton" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 12.0283
-margin_top = -20.0
-margin_right = 88.0283
-margin_bottom = 20.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+margin_left = 68.0
+margin_top = 215.0
+margin_right = 955.0
+margin_bottom = 385.0
+custom_constants/vseparation = 24
+custom_constants/hseparation = 24
+columns = 3
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
-[connection signal="toggled" from="CheckButton" to="." method="_on_CheckButton_toggled"]
+[node name="MuteButton" type="TextureButton" parent="CenterContainer/GridContainer"]
+margin_right = 280.0
+margin_bottom = 170.0
+toggle_mode = true
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+
+[node name="PlayButton" type="TextureButton" parent="CenterContainer/GridContainer"]
+margin_left = 304.0
+margin_right = 583.0
+margin_bottom = 170.0
+texture_normal = ExtResource( 4 )
+
+[node name="HomeButton" type="TextureButton" parent="CenterContainer/GridContainer"]
+margin_left = 607.0
+margin_right = 887.0
+margin_bottom = 170.0
+texture_normal = ExtResource( 3 )
+
+[connection signal="toggled" from="CenterContainer/GridContainer/MuteButton" to="." method="_on_MuteButton_toggled"]
+[connection signal="pressed" from="CenterContainer/GridContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/HomeButton" to="." method="_on_HomeButton_pressed"]

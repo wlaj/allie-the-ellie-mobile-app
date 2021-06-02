@@ -10,18 +10,27 @@ func _input(event):
 		get_tree().paused = !get_tree().paused
 		
 
-
-func _on_Button_pressed():
-	get_tree().paused = false
-	set_visible(false)
+#func _on_Button_pressed():
+#	get_tree().paused = false
+#	set_visible(false)
+#
 	
 func set_visible(is_visible):
 	for node in get_children():
 		node.visible = is_visible
-  
+#
+#
+#
+#func _on_CheckButton_toggled(button_pressed):
+#	if(button_pressed):
+#		var master_sound = AudioServer.get_bus_index("Master")
+#		AudioServer.set_bus_mute(master_sound, true)
+#	else:
+#		var master_sound = AudioServer.get_bus_index("Master")
+#		AudioServer.set_bus_mute(master_sound, false) 
 
 
-func _on_CheckButton_toggled(button_pressed):
+func _on_MuteButton_toggled(button_pressed):
 	if(button_pressed):
 		var master_sound = AudioServer.get_bus_index("Master")
 		AudioServer.set_bus_mute(master_sound, true)
@@ -30,3 +39,10 @@ func _on_CheckButton_toggled(button_pressed):
 		AudioServer.set_bus_mute(master_sound, false) 
 
 
+func _on_PlayButton_pressed():
+	get_tree().paused = false
+	set_visible(false)
+
+
+func _on_HomeButton_pressed():
+	get_tree().reload_current_scene()
