@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://assets/props/nature/winter/bowling_ball.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Allie.tscn" type="PackedScene" id=2]
@@ -27,6 +27,10 @@
 [ext_resource path="res://assets/props/nature/winter/ton.png" type="Texture" id=25]
 [ext_resource path="res://assets/props/nature/winter/christmas_bells.png" type="Texture" id=26]
 [ext_resource path="res://assets/props/nature/winter/water.png" type="Texture" id=27]
+[ext_resource path="res://assets/props/nature/winter/empty_boot.png" type="Texture" id=28]
+[ext_resource path="res://assets/props/nature/winter/stacked_presents_closed.png" type="Texture" id=29]
+[ext_resource path="res://assets/props/nature/winter/frog.png" type="Texture" id=30]
+[ext_resource path="res://assets/props/nature/winter/iglo_show.png" type="Texture" id=31]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.7247, 26.0972 )
@@ -212,24 +216,21 @@ position = Vector2( -86.3925, -153.196 )
 shape = SubResource( 2 )
 disabled = true
 
-[node name="boot_with_worm" type="StaticBody2D" parent="Props"]
-position = Vector2( 2256.89, 677.028 )
-z_index = 2
-collision_layer = 8
+[node name="boot_with_worm" type="Control" parent="Props"]
+margin_left = 2131.03
+margin_top = 128.289
+margin_right = 2131.03
+margin_bottom = 128.289
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="Props/boot_with_worm"]
-position = Vector2( 43.0533, -137.769 )
-rotation = -0.000366926
-scale = Vector2( 0.174519, 0.177885 )
-texture = ExtResource( 13 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/boot_with_worm"]
-position = Vector2( 33.015, -132.174 )
-shape = SubResource( 2 )
-disabled = true
+[node name="TextureButton" type="TextureButton" parent="Props/boot_with_worm"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 28 )
+texture_pressed = ExtResource( 13 )
 
 [node name="mouse_with_cheese" type="StaticBody2D" parent="Props"]
 position = Vector2( 3150.54, 742.435 )
@@ -288,62 +289,57 @@ position = Vector2( 33.015, -132.174 )
 shape = SubResource( 2 )
 disabled = true
 
-[node name="iglo" type="StaticBody2D" parent="Props"]
-position = Vector2( 5141.22, 691.677 )
-z_index = 2
-collision_layer = 8
+[node name="iglo" type="Control" parent="Props"]
+margin_left = 5023.32
+margin_top = 234.932
+margin_right = 5023.32
+margin_bottom = 234.932
+rect_scale = Vector2( 0.559995, 0.559995 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="Props/iglo"]
-position = Vector2( 227.946, -202.842 )
-rotation = -0.000366926
-scale = Vector2( 0.434879, 0.443267 )
-texture = ExtResource( 24 )
+[node name="TextureButton" type="TextureButton" parent="Props/iglo"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 31 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/iglo"]
-position = Vector2( 33.015, -132.174 )
-shape = SubResource( 2 )
-disabled = true
-
-[node name="presents_in_snow" type="StaticBody2D" parent="Props"]
-position = Vector2( 3637.69, 628.474 )
-z_index = 2
-collision_layer = 8
+[node name="presents_in_snow" type="Control" parent="Props"]
+margin_left = 3720.73
+margin_top = 264.3
+margin_right = 3720.73
+margin_bottom = 264.3
+rect_scale = Vector2( 0.24001, 0.24001 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="Props/presents_in_snow"]
-position = Vector2( 51.1507, -152.649 )
-rotation = -0.000366926
-scale = Vector2( 0.388683, 0.396181 )
-texture = ExtResource( 19 )
+[node name="TextureButton" type="TextureButton" parent="Props/presents_in_snow"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 29 )
+texture_pressed = ExtResource( 19 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/presents_in_snow"]
-position = Vector2( 33.015, -132.174 )
-shape = SubResource( 2 )
-disabled = true
-
-[node name="ton" type="StaticBody2D" parent="Props"]
-position = Vector2( 6812.92, 549.43 )
-z_index = 2
-collision_layer = 8
+[node name="ton" type="Control" parent="Props"]
+margin_left = 6741.06
+margin_top = 377.573
+margin_right = 6741.06
+margin_bottom = 377.573
+rect_scale = Vector2( 0.16, 0.16 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="Props/ton"]
-position = Vector2( -8.56186, -66.9641 )
-rotation = -0.000366926
-scale = Vector2( 0.198112, 0.201934 )
-texture = ExtResource( 25 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/ton"]
-position = Vector2( 33.015, -132.174 )
-shape = SubResource( 2 )
-disabled = true
+[node name="TextureButton" type="TextureButton" parent="Props/ton"]
+margin_right = 40.0
+margin_bottom = 40.0
+toggle_mode = true
+texture_normal = ExtResource( 25 )
+texture_pressed = ExtResource( 30 )
 
 [node name="ice" type="StaticBody2D" parent="Props"]
 position = Vector2( 6072.94, 829.561 )
@@ -383,43 +379,22 @@ position = Vector2( 33.015, -132.174 )
 shape = SubResource( 2 )
 disabled = true
 
-[node name="teapot" type="StaticBody2D" parent="Props"]
-position = Vector2( 4945.47, 628.474 )
-z_index = 2
-collision_layer = 8
+[node name="teapot" type="Control" parent="Props"]
+margin_left = 4847.28
+margin_top = 411.433
+margin_right = 4847.28
+margin_bottom = 411.433
+rect_scale = Vector2( 0.2, 0.2 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="Props/teapot"]
-position = Vector2( 28.6485, -134.027 )
-rotation = -0.000366926
-scale = Vector2( 0.212512, 0.216611 )
-texture = ExtResource( 23 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/teapot"]
-position = Vector2( 33.015, -132.174 )
-shape = SubResource( 2 )
-disabled = true
-
-[node name="snowballs" type="StaticBody2D" parent="Props"]
-position = Vector2( 4941.47, 608.474 )
-z_index = 2
-collision_layer = 8
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Props/snowballs"]
-position = Vector2( 62.1814, -88.7035 )
-rotation = -0.000366926
-scale = Vector2( 0.612634, 0.624451 )
-texture = ExtResource( 22 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/snowballs"]
-position = Vector2( 33.015, -132.174 )
-shape = SubResource( 2 )
-disabled = true
+[node name="TextureButton" type="TextureButton" parent="Props/teapot"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 23 )
+texture_pressed = ExtResource( 22 )
 
 [node name="tree" type="StaticBody2D" parent="Props"]
 position = Vector2( 1071.53, 353.324 )

@@ -6,23 +6,21 @@
 [ext_resource path="res://assets/props/house/house-drawer.png" type="Texture" id=4]
 [ext_resource path="res://assets/props/house/winter/bed_with_curtains_closed.png" type="Texture" id=5]
 [ext_resource path="res://assets/backgrounds/christmashouse.png" type="Texture" id=6]
+[ext_resource path="res://assets/props/house/house-window.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 328.607, 156.608 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 609.837, 522.331 )
-
-[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 47.2529, 146.025 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1155.34, 202.284 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 10, 145.014 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 
 [node name="Winter level" type="Node2D"]
 
@@ -49,22 +47,26 @@ texture = ExtResource( 3 )
 position = Vector2( -16.7459, 75.9945 )
 shape = SubResource( 1 )
 
-[node name="Window" type="StaticBody2D" parent="Props"]
-position = Vector2( -342.023, 291.701 )
-scale = Vector2( 0.2, 0.2 )
+[node name="Window" type="Control" parent="Props"]
+margin_left = -444.063
+margin_top = 164.049
+margin_right = -444.063
+margin_bottom = 164.049
+rect_scale = Vector2( 0.440001, 0.440001 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="Props/Window"]
-position = Vector2( -15.001, 30.6312 )
-scale = Vector2( 1.8131, 1.8131 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Window"]
-position = Vector2( -7.5, 27.5 )
-shape = SubResource( 2 )
-disabled = true
+[node name="TextureButton" type="TextureButton" parent="Props/Window"]
+margin_right = 40.0
+margin_bottom = 40.0
+toggle_mode = true
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Drawer" type="StaticBody2D" parent="Props"]
 position = Vector2( -790.991, 474.668 )
@@ -80,7 +82,7 @@ texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Drawer"]
 position = Vector2( -18.5096, -9.95196 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Allie" parent="." instance=ExtResource( 1 )]
 position = Vector2( -912.865, 397.424 )
@@ -114,7 +116,7 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Fallzone"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Startingpoint" type="Area2D" parent="."]
 position = Vector2( 28.329, 496.138 )
@@ -124,7 +126,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Startingpoint"]
 position = Vector2( 1.23938, -135.303 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="Endpoint" type="Area2D" parent="."]
 position = Vector2( -1073.21, 364.411 )
@@ -134,7 +136,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Endpoint"]
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [connection signal="body_entered" from="Fallzone" to="Allie" method="_on_Fallzone_body_entered"]
 [connection signal="body_shape_entered" from="Startingpoint" to="Allie" method="_on_Startingpoint_body_shape_entered"]
