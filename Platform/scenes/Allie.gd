@@ -11,11 +11,19 @@ func _physics_process(delta):
 	if Input.is_action_pressed("right"):
 		velocity.x = SPEED
 		$AnimationPlayer.play("Walk")
+<<<<<<< Updated upstream
 		$Spritesheet.flip_h = false
 	elif Input.is_action_pressed("left"):
 		velocity.x = -SPEED
 		$AnimationPlayer.play("Walk")
 		$Spritesheet.flip_h = true
+=======
+		$SpritesheetWalk.flip_h = false
+	elif Input.is_action_pressed("left"):
+		velocity.x = -SPEED
+		$AnimationPlayer.play("Walk")
+		$SpritesheetWalk.flip_h = true
+>>>>>>> Stashed changes
 	else:
 		$Sprite.play("idle")
 	if not is_on_floor():

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/pause/Pauze-herfst.png" type="Texture" id=1]
@@ -13,10 +14,42 @@ margin_left = -80.0
 margin_top = 10.0
 margin_bottom = 70.0
 toggle_mode = true
+=======
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/pause/pausebutton.png" type="Texture" id=1]
+[ext_resource path="res://scenes/minigames/Close.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="PauseButton" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2( 922.184, 23.1634 )
+scale = Vector2( 3.72041, 3.59661 )
+shape = SubResource( 1 )
+passby_press = true
+action = "ui_accept"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -101.816
+margin_top = 23.1634
+margin_right = -5.81641
+margin_bottom = 119.163
+rect_scale = Vector2( 0.76, 0.76 )
+>>>>>>> Stashed changes
 texture_normal = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+<<<<<<< Updated upstream
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="toggled" from="TextureButton" to="." method="_on_TextureButton_toggled"]
+=======
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+>>>>>>> Stashed changes
