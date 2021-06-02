@@ -17,7 +17,8 @@ func _physics_process(delta):
 		$AnimationPlayer.play("Walk")
 		$Spritesheet.flip_h = true
 	else:
-		$AnimationPlayer.play("Walk")
+		pass
+#		$AnimationPlayer.play("Walk")
 	if not is_on_floor():
 		$AnimationPlayer.play("Walk")
 	
