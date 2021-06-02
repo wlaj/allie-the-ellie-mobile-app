@@ -9,15 +9,12 @@ func _input(event):
 		set_visible(!get_tree().paused)
 		get_tree().paused = !get_tree().paused
 		
-<<<<<<< Updated upstream
 
 #func _on_Button_pressed():
 #	get_tree().paused = false
 #	set_visible(false)
 #
-=======
 	
->>>>>>> Stashed changes
 func set_visible(is_visible):
 	for node in get_children():
 		node.visible = is_visible
@@ -34,7 +31,6 @@ func set_visible(is_visible):
 
 
 func _on_MuteButton_toggled(button_pressed):
-func _on_MusicButton_toggled(button_pressed):
 	if(button_pressed):
 		var master_sound = AudioServer.get_bus_index("Master")
 		AudioServer.set_bus_mute(master_sound, true)
@@ -50,8 +46,3 @@ func _on_PlayButton_pressed():
 
 func _on_HomeButton_pressed():
 	get_tree().reload_current_scene()
-
-
-func _on_PlayButton_pressed():
-	get_tree().paused = false
-	set_visible(false)

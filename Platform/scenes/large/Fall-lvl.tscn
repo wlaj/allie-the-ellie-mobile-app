@@ -211,11 +211,9 @@ tile_data = PoolIntArray( 65518, 3, 0, 131054, 3, 0, 196590, 3, 0, 262126, 3, 0,
 [node name="Node2D" parent="." instance=ExtResource( 13 )]
 position = Vector2( -377.221, 563.413 )
 
-<<<<<<< Updated upstream
 [node name="TextureButton" parent="." instance=ExtResource( 14 )]
-=======
+
 [node name="PauseButton" parent="." instance=ExtResource( 14 )]
->>>>>>> Stashed changes
 
 [connection signal="body_entered" from="Props/Starthouse" to="Allie" method="_on_Starthouse_body_entered"]
 [connection signal="pressed" from="Props/Starthouse/InteractHouse" to="." method="_on_InteractHouse_pressed"]
