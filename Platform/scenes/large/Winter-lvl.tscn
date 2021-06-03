@@ -21,15 +21,15 @@
 [ext_resource path="res://assets/props/nature/winter/stacked_presents.png" type="Texture" id=19]
 [ext_resource path="res://assets/props/nature/winter/mouse_with_cheese.png" type="Texture" id=20]
 [ext_resource path="res://assets/props/nature/winter/bird.png" type="Texture" id=21]
-[ext_resource path="res://assets/props/nature/winter/snow_balls.png" type="Texture" id=22]
+[ext_resource path="res://assets/props/nature/winter/theepotsneew.png" type="Texture" id=22]
 [ext_resource path="res://assets/props/nature/winter/teapot.png" type="Texture" id=23]
-[ext_resource path="res://assets/props/nature/winter/iglo_hide.png" type="Texture" id=24]
+[ext_resource path="res://assets/props/nature/winter/iglo.png" type="Texture" id=24]
 [ext_resource path="res://assets/props/nature/winter/ton.png" type="Texture" id=25]
 [ext_resource path="res://assets/props/nature/winter/christmas_bells.png" type="Texture" id=26]
 [ext_resource path="res://assets/props/nature/winter/water.png" type="Texture" id=27]
-[ext_resource path="res://assets/props/nature/winter/empty_boot.png" type="Texture" id=28]
+[ext_resource path="res://assets/props/nature/winter/laars 1.png" type="Texture" id=28]
 [ext_resource path="res://assets/props/nature/winter/stacked_presents_closed.png" type="Texture" id=29]
-[ext_resource path="res://assets/props/nature/winter/frog.png" type="Texture" id=30]
+[ext_resource path="res://assets/props/nature/winter/kikker-opton.png" type="Texture" id=30]
 [ext_resource path="res://assets/props/nature/winter/iglo_show.png" type="Texture" id=31]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -217,10 +217,11 @@ shape = SubResource( 2 )
 disabled = true
 
 [node name="boot_with_worm" type="Control" parent="Props"]
-margin_left = 2131.03
-margin_top = 128.289
-margin_right = 2131.03
-margin_bottom = 128.289
+margin_left = 2303.47
+margin_top = 449.37
+margin_right = 2303.47
+margin_bottom = 449.37
+rect_scale = Vector2( 0.239985, 0.239985 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -229,6 +230,7 @@ __meta__ = {
 [node name="TextureButton" type="TextureButton" parent="Props/boot_with_worm"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_scale = Vector2( 0.499969, 0.499969 )
 texture_normal = ExtResource( 28 )
 texture_pressed = ExtResource( 13 )
 
@@ -305,13 +307,16 @@ margin_right = 40.0
 margin_bottom = 40.0
 texture_normal = ExtResource( 24 )
 texture_pressed = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="presents_in_snow" type="Control" parent="Props"]
-margin_left = 3720.73
-margin_top = 264.3
-margin_right = 3720.73
-margin_bottom = 264.3
-rect_scale = Vector2( 0.24001, 0.24001 )
+margin_left = 3796.97
+margin_top = 286.055
+margin_right = 3796.97
+margin_bottom = 286.055
+rect_scale = Vector2( 0.56001, 0.56001 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -436,6 +441,7 @@ disabled = true
 
 [node name="whitehill" type="StaticBody2D" parent="Props"]
 position = Vector2( 1534.49, 355.994 )
+z_index = -1
 collision_layer = 8
 __meta__ = {
 "_edit_group_": true

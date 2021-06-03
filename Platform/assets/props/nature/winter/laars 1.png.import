@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/iglo_hide.png-9701fb2bed271b62df61d41e15b8a96c.stex"
+path="res://.import/laars 1.png-f6161b15bebbb14abf30b833efae557e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/props/nature/winter/iglo_hide.png"
-dest_files=[ "res://.import/iglo_hide.png-9701fb2bed271b62df61d41e15b8a96c.stex" ]
+source_file="res://assets/props/nature/winter/laars 1.png"
+dest_files=[ "res://.import/laars 1.png-f6161b15bebbb14abf30b833efae557e.stex" ]
 
 [params]
 

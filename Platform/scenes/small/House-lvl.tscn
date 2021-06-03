@@ -11,8 +11,8 @@
 [ext_resource path="res://assets/props/nature/chocola.png" type="Texture" id=9]
 [ext_resource path="res://assets/props/nature/ei.png" type="Texture" id=10]
 [ext_resource path="res://assets/props/nature/strawberries.png" type="Texture" id=11]
-[ext_resource path="res://assets/props/house/bowl 3.png" type="Texture" id=12]
-[ext_resource path="res://assets/props/house/Bowlmetstof.png" type="Texture" id=13]
+[ext_resource path="res://assets/props/house/bowl-zonder-stof.png" type="Texture" id=12]
+[ext_resource path="res://assets/props/house/Bowlmetstof1.png" type="Texture" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 274.762, 35.5718 )
@@ -119,9 +119,9 @@ shape = SubResource( 4 )
 
 [node name="powder" type="Control" parent="Props"]
 margin_left = -230.743
-margin_top = 387.541
+margin_top = 369.703
 margin_right = -230.743
-margin_bottom = 387.541
+margin_bottom = 369.703
 rect_scale = Vector2( 0.560001, 0.560001 )
 __meta__ = {
 "_edit_group_": true,
@@ -133,6 +133,9 @@ margin_right = 40.0
 margin_bottom = 40.0
 texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="chocolate" type="StaticBody2D" parent="Props"]
 position = Vector2( -396.404, 265.613 )

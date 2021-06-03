@@ -32,7 +32,7 @@ extents = Vector2( 10, 145.014 )
 [node name="Props" type="Node2D" parent="."]
 
 [node name="Witchhat" type="StaticBody2D" parent="Props"]
-position = Vector2( -353.99, 449.697 )
+position = Vector2( -353.99, 477.243 )
 __meta__ = {
 "_edit_group_": true
 }
