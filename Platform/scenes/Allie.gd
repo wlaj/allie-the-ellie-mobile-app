@@ -44,7 +44,7 @@ func _on_Cave_body_entered():
 
 
 func _on_Startingpoint_body_shape_entered(body_id, body, body_shape, local_shape):
-	get_tree().change_scene("res://scenes/large/Winter-lvl.tscn")
+	get_tree().change_scene("res://scenes/large/Fall-lvl.tscn")
 
 
 func _on_Endpoint_body_shape_entered(body_id, body, body_shape, local_shape):

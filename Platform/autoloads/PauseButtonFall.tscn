@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/pause/Pauze-herfst.png" type="Texture" id=1]
 [ext_resource path="res://autoloads/PauseButton.gd" type="Script" id=2]
 
-[node name="PauseButton" type="CanvasLayer"]
+[node name="PauseButtonFall" type="CanvasLayer"]
 script = ExtResource( 2 )
 
 [node name="TextureButton" type="TextureButton" parent="."]

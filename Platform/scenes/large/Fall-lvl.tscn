@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scenes/large/Fall-lvl.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Allie.tscn" type="PackedScene" id=2]
@@ -13,12 +13,14 @@
 [ext_resource path="res://assets/props/nature/Paddenstoel.png" type="Texture" id=11]
 [ext_resource path="res://assets/backgrounds/Achtergrond.png" type="Texture" id=12]
 [ext_resource path="res://scenes/props/Bird-prop.tscn" type="PackedScene" id=13]
-[ext_resource path="res://autoloads/PauseButton.tscn" type="PackedScene" id=14]
+[ext_resource path="res://autoloads/PauseButtonFall.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/props/nature/firsthill.png" type="Texture" id=15]
 [ext_resource path="res://assets/props/nature/herfst_boom_met_uil.png" type="Texture" id=16]
 [ext_resource path="res://assets/props/hills/water-background-hill.png" type="Texture" id=17]
 [ext_resource path="res://scenes/props/Airplane-prop.tscn" type="PackedScene" id=18]
 [ext_resource path="res://assets/props/hills/thirdhill.png" type="Texture" id=19]
+
+[sub_resource type="RectangleShape2D" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 61.0928, 92.7706 )
@@ -37,22 +39,37 @@ script = ExtResource( 1 )
 
 [node name="Props" type="Node2D" parent="."]
 
-[node name="Starthouse" type="Area2D" parent="Props"]
-position = Vector2( -875.84, 353.138 )
-collision_layer = 8
+[node name="Starthouse" type="Node2D" parent="Props"]
+position = Vector2( -870.177, 322.462 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Props/Starthouse"]
-position = Vector2( 27.8383, -31.2516 )
 scale = Vector2( 0.558163, 0.568929 )
 texture = ExtResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Starthouse"]
-position = Vector2( 38.1347, 95.0584 )
-rotation = -0.00087285
-shape = SubResource( 1 )
+[node name="BedroomButton" type="TouchScreenButton" parent="Props/Starthouse"]
+position = Vector2( 10.1136, 125.109 )
+scale = Vector2( 4.24, 6.28 )
+shape = SubResource( 5 )
+shape_centered = false
+
+[node name="Endhouse" type="Node2D" parent="Props"]
+position = Vector2( 6923.25, 322.462 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/Endhouse"]
+scale = Vector2( 0.558163, 0.568929 )
+texture = ExtResource( 5 )
+
+[node name="BakinghouseButton" type="TouchScreenButton" parent="Props/Endhouse"]
+position = Vector2( 10.1136, 125.109 )
+scale = Vector2( 4.24, 6.28 )
+shape = SubResource( 5 )
+shape_centered = false
 
 [node name="CaveEntrance" type="Area2D" parent="Props"]
 position = Vector2( 8443.2, 321.396 )
@@ -217,13 +234,14 @@ tile_data = PoolIntArray( 65518, 3, 0, 131054, 3, 0, 196590, 3, 0, 262126, 3, 0,
 
 [node name="PauseButton" parent="." instance=ExtResource( 14 )]
 
-[node name="Bird" parent="." instance=ExtResource( 13 )]
-
-[node name="Bird2" parent="." instance=ExtResource( 13 )]
-
 [node name="Airplane" parent="." instance=ExtResource( 18 )]
 position = Vector2( 3013.53, 126.51 )
 
-[connection signal="body_entered" from="Props/Starthouse" to="Allie" method="_on_Starthouse_body_entered"]
+[node name="Bird" parent="." instance=ExtResource( 13 )]
+position = Vector2( 104.881, 139.343 )
+
+[connection signal="pressed" from="Props/Starthouse/BedroomButton" to="." method="_on_BedroomButton_pressed"]
+[connection signal="pressed" from="Props/Endhouse/BakinghouseButton" to="." method="_on_BakinghouseButton_pressed"]
+[connection signal="body_entered" from="Props/CaveEntrance" to="." method="_on_CaveEntrance_body_entered"]
 [connection signal="body_shape_entered" from="Props/CaveEntrance" to="." method="_on_CaveEntrance_body_shape_entered"]
 [connection signal="body_entered" from="Fallzone" to="Allie" method="_on_Fallzone_body_entered"]
