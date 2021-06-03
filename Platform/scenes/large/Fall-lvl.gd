@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 
 func _ready():
@@ -11,3 +11,7 @@ func _enter_tree():
 
 func _on_InteractHouse_pressed():
 	$AnimationPlayer.play("interaction")
+
+
+func _on_CaveEntrance_body_shape_entered(body_id, body, body_shape, local_shape):
+	pass # Replace with function body.
