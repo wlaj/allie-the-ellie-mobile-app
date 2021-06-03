@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 
 const UP = Vector2(0,-1)
-const ENGINE = 200
+const ENGINE = 300
 const MAXFALLSPEED = 200
 const GRAVITY = 10
 

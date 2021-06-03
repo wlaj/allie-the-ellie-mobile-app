@@ -7,6 +7,7 @@
 radius = 52.9874
 
 [node name="Checkpoint" type="Area2D"]
+scale = Vector2( 0.759999, 0.759999 )
 collision_layer = 0
 script = ExtResource( 2 )
 

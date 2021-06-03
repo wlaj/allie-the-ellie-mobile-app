@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/minigames/flyingallie/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=2]
@@ -6,6 +6,12 @@
 [ext_resource path="res://scenes/Coin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/backgrounds/Achtergrond.png" type="Texture" id=5]
 [ext_resource path="res://assets/backgrounds/Wolk.png" type="Texture" id=6]
+[ext_resource path="res://assets/props/objects/anchor.png" type="Texture" id=7]
+[ext_resource path="res://scenes/minigames/flyingallie/Objects.gd" type="Script" id=8]
+[ext_resource path="res://assets/props/objects/saw.png" type="Texture" id=9]
+[ext_resource path="res://assets/props/objects/axe.png" type="Texture" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
 
 [node name="Flyingallie" type="Node2D"]
 
@@ -18,16 +24,34 @@ smoothing_enabled = true
 [node name="PlayerNode" parent="." instance=ExtResource( 1 )]
 position = Vector2( 176, 280 )
 
-[node name="Coins" type="Node2D" parent="."]
+[node name="Objects" type="Node2D" parent="."]
+script = ExtResource( 8 )
 
-[node name="Coin" parent="Coins" instance=ExtResource( 4 )]
-position = Vector2( 704, 320 )
+[node name="Coins" type="Node2D" parent="Objects"]
 
-[node name="Coin2" parent="Coins" instance=ExtResource( 4 )]
-position = Vector2( 1152, 248 )
+[node name="Coin" parent="Objects/Coins" instance=ExtResource( 4 )]
+position = Vector2( 864, 472 )
 
-[node name="Coin3" parent="Coins" instance=ExtResource( 4 )]
-position = Vector2( 1456, 392 )
+[node name="Coin2" parent="Objects/Coins" instance=ExtResource( 4 )]
+position = Vector2( 1768, 168 )
+
+[node name="Coin3" parent="Objects/Coins" instance=ExtResource( 4 )]
+position = Vector2( 2400, 520 )
+
+[node name="Anchor" type="Sprite" parent="Objects"]
+position = Vector2( 864, 216 )
+scale = Vector2( 1.68518, 1.68518 )
+texture = ExtResource( 7 )
+
+[node name="Axe" type="Sprite" parent="Objects"]
+position = Vector2( 1824, 536 )
+scale = Vector2( 1.68518, 1.68518 )
+texture = ExtResource( 10 )
+
+[node name="Saw" type="Sprite" parent="Objects"]
+position = Vector2( 2400, 240 )
+scale = Vector2( 1.68518, 1.68518 )
+texture = ExtResource( 9 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -64,6 +88,18 @@ centered = false
 
 [node name="Close" parent="." instance=ExtResource( 3 )]
 
-[connection signal="coin_collected" from="Coins/Coin" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins/Coin3" to="HUD" method="_on_coin_collected"]
+[node name="Fallzone" type="Area2D" parent="."]
+position = Vector2( 3976, 696 )
+scale = Vector2( 7.72, 2.48 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fallzone"]
+scale = Vector2( 51.56, 1 )
+shape = SubResource( 1 )
+
+[connection signal="coin_collected" from="Objects/Coins/Coin" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Objects/Coins/Coin2" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Objects/Coins/Coin3" to="HUD" method="_on_coin_collected"]
+[connection signal="body_shape_entered" from="Fallzone" to="Objects" method="_on_Fallzone_body_shape_entered"]

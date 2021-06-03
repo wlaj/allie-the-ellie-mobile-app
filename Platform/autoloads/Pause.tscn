@@ -55,6 +55,7 @@ texture_normal = ExtResource( 4 )
 
 [node name="HomeButton" type="TextureButton" parent="CenterContainer/GridContainer"]
 margin_left = 607.0
+margin_top = 10.0
 margin_right = 887.0
 margin_bottom = 170.0
 texture_normal = ExtResource( 3 )
