@@ -1,11 +1,11 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://assets/props/nature/winter/bowling_ball.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Allie.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/backgrounds/Achtergrond-winter.png" type="Texture" id=3]
 [ext_resource path="res://world_tileset.tres" type="TileSet" id=4]
 [ext_resource path="res://assets/props/building/Huis.png" type="Texture" id=5]
-[ext_resource path="res://assets/backgrounds/Wolk-winter.png" type="Texture" id=6]
+[ext_resource path="res://assets/props/interactions/snowflake.png" type="Texture" id=6]
 [ext_resource path="res://assets/props/nature/winter/bunny.png" type="Texture" id=7]
 [ext_resource path="res://scenes/props/Bird-prop.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/props/nature/winter/snow_tree.png" type="Texture" id=9]
@@ -47,6 +47,8 @@ height = 24.5537
 
 [sub_resource type="CapsuleShape2D" id=4]
 height = 158.39
+
+[sub_resource type="CircleShape2D" id=7]
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 3627.11, 108.818 )
@@ -463,6 +465,21 @@ position = Vector2( 274.357, 96.1665 )
 shape = SubResource( 4 )
 disabled = true
 
+[node name="Snowflake" type="Node2D" parent="Props"]
+position = Vector2( 4999.97, 225.36 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Props/Snowflake"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 6 )
+
+[node name="SnowflakeButton" type="TouchScreenButton" parent="Props/Snowflake"]
+scale = Vector2( 5, 5 )
+shape = SubResource( 7 )
+shape_centered = false
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -472,26 +489,6 @@ motion_mirroring = Vector2( 1280, 960 )
 position = Vector2( 0, -1.3547 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
-centered = false
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.4, 0.4 )
-motion_offset = Vector2( 0, -500 )
-motion_mirroring = Vector2( 1600, 1200 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-scale = Vector2( 0.804965, 0.804965 )
-texture = ExtResource( 6 )
-centered = false
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.7, 0.7 )
-motion_mirroring = Vector2( 1120, 840 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 228.131, -38.9819 )
-scale = Vector2( 0.838919, 0.838919 )
-texture = ExtResource( 6 )
 centered = false
 
 [node name="Fallzone" type="Area2D" parent="."]
@@ -526,8 +523,22 @@ editor_draw_limits = true
 
 [node name="Bird" parent="." instance=ExtResource( 8 )]
 
+[node name="Snow" type="Node" parent="."]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Snow"]
+visible = false
+position = Vector2( 2500, 0 )
+amount = 200
+lifetime = 10.0
+randomness = 1.0
+emission_shape = 2
+emission_rect_extents = Vector2( 3000, 1 )
+direction = Vector2( 0, 0 )
+scale_amount = 3.0
+
 [connection signal="body_entered" from="Props/Starthouse" to="Allie" method="_on_Starthouse_body_entered"]
 [connection signal="pressed" from="Props/Christmashouse/EndHouseButton" to="." method="_on_EndHouseButton_pressed"]
 [connection signal="body_entered" from="Props/bowling_ball" to="Allie" method="_on_Starthouse_body_entered"]
 [connection signal="body_entered" from="Props/puck" to="Allie" method="_on_Starthouse_body_entered"]
+[connection signal="pressed" from="Props/Snowflake/SnowflakeButton" to="." method="_on_SnowflakeButton_pressed"]
 [connection signal="body_entered" from="Fallzone" to="Allie" method="_on_Fallzone_body_entered"]
