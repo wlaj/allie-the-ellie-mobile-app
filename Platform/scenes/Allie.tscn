@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/players/spritesheet-alliewalking.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Allie.gd" type="Script" id=2]
-[ext_resource path="res://assets/sounds/Allie_Walk.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sounds/Walk.ogg" type="AudioStream" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -61,6 +61,7 @@ position = Vector2( 0.176773, -0.353554 )
 script = ExtResource( 2 )
 
 [node name="Spritesheet" type="Sprite" parent="."]
+scale = Vector2( 1.16, 1.16 )
 texture = ExtResource( 1 )
 hframes = 10
 vframes = 12
@@ -71,7 +72,7 @@ anims/Jump = SubResource( 2 )
 anims/Walk = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.37551, 13.8336 )
+position = Vector2( -1.90526, 38.2012 )
 shape = SubResource( 4 )
 
 [node name="SoundWalk" type="AudioStreamPlayer" parent="."]

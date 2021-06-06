@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/pause/Home.png" type="Texture" id=1]
+[ext_resource path="res://assets/pause/background.png" type="Texture" id=2]
+[ext_resource path="res://autoloads/PauseMobile.gd" type="Script" id=3]
+[ext_resource path="res://assets/pause/Play.png" type="Texture" id=4]
+[ext_resource path="res://assets/pause/Musicon.png" type="Texture" id=5]
+[ext_resource path="res://assets/pause/Musicoff.png" type="Texture" id=6]
+
+[node name="PauseMobile" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Popup" type="Popup" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="TextureRect" parent="Popup"]
+modulate = Color( 1, 1, 1, 0.392157 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Popup/CenterContainer"]
+margin_left = 490.0
+margin_top = 455.0
+margin_right = 1429.0
+margin_bottom = 625.0
+custom_constants/hseparation = 50
+columns = 3
+
+[node name="MuteButton" type="TextureButton" parent="Popup/CenterContainer/GridContainer"]
+pause_mode = 2
+margin_right = 280.0
+margin_bottom = 170.0
+toggle_mode = true
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+
+[node name="PlayButton" type="TextureButton" parent="Popup/CenterContainer/GridContainer"]
+pause_mode = 2
+margin_left = 330.0
+margin_right = 609.0
+margin_bottom = 170.0
+texture_normal = ExtResource( 4 )
+
+[node name="HomeButton" type="TextureButton" parent="Popup/CenterContainer/GridContainer"]
+pause_mode = 2
+margin_left = 659.0
+margin_right = 939.0
+margin_bottom = 170.0
+texture_normal = ExtResource( 1 )
+
+[connection signal="toggled" from="Popup/CenterContainer/GridContainer/MuteButton" to="." method="_on_MuteButton_toggled"]
+[connection signal="pressed" from="Popup/CenterContainer/GridContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="Popup/CenterContainer/GridContainer/HomeButton" to="." method="_on_HomeButton_pressed"]

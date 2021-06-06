@@ -25,3 +25,24 @@ func _on_BakinghouseButton_pressed():
 
 func _on_CaveEntrance_body_entered(body):
 	get_tree().change_scene("res://scenes/small/Cave-lvl.tscn")
+
+
+
+func _on_PauseMobile_pressed():
+	get_tree().paused = true
+	$PauseMobile/Popup.show()
+
+
+func _on_Leavesbush_body_entered(body):
+	Input.vibrate_handheld(500)
+
+func _on_OwlTree_body_shape_entered(body_id, body, body_shape, local_shape):
+	$FrontProps/OwlTree/SoundOehoe.play()
+
+
+func _on_BirdHouse_body_shape_entered(body_id, body, body_shape, local_shape):
+	$FrontProps/BirdHouse/SoundPiep.play()
+
+
+func _on_SnowflakeButton_pressed():
+	$Rain/CPUParticles2D.visible = true

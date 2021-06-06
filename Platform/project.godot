@@ -15,13 +15,19 @@ run/main_scene="res://scenes/Menu.tscn"
 
 [autoload]
 
-Pause="*res://autoloads/Pause.tscn"
 MusicController="*res://autoloads/MusicController.tscn"
 Checkpoint="*res://autoloads/Checkpoint.gd"
 
 [debug]
 
 settings/stdout/verbose_stdout=true
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [input]
 

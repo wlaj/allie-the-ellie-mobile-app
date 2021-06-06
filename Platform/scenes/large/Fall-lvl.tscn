@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://scenes/large/Fall-lvl.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Allie.tscn" type="PackedScene" id=2]
@@ -13,159 +13,280 @@
 [ext_resource path="res://assets/props/nature/Paddenstoel.png" type="Texture" id=11]
 [ext_resource path="res://assets/backgrounds/Achtergrond.png" type="Texture" id=12]
 [ext_resource path="res://scenes/props/Bird-prop.tscn" type="PackedScene" id=13]
-[ext_resource path="res://autoloads/PauseButtonFall.tscn" type="PackedScene" id=14]
+[ext_resource path="res://autoloads/PauseMobile.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/props/nature/firsthill.png" type="Texture" id=15]
 [ext_resource path="res://assets/props/nature/herfst_boom_met_uil.png" type="Texture" id=16]
 [ext_resource path="res://assets/props/hills/water-background-hill.png" type="Texture" id=17]
 [ext_resource path="res://scenes/props/Airplane-prop.tscn" type="PackedScene" id=18]
 [ext_resource path="res://assets/props/hills/thirdhill.png" type="Texture" id=19]
-
-[sub_resource type="RectangleShape2D" id=5]
+[ext_resource path="res://assets/pause/Pauze-herfst.png" type="Texture" id=20]
+[ext_resource path="res://assets/props/nature/birdhouse.png" type="Texture" id=21]
+[ext_resource path="res://assets/sounds/Piep.ogg" type="AudioStream" id=22]
+[ext_resource path="res://assets/sounds/Oehoe.ogg" type="AudioStream" id=23]
+[ext_resource path="res://assets/props/nature/mandappels.png" type="Texture" id=24]
+[ext_resource path="res://assets/props/nature/pompoen.png" type="Texture" id=25]
+[ext_resource path="res://assets/props/nature/toilethuis.png" type="Texture" id=26]
+[ext_resource path="res://assets/props/nature/rups-groot.png" type="Texture" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 61.0928, 92.7706 )
 
 [sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 61.0928, 92.7706 )
+
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 35.148, 34.3359 )
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 122.363, 212.381 )
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 182.603
+height = 63.8796
+
+[sub_resource type="CircleShape2D" id=6]
 radius = 74.4576
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=8]
+
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 3627.11, 108.818 )
 
 [node name="Autumn level" type="Node"]
 script = ExtResource( 1 )
 
-[node name="Props" type="Node2D" parent="."]
+[node name="FrontProps" type="Node" parent="."]
 
-[node name="Starthouse" type="Node2D" parent="Props"]
+[node name="Starthouse" type="Node2D" parent="FrontProps"]
 position = Vector2( -870.177, 322.462 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Props/Starthouse"]
+[node name="Sprite" type="Sprite" parent="FrontProps/Starthouse"]
 scale = Vector2( 0.558163, 0.568929 )
 texture = ExtResource( 5 )
 
-[node name="BedroomButton" type="TouchScreenButton" parent="Props/Starthouse"]
+[node name="BedroomButton" type="TouchScreenButton" parent="FrontProps/Starthouse"]
 position = Vector2( 10.1136, 125.109 )
 scale = Vector2( 4.24, 6.28 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 shape_centered = false
 
-[node name="Endhouse" type="Node2D" parent="Props"]
+[node name="Endhouse" type="Node2D" parent="FrontProps"]
 position = Vector2( 6923.25, 322.462 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Props/Endhouse"]
+[node name="Sprite" type="Sprite" parent="FrontProps/Endhouse"]
 scale = Vector2( 0.558163, 0.568929 )
 texture = ExtResource( 5 )
 
-[node name="BakinghouseButton" type="TouchScreenButton" parent="Props/Endhouse"]
+[node name="BakinghouseButton" type="TouchScreenButton" parent="FrontProps/Endhouse"]
 position = Vector2( 10.1136, 125.109 )
 scale = Vector2( 4.24, 6.28 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 shape_centered = false
 
-[node name="CaveEntrance" type="Area2D" parent="Props"]
+[node name="CaveEntrance" type="Area2D" parent="FrontProps"]
 position = Vector2( 8443.2, 321.396 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Props/CaveEntrance"]
+[node name="Sprite" type="Sprite" parent="FrontProps/CaveEntrance"]
 position = Vector2( -21.0889, 16.7744 )
 scale = Vector2( 0.558163, 0.568929 )
 texture = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/CaveEntrance"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontProps/CaveEntrance"]
 position = Vector2( 111.004, 58.502 )
 rotation = -0.00087285
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 one_way_collision = true
 
-[node name="Mushroom" type="StaticBody2D" parent="Props"]
-position = Vector2( -80.9565, 468.865 )
+[node name="Mushroom" type="StaticBody2D" parent="FrontProps"]
+position = Vector2( 36.5112, 468.865 )
 collision_layer = 8
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Props/Mushroom"]
+[node name="Sprite" type="Sprite" parent="FrontProps/Mushroom"]
 position = Vector2( 3.51172, 11.8828 )
 scale = Vector2( 0.0384574, 0.0344658 )
 texture = ExtResource( 11 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Mushroom"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontProps/Mushroom"]
 position = Vector2( 0.720349, 11.9663 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 disabled = true
 
-[node name="FirstTree" type="Node" parent="Props"]
+[node name="BirdHouse" type="Area2D" parent="FrontProps"]
+position = Vector2( 1024.82, 410.586 )
+scale = Vector2( 0.47, 0.47 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Props/FirstTree"]
-position = Vector2( 894.435, 309.716 )
+[node name="Sprite" type="Sprite" parent="FrontProps/BirdHouse"]
+texture = ExtResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontProps/BirdHouse"]
+position = Vector2( -1.59448, -19.9243 )
+shape = SubResource( 4 )
+
+[node name="SoundPiep" type="AudioStreamPlayer" parent="FrontProps/BirdHouse"]
+stream = ExtResource( 22 )
+
+[node name="FirstTree" type="Node2D" parent="FrontProps"]
+position = Vector2( 273.033, 347.641 )
+scale = Vector2( 0.8, 0.8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="FrontProps/FirstTree"]
 scale = Vector2( 0.283398, 0.253983 )
 texture = ExtResource( 7 )
 
-[node name="SecondTree" type="Node" parent="Props"]
+[node name="OwlTree" type="Area2D" parent="FrontProps"]
+position = Vector2( 1567.23, 308.651 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Props/SecondTree"]
-position = Vector2( 1635.44, 308.886 )
+[node name="Sprite" type="Sprite" parent="FrontProps/OwlTree"]
 scale = Vector2( 0.531681, 0.476496 )
 texture = ExtResource( 16 )
 
-[node name="FirstHill" type="Node" parent="Props"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontProps/OwlTree"]
+position = Vector2( 3.1748, -15.0803 )
+shape = SubResource( 5 )
 
-[node name="Sprite" type="Sprite" parent="Props/FirstHill"]
-position = Vector2( 2786.12, 489.41 )
+[node name="SoundOehoe" type="AudioStreamPlayer" parent="FrontProps/OwlTree"]
+stream = ExtResource( 23 )
+volume_db = -8.0
+
+[node name="FirstHill" type="Node" parent="FrontProps"]
+
+[node name="Sprite" type="Sprite" parent="FrontProps/FirstHill"]
+position = Vector2( 2233.24, 489.41 )
 scale = Vector2( 0.341115, 0.305709 )
 texture = ExtResource( 15 )
 
-[node name="WaterBackground" type="Node" parent="Props"]
+[node name="WaterBackground" type="Node" parent="FrontProps"]
 
-[node name="Sprite" type="Sprite" parent="Props/WaterBackground"]
-position = Vector2( 4921.23, 465.405 )
-scale = Vector2( 0.393095, 0.352294 )
+[node name="Sprite" type="Sprite" parent="FrontProps/WaterBackground"]
+position = Vector2( 4705.19, 465.405 )
+scale = Vector2( 0.513105, 0.352294 )
 texture = ExtResource( 17 )
 
-[node name="SecondHill" type="Node" parent="Props"]
+[node name="SecondHill" type="Node" parent="FrontProps"]
 
-[node name="Sprite" type="Sprite" parent="Props/SecondHill"]
-position = Vector2( 3978.72, 405.376 )
+[node name="Sprite" type="Sprite" parent="FrontProps/SecondHill"]
+position = Vector2( 3462.14, 405.376 )
 scale = Vector2( 0.713095, 0.639079 )
 texture = ExtResource( 9 )
 
-[node name="ThirdHill" type="Node" parent="Props"]
+[node name="ThirdHill" type="Node" parent="FrontProps"]
 
-[node name="Sprite" type="Sprite" parent="Props/ThirdHill"]
-position = Vector2( 6045.01, 484.212 )
+[node name="Sprite" type="Sprite" parent="FrontProps/ThirdHill"]
+position = Vector2( 6074.19, 484.212 )
 scale = Vector2( 0.713095, 0.639079 )
 texture = ExtResource( 19 )
 
-[node name="Leavesbush" type="StaticBody2D" parent="Props"]
-position = Vector2( 278.153, 476.405 )
+[node name="Leavesbush" type="Area2D" parent="FrontProps"]
+position = Vector2( 722.625, 476.405 )
 collision_layer = 8
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Props/Leavesbush"]
+[node name="Sprite" type="Sprite" parent="FrontProps/Leavesbush"]
 position = Vector2( -32.6946, -3.89401 )
 scale = Vector2( 0.615231, 0.551375 )
 texture = ExtResource( 6 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Leavesbush"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontProps/Leavesbush"]
 position = Vector2( -32.7517, 15.0169 )
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 disabled = true
 
-[node name="Checkpoint" parent="Props" instance=ExtResource( 3 )]
-position = Vector2( 1916.84, 460.334 )
+[node name="Checkpoint" parent="FrontProps" instance=ExtResource( 3 )]
+position = Vector2( 2994.06, 460.334 )
+
+[node name="BasketApples" type="Node2D" parent="FrontProps"]
+position = Vector2( 2126.37, 352.279 )
+scale = Vector2( 0.4, 0.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="FrontProps/BasketApples"]
+texture = ExtResource( 24 )
+
+[node name="Pumkin" type="Control" parent="FrontProps"]
+margin_left = 2507.76
+margin_top = 430.804
+margin_right = 2866.76
+margin_bottom = 701.804
+rect_scale = Vector2( 0.3, 0.3 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="FrontProps/Pumkin"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 25 )
+
+[node name="ToiletHouse" type="Node2D" parent="FrontProps"]
+position = Vector2( 3457.84, 197.732 )
+scale = Vector2( 0.6, 0.6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="FrontProps/ToiletHouse"]
+texture = ExtResource( 26 )
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="FrontProps/ToiletHouse"]
+
+[node name="Snowflake" type="Node2D" parent="FrontProps"]
+position = Vector2( 5487.14, -81.8464 )
+scale = Vector2( 4, 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="FrontProps/Snowflake"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+
+[node name="SnowflakeButton" type="TouchScreenButton" parent="FrontProps/Snowflake"]
+scale = Vector2( 5, 5 )
+shape = SubResource( 8 )
+shape_centered = false
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( 65518, 3, 0, 131054, 3, 0, 196590, 3, 0, 262126, 3, 0, 327662, 3, 0, 393198, 3, 0, 458734, 3, 0, 524270, 3, 0, 589806, 3, 0, 589807, 2, 0, 589808, 2, 0, 589809, 2, 0, 589810, 2, 0, 589811, 2, 0, 589812, 2, 0, 589813, 2, 0, 589814, 2, 0, 589815, 2, 0, 589816, 2, 0, 589817, 2, 0, 589818, 2, 0, 589819, 2, 0, 589820, 2, 0, 589821, 2, 0, 589822, 2, 0, 589823, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 524292, 2, 0, 524293, 2, 0, 524294, 2, 0, 524295, 2, 0, 524296, 2, 0, 524297, 2, 0, 524298, 2, 0, 524299, 2, 0, 524300, 2, 0, 524301, 2, 0, 524302, 2, 0, 524303, 2, 0, 524304, 2, 0, 524305, 2, 0, 524306, 2, 0, 524307, 2, 0, 524308, 2, 0, 524309, 2, 0, 524310, 2, 0, 524311, 2, 0, 524312, 2, 0, 524313, 2, 0, 524314, 2, 0, 524315, 2, 0, 524316, 2, 0, 524317, 2, 0, 524318, 2, 0, 524319, 2, 0, 524320, 2, 0, 524321, 2, 0, 524322, 2, 0, 524323, 2, 0, 524324, 2, 0, 524325, 2, 0, 524326, 2, 0, 524327, 2, 0, 524328, 2, 0, 524329, 2, 0, 524330, 2, 0, 524331, 2, 0, 524332, 2, 0, 524333, 2, 0, 524334, 2, 0, 524335, 2, 0, 524336, 2, 0, 524337, 2, 0, 524338, 2, 0, 524339, 2, 0, 524340, 2, 0, 524341, 2, 0, 524342, 2, 0, 524343, 2, 0, 524344, 2, 0, 524345, 2, 0, 524346, 2, 0, 524347, 2, 0, 524348, 2, 0, 524349, 2, 0, 524350, 2, 0, 524351, 2, 0, 524352, 2, 0, 524353, 2, 0, 524354, 2, 0, 524355, 2, 0, 524356, 2, 0, 524357, 2, 0, 524358, 2, 0, 524359, 2, 0, 524360, 2, 0, 524361, 2, 0, 524362, 2, 0, 524363, 2, 0, 524364, 2, 0, 524365, 2, 0, 524366, 2, 0, 524367, 2, 0, 524368, 2, 0, 524369, 2, 0, 524370, 2, 0, 524371, 2, 0, 524372, 2, 0, 524373, 2, 0, 524374, 2, 0, 524375, 2, 0, 524376, 2, 0, 524377, 2, 0, 524378, 2, 0, 524379, 2, 0, 524380, 2, 0, 524381, 2, 0, 524382, 2, 0, 524383, 2, 0, 524384, 2, 0, 524385, 2, 0, 524386, 2, 0, 524387, 2, 0, 524388, 2, 0, 524389, 2, 0, 524390, 2, 0, 524391, 2, 0, 524392, 2, 0, 524393, 2, 0, 524394, 2, 0, 524395, 2, 0, 524396, 2, 0, 524397, 2, 0, 524398, 2, 0, 524399, 2, 0, 524400, 2, 0, 524401, 2, 0, 524402, 2, 0, 524403, 2, 0, 524404, 2, 0, 524405, 2, 0, 524406, 2, 0, 524407, 2, 0, 524408, 2, 0, 524409, 2, 0, 524410, 2, 0, 524411, 2, 0, 524412, 2, 0, 524413, 2, 0, 524414, 2, 0, 524415, 2, 0, 524416, 2, 0, 524417, 2, 0, 524418, 2, 0, 524419, 2, 0, 524420, 2, 0, 524421, 2, 0, 524422, 2, 0, 524423, 2, 0, 524424, 2, 0, 524425, 2, 0, 524426, 2, 0, 655342, 3, 0, 655343, 3, 0, 655344, 3, 0, 655345, 3, 0, 655346, 3, 0, 655347, 3, 0, 655348, 3, 0, 655349, 3, 0, 655350, 3, 0, 655351, 3, 0, 655352, 3, 0, 655353, 3, 0, 655354, 3, 0, 655355, 3, 0, 655356, 3, 0, 655357, 3, 0, 655358, 3, 0, 655359, 3, 0, 589824, 3, 0, 589825, 3, 0, 589826, 3, 0, 589827, 3, 0, 589828, 3, 0, 589829, 3, 0, 589830, 3, 0, 589831, 3, 0, 589832, 3, 0, 589833, 3, 0, 589834, 3, 0, 589835, 3, 0, 589836, 3, 0, 589837, 3, 0, 589838, 3, 0, 589839, 3, 0, 589840, 3, 0, 589841, 3, 0, 589842, 3, 0, 589843, 3, 0, 589844, 3, 0, 589845, 3, 0, 589846, 3, 0, 589847, 3, 0, 589848, 3, 0, 589849, 3, 0, 589850, 3, 0, 589851, 3, 0, 589852, 3, 0, 589853, 3, 0, 589854, 3, 0, 589855, 3, 0, 589856, 3, 0, 589857, 3, 0, 589858, 3, 0, 589859, 3, 0, 589860, 3, 0, 589861, 3, 0, 589862, 3, 0, 589863, 3, 0, 589864, 3, 0, 589865, 3, 0, 589866, 3, 0, 589867, 3, 0, 589868, 3, 0, 589869, 3, 0, 589870, 3, 0, 589871, 3, 0, 589872, 3, 0, 589873, 3, 0, 589874, 3, 0, 589875, 3, 0, 589876, 3, 0, 589877, 3, 0, 589878, 3, 0, 589879, 3, 0, 589880, 3, 0, 589881, 3, 0, 589882, 3, 0, 589883, 3, 0, 589884, 3, 0, 589885, 3, 0, 589886, 3, 0, 589887, 3, 0, 589888, 3, 0, 589889, 3, 0, 589890, 3, 0, 589891, 3, 0, 589892, 3, 0, 589893, 3, 0, 589894, 3, 0, 589895, 3, 0, 589896, 3, 0, 589897, 3, 0, 589898, 3, 0, 589899, 3, 0, 589900, 3, 0, 589901, 3, 0, 589902, 3, 0, 589903, 3, 0, 589904, 3, 0, 589905, 3, 0, 589906, 3, 0, 589907, 3, 0, 589908, 3, 0, 589909, 3, 0, 589910, 3, 0, 589911, 3, 0, 589912, 3, 0, 589913, 3, 0, 589914, 3, 0, 589915, 3, 0, 589916, 3, 0, 589917, 3, 0, 589918, 3, 0, 589919, 3, 0, 589920, 3, 0, 589921, 3, 0, 589922, 3, 0, 589923, 3, 0, 589924, 3, 0, 589925, 3, 0, 589926, 3, 0, 589927, 3, 0, 589928, 3, 0, 589929, 3, 0, 589930, 3, 0, 589931, 3, 0, 589932, 3, 0, 589933, 3, 0, 589934, 3, 0, 589935, 3, 0, 589936, 3, 0, 589937, 3, 0, 589938, 3, 0, 589939, 3, 0, 589940, 3, 0, 589941, 3, 0, 589942, 3, 0, 589943, 3, 0, 589944, 3, 0, 589945, 3, 0, 589946, 3, 0, 589947, 3, 0, 589948, 3, 0, 589949, 3, 0, 589950, 3, 0, 589951, 3, 0, 589952, 3, 0, 589953, 3, 0, 589954, 3, 0, 589955, 3, 0, 589956, 3, 0, 589957, 3, 0, 589958, 3, 0, 589959, 3, 0, 589960, 3, 0, 589961, 3, 0, 589962, 3, 0, 720878, 3, 0, 720879, 3, 0, 720880, 3, 0, 720881, 3, 0, 720882, 3, 0, 720883, 3, 0, 720884, 3, 0, 720885, 3, 0, 720886, 3, 0, 720887, 3, 0, 720888, 3, 0, 720889, 3, 0, 720890, 3, 0, 720891, 3, 0, 720892, 3, 0, 720893, 3, 0, 720894, 3, 0, 720895, 3, 0, 655360, 3, 0, 655361, 3, 0, 655362, 3, 0, 655363, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 3, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 3, 0, 655375, 3, 0, 655376, 3, 0, 655377, 3, 0, 655378, 3, 0, 655379, 3, 0, 655380, 3, 0, 655381, 3, 0, 655382, 3, 0, 655383, 3, 0, 655384, 3, 0, 655385, 3, 0, 655386, 3, 0, 655387, 3, 0, 655388, 3, 0, 655389, 3, 0, 655390, 3, 0, 655391, 3, 0, 655392, 3, 0, 655393, 3, 0, 655394, 3, 0, 655395, 3, 0, 655396, 3, 0, 655397, 3, 0, 655398, 3, 0, 655399, 3, 0, 655400, 3, 0, 655401, 3, 0, 655402, 3, 0, 655403, 3, 0, 655404, 3, 0, 655405, 3, 0, 655406, 3, 0, 655407, 3, 0, 655408, 3, 0, 655409, 3, 0, 655410, 3, 0, 655411, 3, 0, 655412, 3, 0, 655413, 3, 0, 655414, 3, 0, 655415, 3, 0, 655416, 3, 0, 655417, 3, 0, 655418, 3, 0, 655419, 3, 0, 655420, 3, 0, 655421, 3, 0, 655422, 3, 0, 655423, 3, 0, 655424, 3, 0, 655425, 3, 0, 655426, 3, 0, 655427, 3, 0, 655428, 3, 0, 655429, 3, 0, 655430, 3, 0, 655431, 3, 0, 655432, 3, 0, 655433, 3, 0, 655434, 3, 0, 655435, 3, 0, 655436, 3, 0, 655437, 3, 0, 655438, 3, 0, 655439, 3, 0, 655440, 3, 0, 655441, 3, 0, 655442, 3, 0, 655443, 3, 0, 655444, 3, 0, 655445, 3, 0, 655446, 3, 0, 655447, 3, 0, 655448, 3, 0, 655449, 3, 0, 655450, 3, 0, 655451, 3, 0, 655452, 3, 0, 655453, 3, 0, 655454, 3, 0, 655455, 3, 0, 655456, 3, 0, 655457, 3, 0, 655458, 3, 0, 655459, 3, 0, 655460, 3, 0, 655461, 3, 0, 655462, 3, 0, 655463, 3, 0, 655464, 3, 0, 655465, 3, 0, 655466, 3, 0, 655467, 3, 0, 655468, 3, 0, 655469, 3, 0, 655470, 3, 0, 655471, 3, 0, 655472, 3, 0, 655473, 3, 0, 655474, 3, 0, 655475, 3, 0, 655476, 3, 0, 655477, 3, 0, 655478, 3, 0, 655479, 3, 0, 655480, 3, 0, 655481, 3, 0, 655482, 3, 0, 655483, 3, 0, 655484, 3, 0, 655485, 3, 0, 655486, 3, 0, 655487, 3, 0, 655488, 3, 0, 655489, 3, 0, 655490, 3, 0, 655491, 3, 0, 655492, 3, 0, 655493, 3, 0, 655494, 3, 0, 655495, 3, 0, 655496, 3, 0, 655497, 3, 0, 655498, 3, 0 )
+
+[node name="BackProps" type="Node" parent="."]
+
+[node name="Caterpillar" type="Node2D" parent="BackProps"]
+position = Vector2( 4931.65, 613.355 )
+scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="BackProps/Caterpillar"]
+texture = ExtResource( 27 )
 
 [node name="Allie" parent="." instance=ExtResource( 2 )]
 position = Vector2( -526.06, -327.091 )
@@ -193,19 +314,33 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 12 )
 centered = false
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 0, 149.84 )
 motion_scale = Vector2( 0.4, 0.4 )
 motion_offset = Vector2( 0, -500 )
 motion_mirroring = Vector2( 1600, 1200 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+[node name="FirstCloud" type="Sprite" parent="ParallaxBackground/Clouds"]
+scale = Vector2( 0.804965, 0.804965 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="SecondCloud" type="Sprite" parent="ParallaxBackground/Clouds"]
+position = Vector2( 370.417, 50.3969 )
 scale = Vector2( 0.804965, 0.804965 )
 texture = ExtResource( 8 )
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 motion_scale = Vector2( 0.7, 0.7 )
 motion_mirroring = Vector2( 1120, 840 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2( 228.131, -38.9819 )
@@ -222,26 +357,51 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Fallzone"]
-shape = SubResource( 4 )
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 4 )
-collision_layer = 2
-format = 1
-tile_data = PoolIntArray( 65518, 3, 0, 131054, 3, 0, 196590, 3, 0, 262126, 3, 0, 327662, 3, 0, 393198, 3, 0, 458734, 3, 0, 524270, 3, 0, 589806, 3, 0, 589807, 2, 0, 589808, 2, 0, 589809, 2, 0, 589810, 2, 0, 589811, 2, 0, 589812, 2, 0, 589813, 2, 0, 589814, 2, 0, 589815, 2, 0, 589816, 2, 0, 589817, 2, 0, 589818, 2, 0, 589819, 2, 0, 589820, 2, 0, 589821, 2, 0, 589822, 2, 0, 589823, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 524292, 2, 0, 524293, 2, 0, 524294, 2, 0, 524295, 2, 0, 524296, 2, 0, 524297, 2, 0, 524298, 2, 0, 524299, 2, 0, 524300, 2, 0, 524301, 2, 0, 524302, 2, 0, 524303, 2, 0, 524304, 2, 0, 524305, 2, 0, 524306, 2, 0, 524307, 2, 0, 524308, 2, 0, 524309, 2, 0, 524310, 2, 0, 524311, 2, 0, 524312, 2, 0, 524313, 2, 0, 524314, 2, 0, 524315, 2, 0, 524316, 2, 0, 524317, 2, 0, 524318, 2, 0, 524319, 2, 0, 524320, 2, 0, 524321, 2, 0, 524322, 2, 0, 524323, 2, 0, 524324, 2, 0, 524325, 2, 0, 524326, 2, 0, 524327, 2, 0, 524328, 2, 0, 524329, 2, 0, 524330, 2, 0, 524331, 2, 0, 524332, 2, 0, 524333, 2, 0, 524334, 2, 0, 524335, 2, 0, 524336, 2, 0, 524337, 2, 0, 524338, 2, 0, 524339, 2, 0, 524340, 2, 0, 524341, 2, 0, 524342, 2, 0, 524343, 2, 0, 524344, 2, 0, 524345, 2, 0, 524346, 2, 0, 524347, 2, 0, 524348, 2, 0, 524349, 2, 0, 524350, 2, 0, 524351, 2, 0, 524352, 2, 0, 524353, 2, 0, 524354, 2, 0, 524355, 2, 0, 524356, 2, 0, 524357, 2, 0, 524358, 2, 0, 524359, 2, 0, 524360, 2, 0, 524361, 2, 0, 524362, 2, 0, 524363, 2, 0, 524364, 2, 0, 524365, 2, 0, 524366, 2, 0, 524367, 2, 0, 524368, 2, 0, 524369, 2, 0, 524370, 2, 0, 524371, 2, 0, 524372, 2, 0, 524373, 2, 0, 524374, 2, 0, 524375, 2, 0, 524376, 2, 0, 524377, 2, 0, 524378, 2, 0, 524379, 2, 0, 524380, 2, 0, 524381, 2, 0, 524382, 2, 0, 524383, 2, 0, 524384, 2, 0, 524385, 2, 0, 524386, 2, 0, 524387, 2, 0, 524388, 2, 0, 524389, 2, 0, 524390, 2, 0, 524391, 2, 0, 524392, 2, 0, 524393, 2, 0, 524394, 2, 0, 524395, 2, 0, 524396, 2, 0, 524397, 2, 0, 524398, 2, 0, 524399, 2, 0, 524400, 2, 0, 524401, 2, 0, 524402, 2, 0, 524403, 2, 0, 524404, 2, 0, 524405, 2, 0, 524406, 2, 0, 524407, 2, 0, 524408, 2, 0, 524409, 2, 0, 524410, 2, 0, 524411, 2, 0, 524412, 2, 0, 524413, 2, 0, 524414, 2, 0, 524415, 2, 0, 524416, 2, 0, 524417, 2, 0, 524418, 2, 0, 524419, 2, 0, 524420, 2, 0, 524421, 2, 0, 524422, 2, 0, 524423, 2, 0, 524424, 2, 0, 524425, 2, 0, 524426, 2, 0, 655342, 3, 0, 655343, 3, 0, 655344, 3, 0, 655345, 3, 0, 655346, 3, 0, 655347, 3, 0, 655348, 3, 0, 655349, 3, 0, 655350, 3, 0, 655351, 3, 0, 655352, 3, 0, 655353, 3, 0, 655354, 3, 0, 655355, 3, 0, 655356, 3, 0, 655357, 3, 0, 655358, 3, 0, 655359, 3, 0, 589824, 3, 0, 589825, 3, 0, 589826, 3, 0, 589827, 3, 0, 589828, 3, 0, 589829, 3, 0, 589830, 3, 0, 589831, 3, 0, 589832, 3, 0, 589833, 3, 0, 589834, 3, 0, 589835, 3, 0, 589836, 3, 0, 589837, 3, 0, 589838, 3, 0, 589839, 3, 0, 589840, 3, 0, 589841, 3, 0, 589842, 3, 0, 589843, 3, 0, 589844, 3, 0, 589845, 3, 0, 589846, 3, 0, 589847, 3, 0, 589848, 3, 0, 589849, 3, 0, 589850, 3, 0, 589851, 3, 0, 589852, 3, 0, 589853, 3, 0, 589854, 3, 0, 589855, 3, 0, 589856, 3, 0, 589857, 3, 0, 589858, 3, 0, 589859, 3, 0, 589860, 3, 0, 589861, 3, 0, 589862, 3, 0, 589863, 3, 0, 589864, 3, 0, 589865, 3, 0, 589866, 3, 0, 589867, 3, 0, 589868, 3, 0, 589869, 3, 0, 589870, 3, 0, 589871, 3, 0, 589872, 3, 0, 589873, 3, 0, 589874, 3, 0, 589875, 3, 0, 589876, 3, 0, 589877, 3, 0, 589878, 3, 0, 589879, 3, 0, 589880, 3, 0, 589881, 3, 0, 589882, 3, 0, 589883, 3, 0, 589884, 3, 0, 589885, 3, 0, 589886, 3, 0, 589887, 3, 0, 589888, 3, 0, 589889, 3, 0, 589890, 3, 0, 589891, 3, 0, 589892, 3, 0, 589893, 3, 0, 589894, 3, 0, 589895, 3, 0, 589896, 3, 0, 589897, 3, 0, 589898, 3, 0, 589899, 3, 0, 589900, 3, 0, 589901, 3, 0, 589902, 3, 0, 589903, 3, 0, 589904, 3, 0, 589905, 3, 0, 589906, 3, 0, 589907, 3, 0, 589908, 3, 0, 589909, 3, 0, 589910, 3, 0, 589911, 3, 0, 589912, 3, 0, 589913, 3, 0, 589914, 3, 0, 589915, 3, 0, 589916, 3, 0, 589917, 3, 0, 589918, 3, 0, 589919, 3, 0, 589920, 3, 0, 589921, 3, 0, 589922, 3, 0, 589923, 3, 0, 589924, 3, 0, 589925, 3, 0, 589926, 3, 0, 589927, 3, 0, 589928, 3, 0, 589929, 3, 0, 589930, 3, 0, 589931, 3, 0, 589932, 3, 0, 589933, 3, 0, 589934, 3, 0, 589935, 3, 0, 589936, 3, 0, 589937, 3, 0, 589938, 3, 0, 589939, 3, 0, 589940, 3, 0, 589941, 3, 0, 589942, 3, 0, 589943, 3, 0, 589944, 3, 0, 589945, 3, 0, 589946, 3, 0, 589947, 3, 0, 589948, 3, 0, 589949, 3, 0, 589950, 3, 0, 589951, 3, 0, 589952, 3, 0, 589953, 3, 0, 589954, 3, 0, 589955, 3, 0, 589956, 3, 0, 589957, 3, 0, 589958, 3, 0, 589959, 3, 0, 589960, 3, 0, 589961, 3, 0, 589962, 3, 0, 720878, 3, 0, 720879, 3, 0, 720880, 3, 0, 720881, 3, 0, 720882, 3, 0, 720883, 3, 0, 720884, 3, 0, 720885, 3, 0, 720886, 3, 0, 720887, 3, 0, 720888, 3, 0, 720889, 3, 0, 720890, 3, 0, 720891, 3, 0, 720892, 3, 0, 720893, 3, 0, 720894, 3, 0, 720895, 3, 0, 655360, 3, 0, 655361, 3, 0, 655362, 3, 0, 655363, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 3, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 3, 0, 655375, 3, 0, 655376, 3, 0, 655377, 3, 0, 655378, 3, 0, 655379, 3, 0, 655380, 3, 0, 655381, 3, 0, 655382, 3, 0, 655383, 3, 0, 655384, 3, 0, 655385, 3, 0, 655386, 3, 0, 655387, 3, 0, 655388, 3, 0, 655389, 3, 0, 655390, 3, 0, 655391, 3, 0, 655392, 3, 0, 655393, 3, 0, 655394, 3, 0, 655395, 3, 0, 655396, 3, 0, 655397, 3, 0, 655398, 3, 0, 655399, 3, 0, 655400, 3, 0, 655401, 3, 0, 655402, 3, 0, 655403, 3, 0, 655404, 3, 0, 655405, 3, 0, 655406, 3, 0, 655407, 3, 0, 655408, 3, 0, 655409, 3, 0, 655410, 3, 0, 655411, 3, 0, 655412, 3, 0, 655413, 3, 0, 655414, 3, 0, 655415, 3, 0, 655416, 3, 0, 655417, 3, 0, 655418, 3, 0, 655419, 3, 0, 655420, 3, 0, 655421, 3, 0, 655422, 3, 0, 655423, 3, 0, 655424, 3, 0, 655425, 3, 0, 655426, 3, 0, 655427, 3, 0, 655428, 3, 0, 655429, 3, 0, 655430, 3, 0, 655431, 3, 0, 655432, 3, 0, 655433, 3, 0, 655434, 3, 0, 655435, 3, 0, 655436, 3, 0, 655437, 3, 0, 655438, 3, 0, 655439, 3, 0, 655440, 3, 0, 655441, 3, 0, 655442, 3, 0, 655443, 3, 0, 655444, 3, 0, 655445, 3, 0, 655446, 3, 0, 655447, 3, 0, 655448, 3, 0, 655449, 3, 0, 655450, 3, 0, 655451, 3, 0, 655452, 3, 0, 655453, 3, 0, 655454, 3, 0, 655455, 3, 0, 655456, 3, 0, 655457, 3, 0, 655458, 3, 0, 655459, 3, 0, 655460, 3, 0, 655461, 3, 0, 655462, 3, 0, 655463, 3, 0, 655464, 3, 0, 655465, 3, 0, 655466, 3, 0, 655467, 3, 0, 655468, 3, 0, 655469, 3, 0, 655470, 3, 0, 655471, 3, 0, 655472, 3, 0, 655473, 3, 0, 655474, 3, 0, 655475, 3, 0, 655476, 3, 0, 655477, 3, 0, 655478, 3, 0, 655479, 3, 0, 655480, 3, 0, 655481, 3, 0, 655482, 3, 0, 655483, 3, 0, 655484, 3, 0, 655485, 3, 0, 655486, 3, 0, 655487, 3, 0, 655488, 3, 0, 655489, 3, 0, 655490, 3, 0, 655491, 3, 0, 655492, 3, 0, 655493, 3, 0, 655494, 3, 0, 655495, 3, 0, 655496, 3, 0, 655497, 3, 0, 655498, 3, 0 )
-
-[node name="TextureButton" parent="." instance=ExtResource( 14 )]
-
-[node name="PauseButton" parent="." instance=ExtResource( 14 )]
+shape = SubResource( 7 )
 
 [node name="Airplane" parent="." instance=ExtResource( 18 )]
-position = Vector2( 3013.53, 126.51 )
+position = Vector2( 3013.53, -23.3301 )
 
 [node name="Bird" parent="." instance=ExtResource( 13 )]
-position = Vector2( 104.881, 139.343 )
+position = Vector2( 104.881, 43.416 )
 
-[connection signal="pressed" from="Props/Starthouse/BedroomButton" to="." method="_on_BedroomButton_pressed"]
-[connection signal="pressed" from="Props/Endhouse/BakinghouseButton" to="." method="_on_BakinghouseButton_pressed"]
-[connection signal="body_entered" from="Props/CaveEntrance" to="." method="_on_CaveEntrance_body_entered"]
-[connection signal="body_shape_entered" from="Props/CaveEntrance" to="." method="_on_CaveEntrance_body_shape_entered"]
+[node name="PauseButton" type="CanvasLayer" parent="."]
+
+[node name="PauseMobile" type="TextureButton" parent="PauseButton"]
+pause_mode = 2
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -160.0
+margin_top = 30.0
+margin_bottom = 141.0
+texture_normal = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseMobile" parent="." instance=ExtResource( 14 )]
+
+[node name="Rain" type="Node" parent="."]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Rain"]
+visible = false
+position = Vector2( 290.124, -679.444 )
+amount = 800
+lifetime = 10.0
+randomness = 1.0
+emission_shape = 2
+emission_rect_extents = Vector2( 8000, 1 )
+direction = Vector2( 0, 0 )
+scale_amount = 3.0
+color = Color( 0, 0.529412, 1, 1 )
+
+[connection signal="pressed" from="FrontProps/Starthouse/BedroomButton" to="." method="_on_BedroomButton_pressed"]
+[connection signal="pressed" from="FrontProps/Endhouse/BakinghouseButton" to="." method="_on_BakinghouseButton_pressed"]
+[connection signal="body_entered" from="FrontProps/CaveEntrance" to="." method="_on_CaveEntrance_body_entered"]
+[connection signal="body_shape_entered" from="FrontProps/CaveEntrance" to="." method="_on_CaveEntrance_body_shape_entered"]
+[connection signal="body_shape_entered" from="FrontProps/BirdHouse" to="." method="_on_BirdHouse_body_shape_entered"]
+[connection signal="body_shape_entered" from="FrontProps/OwlTree" to="." method="_on_OwlTree_body_shape_entered"]
+[connection signal="body_entered" from="FrontProps/Leavesbush" to="." method="_on_Leavesbush_body_entered"]
+[connection signal="pressed" from="FrontProps/Snowflake/SnowflakeButton" to="." method="_on_SnowflakeButton_pressed"]
 [connection signal="body_entered" from="Fallzone" to="Allie" method="_on_Fallzone_body_entered"]
+[connection signal="pressed" from="PauseButton/PauseMobile" to="." method="_on_PauseMobile_pressed"]

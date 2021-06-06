@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Piep.ogg-7d2bc1ee21580fe5a4e96b87fd21fc19.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/Piep.ogg"
+dest_files=[ "res://.import/Piep.ogg-7d2bc1ee21580fe5a4e96b87fd21fc19.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

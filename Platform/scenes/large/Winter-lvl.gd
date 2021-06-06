@@ -11,3 +11,8 @@ func _on_EndHouseButton_pressed():
 
 func _on_SnowflakeButton_pressed():
 	$Snow/CPUParticles2D.visible = true
+
+
+func _on_PauseMobile_pressed():
+	get_tree().paused = true
+	$PauseMobile/Popup.show()

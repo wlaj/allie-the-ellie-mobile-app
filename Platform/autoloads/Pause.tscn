@@ -28,14 +28,15 @@ __meta__ = {
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 0.943848
-margin_right = 0.943848
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="GridContainer" type="GridContainer" parent="CenterContainer"]
-margin_left = 68.0
-margin_top = 215.0
-margin_right = 955.0
-margin_bottom = 385.0
+margin_left = 516.0
+margin_top = 455.0
+margin_right = 1403.0
+margin_bottom = 625.0
 custom_constants/vseparation = 24
 custom_constants/hseparation = 24
 columns = 3
@@ -55,7 +56,6 @@ texture_normal = ExtResource( 4 )
 
 [node name="HomeButton" type="TextureButton" parent="CenterContainer/GridContainer"]
 margin_left = 607.0
-margin_top = 10.0
 margin_right = 887.0
 margin_bottom = 170.0
 texture_normal = ExtResource( 3 )
