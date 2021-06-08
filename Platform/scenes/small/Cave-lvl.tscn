@@ -23,20 +23,20 @@ radius = 76.3504
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 62.1274, 31.8137 )
 
-[sub_resource type="CapsuleShape2D" id=8]
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 16.1185
 height = 49.6325
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=5]
 radius = 65.2945
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 1155.34, 202.284 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 10, 145.014 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 
 [node name="Cave level" type="Node2D"]
 script = ExtResource( 8 )
@@ -170,7 +170,7 @@ texture = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/HangingBat"]
 scale = Vector2( 0.725, 0.725 )
-shape = SubResource( 8 )
+shape = SubResource( 4 )
 disabled = true
 
 [node name="StonesRight" type="StaticBody2D" parent="Props"]
@@ -188,7 +188,7 @@ texture = ExtResource( 6 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/StonesRight"]
 position = Vector2( -41.7941, -1.41589 )
 rotation = 1.5708
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="TopBar" type="Node2D" parent="Props"]
 position = Vector2( -1090.56, -124.14 )
@@ -255,7 +255,7 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Fallzone"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -270,7 +270,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartingpointCave"]
 position = Vector2( 1.23938, -135.303 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="EndpointCave" type="Area2D" parent="."]
 position = Vector2( -1073.21, 364.411 )
@@ -280,7 +280,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndpointCave"]
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.552941, 0.552941, 0.552941, 1 )

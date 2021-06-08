@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+export(PackedScene) var target_scene
 
 func _ready():
 	pass
@@ -25,4 +26,4 @@ func _on_PlayButton_pressed():
 func _on_HomeButton_pressed():
 	$Popup.hide()
 	get_tree().paused = false
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to(target_scene)

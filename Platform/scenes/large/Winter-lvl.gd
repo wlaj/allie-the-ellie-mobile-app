@@ -16,3 +16,7 @@ func _on_SnowflakeButton_pressed():
 func _on_PauseMobile_pressed():
 	get_tree().paused = true
 	$PauseMobile/Popup.show()
+
+
+func _on_BunnyButton_pressed():
+	$Props/Bunny/AnimationPlayer.play("BunnyHop")

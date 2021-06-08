@@ -12,3 +12,15 @@ func _physics_process(delta):
 
 func _on_Fallzone_body_shape_entered(body_id, body, body_shape, local_shape):
 	get_tree().reload_current_scene()
+
+
+func _on_Anchor_body_shape_entered(body_id, body, body_shape, local_shape):
+	get_tree().reload_current_scene()
+
+
+func _on_Axe_body_shape_entered(body_id, body, body_shape, local_shape):
+	get_tree().reload_current_scene()
+
+
+func _on_Saw_body_shape_entered(body_id, body, body_shape, local_shape):
+	get_tree().reload_current_scene()
