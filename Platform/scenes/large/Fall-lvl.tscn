@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://scenes/large/Fall-lvl.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Allie.tscn" type="PackedScene" id=2]
@@ -27,6 +27,17 @@
 [ext_resource path="res://assets/props/nature/pompoen.png" type="Texture" id=25]
 [ext_resource path="res://assets/props/nature/toilethuis.png" type="Texture" id=26]
 [ext_resource path="res://assets/props/nature/rups-groot.png" type="Texture" id=27]
+[ext_resource path="res://assets/props/nature/ball.png" type="Texture" id=28]
+[ext_resource path="res://assets/props/nature/slak1.png" type="Texture" id=29]
+[ext_resource path="res://assets/props/nature/paddestoelen-bruin.png" type="Texture" id=30]
+[ext_resource path="res://assets/props/interactions/vosstaart.png" type="Texture" id=31]
+[ext_resource path="res://assets/props/interactions/voshol.png" type="Texture" id=32]
+[ext_resource path="res://assets/props/nature/egel-in-berg.png" type="Texture" id=33]
+[ext_resource path="res://scenes/props/Spider-prop.tscn" type="PackedScene" id=34]
+[ext_resource path="res://assets/props/nature/regendruppel.png" type="Texture" id=35]
+[ext_resource path="res://assets/props/nature/bladeren.png" type="Texture" id=36]
+[ext_resource path="res://assets/props/nature/bladeren2.png" type="Texture" id=37]
+[ext_resource path="res://assets/props/nature/hert.png" type="Texture" id=38]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -43,10 +54,28 @@ extents = Vector2( 122.363, 212.381 )
 radius = 182.603
 height = 63.8796
 
-[sub_resource type="CircleShape2D" id=6]
-radius = 74.4576
+[sub_resource type="CircleShape2D" id=10]
 
-[sub_resource type="CircleShape2D" id=8]
+[sub_resource type="Animation" id=9]
+resource_name = "ReindeerIn"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Reindeer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2336.93, 423.614 ), Vector2( 2336.93, 410.159 ), Vector2( 2336.93, 380.728 ), Vector2( 2336.93, 358.865 ), Vector2( 2336.93, 338.683 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 130, 230 )
+
+[sub_resource type="CircleShape2D" id=6]
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 3627.11, 108.818 )
@@ -73,7 +102,7 @@ shape = SubResource( 1 )
 shape_centered = false
 
 [node name="Endhouse" type="Node2D" parent="FrontProps"]
-position = Vector2( 6923.25, 322.462 )
+position = Vector2( 6849.17, 322.462 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -147,7 +176,8 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="FrontProps/FirstTree"]
-scale = Vector2( 0.283398, 0.253983 )
+position = Vector2( 0, -9.0629 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 7 )
 
 [node name="OwlTree" type="Area2D" parent="FrontProps"]
@@ -170,54 +200,51 @@ volume_db = -8.0
 
 [node name="FirstHill" type="Node" parent="FrontProps"]
 
+[node name="Reindeer" type="Sprite" parent="FrontProps/FirstHill"]
+position = Vector2( 2336.93, 423.614 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 38 )
+
+[node name="ReindeerButton" type="TouchScreenButton" parent="FrontProps/FirstHill/Reindeer"]
+position = Vector2( 18.334, -680.726 )
+scale = Vector2( 70, 60 )
+shape = SubResource( 10 )
+shape_centered = false
+
 [node name="Sprite" type="Sprite" parent="FrontProps/FirstHill"]
-position = Vector2( 2233.24, 489.41 )
+position = Vector2( 2146.81, 489.41 )
 scale = Vector2( 0.341115, 0.305709 )
 texture = ExtResource( 15 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FrontProps/FirstHill"]
+anims/ReindeerIn = SubResource( 9 )
 
 [node name="WaterBackground" type="Node" parent="FrontProps"]
 
 [node name="Sprite" type="Sprite" parent="FrontProps/WaterBackground"]
-position = Vector2( 4705.19, 465.405 )
+position = Vector2( 4631.11, 465.405 )
 scale = Vector2( 0.513105, 0.352294 )
 texture = ExtResource( 17 )
 
 [node name="SecondHill" type="Node" parent="FrontProps"]
 
 [node name="Sprite" type="Sprite" parent="FrontProps/SecondHill"]
-position = Vector2( 3462.14, 405.376 )
+position = Vector2( 3328.11, 405.376 )
 scale = Vector2( 0.713095, 0.639079 )
 texture = ExtResource( 9 )
 
 [node name="ThirdHill" type="Node" parent="FrontProps"]
 
 [node name="Sprite" type="Sprite" parent="FrontProps/ThirdHill"]
-position = Vector2( 6074.19, 484.212 )
+position = Vector2( 6000.11, 484.212 )
 scale = Vector2( 0.713095, 0.639079 )
 texture = ExtResource( 19 )
 
-[node name="Leavesbush" type="Area2D" parent="FrontProps"]
-position = Vector2( 722.625, 476.405 )
-collision_layer = 8
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="FrontProps/Leavesbush"]
-position = Vector2( -32.6946, -3.89401 )
-scale = Vector2( 0.615231, 0.551375 )
-texture = ExtResource( 6 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontProps/Leavesbush"]
-position = Vector2( -32.7517, 15.0169 )
-shape = SubResource( 6 )
-disabled = true
-
 [node name="Checkpoint" parent="FrontProps" instance=ExtResource( 3 )]
-position = Vector2( 2994.06, 460.334 )
+position = Vector2( 2886.19, 460.334 )
 
 [node name="BasketApples" type="Node2D" parent="FrontProps"]
-position = Vector2( 2126.37, 352.279 )
+position = Vector2( 2046.68, 362.381 )
 scale = Vector2( 0.4, 0.4 )
 __meta__ = {
 "_edit_group_": true
@@ -227,9 +254,9 @@ __meta__ = {
 texture = ExtResource( 24 )
 
 [node name="Pumkin" type="Control" parent="FrontProps"]
-margin_left = 2507.76
+margin_left = 2404.49
 margin_top = 430.804
-margin_right = 2866.76
+margin_right = 2763.49
 margin_bottom = 701.804
 rect_scale = Vector2( 0.3, 0.3 )
 __meta__ = {
@@ -243,7 +270,7 @@ margin_bottom = 40.0
 texture_normal = ExtResource( 25 )
 
 [node name="ToiletHouse" type="Node2D" parent="FrontProps"]
-position = Vector2( 3457.84, 197.732 )
+position = Vector2( 3323.81, 197.732 )
 scale = Vector2( 0.6, 0.6 )
 __meta__ = {
 "_edit_group_": true
@@ -252,23 +279,48 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="FrontProps/ToiletHouse"]
 texture = ExtResource( 26 )
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="FrontProps/ToiletHouse"]
+[node name="ToiletHouseButton" type="TouchScreenButton" parent="FrontProps/ToiletHouse"]
+shape = SubResource( 8 )
+shape_centered = false
 
-[node name="Snowflake" type="Node2D" parent="FrontProps"]
-position = Vector2( 5487.14, -81.8464 )
+[node name="Cloud" type="Node2D" parent="FrontProps"]
+position = Vector2( 5249.93, -81.8464 )
 scale = Vector2( 4, 4 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="FrontProps/Snowflake"]
+[node name="Sprite" type="Sprite" parent="FrontProps/Cloud"]
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 8 )
 
-[node name="SnowflakeButton" type="TouchScreenButton" parent="FrontProps/Snowflake"]
+[node name="SnowflakeButton" type="TouchScreenButton" parent="FrontProps/Cloud"]
 scale = Vector2( 5, 5 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 shape_centered = false
+
+[node name="Snail" type="Node2D" parent="FrontProps"]
+position = Vector2( 4723.86, 399.532 )
+scale = Vector2( 0.1, 0.1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="FrontProps/Snail"]
+texture = ExtResource( 29 )
+
+[node name="Spider" parent="FrontProps" instance=ExtResource( 34 )]
+position = Vector2( 1852.53, 500.693 )
+
+[node name="MixLeaves" type="Node2D" parent="FrontProps"]
+position = Vector2( 2006.95, 433.504 )
+scale = Vector2( 0.17, 0.17 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="FrontProps/MixLeaves"]
+texture = ExtResource( 37 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 4 )
@@ -279,8 +331,8 @@ tile_data = PoolIntArray( 65518, 3, 0, 131054, 3, 0, 196590, 3, 0, 262126, 3, 0,
 [node name="BackProps" type="Node" parent="."]
 
 [node name="Caterpillar" type="Node2D" parent="BackProps"]
-position = Vector2( 4931.65, 613.355 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 4857.57, 613.355 )
+scale = Vector2( 0.4, 0.4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -288,12 +340,78 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="BackProps/Caterpillar"]
 texture = ExtResource( 27 )
 
+[node name="Ball" type="Node2D" parent="BackProps"]
+position = Vector2( 4171.85, 609.802 )
+scale = Vector2( 0.2, 0.2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="BackProps/Ball"]
+texture = ExtResource( 28 )
+
+[node name="BrownShrooms" type="Node2D" parent="BackProps"]
+position = Vector2( 6261.16, 606.456 )
+scale = Vector2( 0.2, 0.2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="BackProps/BrownShrooms"]
+texture = ExtResource( 30 )
+
+[node name="Control" type="Control" parent="BackProps"]
+margin_left = -341.424
+margin_top = 456.158
+margin_right = 879.576
+margin_bottom = 1557.16
+rect_scale = Vector2( 0.15, 0.15 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="BackProps/Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 31 )
+texture_pressed = ExtResource( 32 )
+
+[node name="Leavesbush" type="Control" parent="BackProps"]
+margin_left = 586.657
+margin_top = 428.443
+margin_right = 811.657
+margin_bottom = 625.443
+rect_scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="BackProps/Leavesbush"]
+margin_right = 40.0
+margin_bottom = 40.0
+toggle_mode = true
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 33 )
+
+[node name="GreenLeaves" type="Node2D" parent="BackProps"]
+position = Vector2( 1408.18, 572.514 )
+scale = Vector2( 0.25, 0.25 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="BackProps/GreenLeaves"]
+texture = ExtResource( 36 )
+
 [node name="Allie" parent="." instance=ExtResource( 2 )]
 position = Vector2( -526.06, -327.091 )
 z_index = 2
 
 [node name="Camera2D" type="Camera2D" parent="Allie"]
 current = true
+process_mode = 0
 limit_left = -1088
 limit_bottom = 700
 limit_smoothed = true
@@ -386,14 +504,15 @@ __meta__ = {
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Rain"]
 visible = false
 position = Vector2( 290.124, -679.444 )
-amount = 800
+amount = 500
 lifetime = 10.0
+speed_scale = 3.0
 randomness = 1.0
+texture = ExtResource( 35 )
 emission_shape = 2
 emission_rect_extents = Vector2( 8000, 1 )
 direction = Vector2( 0, 0 )
-scale_amount = 3.0
-color = Color( 0, 0.529412, 1, 1 )
+scale_amount = 0.3
 
 [connection signal="pressed" from="FrontProps/Starthouse/BedroomButton" to="." method="_on_BedroomButton_pressed"]
 [connection signal="pressed" from="FrontProps/Endhouse/BakinghouseButton" to="." method="_on_BakinghouseButton_pressed"]
@@ -401,7 +520,8 @@ color = Color( 0, 0.529412, 1, 1 )
 [connection signal="body_shape_entered" from="FrontProps/CaveEntrance" to="." method="_on_CaveEntrance_body_shape_entered"]
 [connection signal="body_shape_entered" from="FrontProps/BirdHouse" to="." method="_on_BirdHouse_body_shape_entered"]
 [connection signal="body_shape_entered" from="FrontProps/OwlTree" to="." method="_on_OwlTree_body_shape_entered"]
-[connection signal="body_entered" from="FrontProps/Leavesbush" to="." method="_on_Leavesbush_body_entered"]
-[connection signal="pressed" from="FrontProps/Snowflake/SnowflakeButton" to="." method="_on_SnowflakeButton_pressed"]
+[connection signal="pressed" from="FrontProps/FirstHill/Reindeer/ReindeerButton" to="." method="_on_ReindeerButton_pressed"]
+[connection signal="pressed" from="FrontProps/ToiletHouse/ToiletHouseButton" to="." method="_on_ToiletHouseButton_pressed"]
+[connection signal="pressed" from="FrontProps/Cloud/SnowflakeButton" to="." method="_on_SnowflakeButton_pressed"]
 [connection signal="body_entered" from="Fallzone" to="Allie" method="_on_Fallzone_body_entered"]
 [connection signal="pressed" from="PauseButton/PauseMobile" to="." method="_on_PauseMobile_pressed"]

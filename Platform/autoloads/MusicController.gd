@@ -9,3 +9,6 @@ func play_music():
 	$Music.stream = battle_music
 	$Music.play()
 
+func stop_music():
+	$Music.stop()
+

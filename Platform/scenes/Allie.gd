@@ -4,22 +4,23 @@ var velocity = Vector2(0,0)
 var coins = 0
 const SPEED = 250
 const GRAVITY = 35
-const JUMPFORCE = -900
+const JUMPFORCE = -1000
 
 func _physics_process(delta):
 	
 	if Input.is_action_pressed("right"):
 		velocity.x = SPEED
-		$AnimationPlayer.play("Walk")
-		$Spritesheet.flip_h = false
+		$AnimatedSprite.play("walk")
+		$AnimatedSprite.flip_h = false
 	elif Input.is_action_pressed("left"):
 		velocity.x = -SPEED
-		$AnimationPlayer.play("Walk")
-		$Spritesheet.flip_h = true
-	else:
-		$AnimationPlayer.play("Idle")
+		$AnimatedSprite.play("walk")
+		$AnimatedSprite.flip_h = true
+	elif is_on_floor():
+		$AnimatedSprite.play("idle")
+		
 	if not is_on_floor():
-		$AnimationPlayer.play("Jump")
+		$AnimatedSprite.play("air")
 	
 	velocity.y = velocity.y + GRAVITY
 	

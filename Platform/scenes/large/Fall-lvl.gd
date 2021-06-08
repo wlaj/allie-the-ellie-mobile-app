@@ -46,3 +46,11 @@ func _on_BirdHouse_body_shape_entered(body_id, body, body_shape, local_shape):
 
 func _on_SnowflakeButton_pressed():
 	$Rain/CPUParticles2D.visible = true
+
+
+func _on_ToiletHouseButton_pressed():
+	get_tree().change_scene("res://scenes/small/Toilet-House.tscn")
+
+
+func _on_ReindeerButton_pressed():
+	$FrontProps/FirstHill/AnimationPlayer.play("ReindeerIn")

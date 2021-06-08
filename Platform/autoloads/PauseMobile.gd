@@ -12,11 +12,9 @@ func _input(event):
 
 func _on_MuteButton_toggled(button_pressed):
 	if(button_pressed):
-		var master_sound = AudioServer.get_bus_index("Master")
-		AudioServer.set_bus_mute(master_sound, true)
+		MusicController.stop_music()
 	else:
-		var master_sound = AudioServer.get_bus_index("Master")
-		AudioServer.set_bus_mute(master_sound, false) 
+		MusicController.play_music()
 
 
 func _on_PlayButton_pressed():

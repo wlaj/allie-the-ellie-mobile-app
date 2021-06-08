@@ -33,32 +33,38 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="CenterContainer"]
-margin_left = 516.0
-margin_top = 455.0
-margin_right = 1403.0
-margin_bottom = 625.0
+margin_left = 274.0
+margin_top = 405.0
+margin_right = 1645.0
+margin_bottom = 674.0
 custom_constants/vseparation = 24
 custom_constants/hseparation = 24
 columns = 3
 
 [node name="MuteButton" type="TextureButton" parent="CenterContainer/GridContainer"]
-margin_right = 280.0
-margin_bottom = 170.0
+margin_right = 441.0
+margin_bottom = 269.0
+rect_min_size = Vector2( 441, 269 )
 toggle_mode = true
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
+expand = true
 
 [node name="PlayButton" type="TextureButton" parent="CenterContainer/GridContainer"]
-margin_left = 304.0
-margin_right = 583.0
-margin_bottom = 170.0
+margin_left = 465.0
+margin_right = 906.0
+margin_bottom = 269.0
+rect_min_size = Vector2( 441, 269 )
 texture_normal = ExtResource( 4 )
+expand = true
 
 [node name="HomeButton" type="TextureButton" parent="CenterContainer/GridContainer"]
-margin_left = 607.0
-margin_right = 887.0
-margin_bottom = 170.0
+margin_left = 930.0
+margin_right = 1371.0
+margin_bottom = 269.0
+rect_min_size = Vector2( 441, 269 )
 texture_normal = ExtResource( 3 )
+expand = true
 
 [connection signal="toggled" from="CenterContainer/GridContainer/MuteButton" to="." method="_on_MuteButton_toggled"]
 [connection signal="pressed" from="CenterContainer/GridContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
