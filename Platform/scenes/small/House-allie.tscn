@@ -43,12 +43,12 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Props/Bed"]
-position = Vector2( -17.5277, 47.4116 )
-scale = Vector2( 0.380194, 0.380194 )
+position = Vector2( 69.5426, -0.916618 )
+scale = Vector2( 0.479533, 0.479533 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Bed"]
-position = Vector2( -16.7459, 75.9945 )
+position = Vector2( 45.6131, 63.5228 )
 shape = SubResource( 1 )
 
 [node name="Window" type="Control" parent="Props"]
@@ -73,20 +73,22 @@ __meta__ = {
 }
 
 [node name="Drawer" type="StaticBody2D" parent="Props"]
-position = Vector2( -790.991, 474.668 )
+position = Vector2( -812.318, 474.668 )
 scale = Vector2( 0.439999, 0.439999 )
+z_index = 2
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Props/Drawer"]
-position = Vector2( -16.7577, -10.345 )
-scale = Vector2( 0.343333, 0.343333 )
+position = Vector2( 4.92626, -57.015 )
+scale = Vector2( 0.453404, 0.453404 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Drawer"]
 position = Vector2( -18.5096, -9.95196 )
 shape = SubResource( 2 )
+disabled = true
 
 [node name="Allie" parent="." instance=ExtResource( 3 )]
 position = Vector2( -912.865, 397.424 )

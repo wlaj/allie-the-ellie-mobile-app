@@ -44,19 +44,20 @@ tile_data = PoolIntArray( -18, 15, 0, 65518, 15, 0, 131054, 15, 0, 196590, 15, 0
 [node name="Props" type="Node2D" parent="."]
 
 [node name="snowglobe" type="StaticBody2D" parent="Props"]
-position = Vector2( -918.132, 260.661 )
+position = Vector2( -640.485, 462.222 )
 scale = Vector2( 0.2, 0.2 )
+z_index = 2
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Props/snowglobe"]
-position = Vector2( -138.738, 186.699 )
-scale = Vector2( 0.407138, 0.407138 )
+position = Vector2( -24.8459, 59.1842 )
+scale = Vector2( 0.723945, 0.723945 )
 texture = ExtResource( 7 )
 
 [node name="candy_cane" type="StaticBody2D" parent="Props"]
-position = Vector2( -776.141, 257.294 )
+position = Vector2( -776.141, 344.02 )
 scale = Vector2( 0.2, 0.2 )
 __meta__ = {
 "_edit_group_": true
@@ -69,9 +70,9 @@ texture = ExtResource( 17 )
 
 [node name="Fireplace" type="Control" parent="Props"]
 margin_left = -1046.27
-margin_top = 238.339
+margin_top = 322.037
 margin_right = -1046.27
-margin_bottom = 238.339
+margin_bottom = 322.037
 rect_scale = Vector2( 0.32, 0.32 )
 __meta__ = {
 "_edit_group_": true,
@@ -101,10 +102,10 @@ scale = Vector2( 1.8131, 1.8131 )
 texture = ExtResource( 6 )
 
 [node name="gingerbread" type="Control" parent="Props"]
-margin_left = 31.498
-margin_top = 241.366
-margin_right = 31.498
-margin_bottom = 241.366
+margin_left = 16.6655
+margin_top = 143.895
+margin_right = 16.6655
+margin_bottom = 143.895
 rect_scale = Vector2( 0.08, 0.08 )
 __meta__ = {
 "_edit_group_": true,
@@ -114,14 +115,15 @@ __meta__ = {
 [node name="GingerbreadButton" type="TextureButton" parent="Props/gingerbread"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_scale = Vector2( 1.50001, 1.50001 )
 texture_normal = ExtResource( 16 )
 texture_pressed = ExtResource( 20 )
 
 [node name="muffin" type="Control" parent="Props"]
-margin_left = 121.061
-margin_top = 248.318
-margin_right = 121.061
-margin_bottom = 248.318
+margin_left = 132.656
+margin_top = 180.75
+margin_right = 132.656
+margin_bottom = 180.75
 rect_scale = Vector2( 0.0799991, 0.0799991 )
 __meta__ = {
 "_edit_group_": true,
@@ -136,31 +138,31 @@ texture_normal = ExtResource( 15 )
 texture_pressed = ExtResource( 21 )
 
 [node name="candycane1" type="StaticBody2D" parent="Props"]
-position = Vector2( 343.052, 133.509 )
+position = Vector2( 343.052, 65.7034 )
 scale = Vector2( 0.2, 0.2 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Props/candycane1"]
-position = Vector2( -602.673, 746.429 )
-scale = Vector2( 0.408549, 0.408549 )
+position = Vector2( -623.275, 699.538 )
+scale = Vector2( 0.49281, 0.49281 )
 texture = ExtResource( 3 )
 
 [node name="candycane2" type="StaticBody2D" parent="Props"]
-position = Vector2( 384.432, 133.509 )
+position = Vector2( 384.432, 65.7034 )
 scale = Vector2( 0.2, 0.2 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Props/candycane2"]
-position = Vector2( -602.673, 746.429 )
-scale = Vector2( 0.408549, 0.408549 )
+position = Vector2( -583.944, 703.801 )
+scale = Vector2( 0.485149, 0.485149 )
 texture = ExtResource( 17 )
 
 [node name="plank" type="StaticBody2D" parent="Props"]
-position = Vector2( 167.359, 329.73 )
+position = Vector2( 167.359, 261.924 )
 scale = Vector2( 0.2, 0.2 )
 __meta__ = {
 "_edit_group_": true
@@ -172,11 +174,11 @@ scale = Vector2( 1.8131, 1.8131 )
 texture = ExtResource( 14 )
 
 [node name="wreath" type="Control" parent="Props"]
-margin_left = -930.762
-margin_top = 161.606
-margin_right = -930.762
-margin_bottom = 161.606
-rect_scale = Vector2( 1.87522, 1.87522 )
+margin_left = -969.071
+margin_top = 144.85
+margin_right = -969.071
+margin_bottom = 144.85
+rect_scale = Vector2( 2.63522, 2.63522 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -194,41 +196,41 @@ __meta__ = {
 }
 
 [node name="christmas_tree" type="StaticBody2D" parent="Props"]
-position = Vector2( -428.339, 503.209 )
+position = Vector2( -413.747, 503.209 )
 scale = Vector2( 0.439999, 0.439999 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Props/christmas_tree"]
-position = Vector2( 129.191, -258.731 )
-scale = Vector2( 0.840602, 0.840602 )
+position = Vector2( 143.508, -341.576 )
+scale = Vector2( 1.00646, 1.00646 )
 z_index = 1
 texture = ExtResource( 4 )
 
 [node name="table" type="StaticBody2D" parent="Props"]
-position = Vector2( 438.138, 639.28 )
+position = Vector2( 421.148, 667.596 )
 scale = Vector2( 0.439999, 0.439999 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Props/table"]
-position = Vector2( 98.1776, -244.414 )
-scale = Vector2( 0.749117, 0.749117 )
+position = Vector2( 163.232, -274.447 )
+scale = Vector2( 0.941018, 0.941018 )
 z_index = 1
 texture = ExtResource( 13 )
 
 [node name="hot_choco" type="StaticBody2D" parent="Props"]
-position = Vector2( 422.092, 498.643 )
+position = Vector2( 401.327, 504.306 )
 scale = Vector2( 0.439999, 0.439999 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Props/hot_choco"]
-position = Vector2( 8.08032, -95.084 )
-scale = Vector2( 0.213886, 0.213886 )
+position = Vector2( 42.4031, -133.009 )
+scale = Vector2( 0.349818, 0.349818 )
 z_index = 1
 texture = ExtResource( 12 )
 
@@ -240,9 +242,9 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Props/pencil"]
-position = Vector2( 32.6582, 72.0086 )
+position = Vector2( 2.03708, 91.6148 )
 rotation = 1.309
-scale = Vector2( 0.171089, 0.171089 )
+scale = Vector2( 0.241235, 0.241235 )
 texture = ExtResource( 11 )
 
 [node name="brush" type="StaticBody2D" parent="Props"]
@@ -253,9 +255,9 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Props/brush"]
-position = Vector2( 32.6582, 72.0086 )
+position = Vector2( -5.18018, 96.0129 )
 rotation = -0.261799
-scale = Vector2( 0.171089, 0.171089 )
+scale = Vector2( 0.291206, 0.291207 )
 texture = ExtResource( 10 )
 
 [node name="Allie" parent="." instance=ExtResource( 1 )]

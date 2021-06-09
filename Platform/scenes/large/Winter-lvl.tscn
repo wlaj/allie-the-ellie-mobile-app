@@ -173,7 +173,8 @@ shape = SubResource( 6 )
 shape_centered = false
 
 [node name="bird_in_tree" type="StaticBody2D" parent="Props"]
-position = Vector2( 2302.48, 628.563 )
+position = Vector2( 2132.94, 758.228 )
+scale = Vector2( 1.68, 1.68 )
 z_index = 2
 collision_layer = 8
 __meta__ = {
@@ -192,7 +193,8 @@ shape = SubResource( 3 )
 disabled = true
 
 [node name="holly" type="StaticBody2D" parent="Props"]
-position = Vector2( 1941.77, 698.41 )
+position = Vector2( 2089.4, 760.534 )
+scale = Vector2( 1, 1.12 )
 z_index = 2
 collision_layer = 8
 __meta__ = {
@@ -248,7 +250,7 @@ shape = SubResource( 3 )
 disabled = true
 
 [node name="snowman" type="StaticBody2D" parent="Props"]
-position = Vector2( 2881.99, 604.865 )
+position = Vector2( 2849.9, 663.385 )
 z_index = 2
 collision_layer = 8
 __meta__ = {
@@ -256,9 +258,9 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Props/snowman"]
-position = Vector2( 43.0533, -137.769 )
+position = Vector2( 62.8625, -179.308 )
 rotation = -0.000366926
-scale = Vector2( 0.174519, 0.177885 )
+scale = Vector2( 0.258878, 0.263871 )
 texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/snowman"]
@@ -267,7 +269,7 @@ shape = SubResource( 3 )
 disabled = true
 
 [node name="tree_without_snow" type="StaticBody2D" parent="Props"]
-position = Vector2( 3857.15, 691.677 )
+position = Vector2( 3857.15, 705.948 )
 z_index = 2
 collision_layer = 8
 __meta__ = {
@@ -275,9 +277,9 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Props/tree_without_snow"]
-position = Vector2( 142.267, -292.911 )
+position = Vector2( 176.74, -346.817 )
 rotation = -0.000366926
-scale = Vector2( 1.48071, 1.50927 )
+scale = Vector2( 1.93456, 1.97187 )
 texture = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/tree_without_snow"]
@@ -392,11 +394,12 @@ __meta__ = {
 [node name="TextureButton" type="TextureButton" parent="Props/teapot"]
 margin_right = 40.0
 margin_bottom = 40.0
-texture_normal = ExtResource( 23 )
-texture_pressed = ExtResource( 22 )
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 23 )
 
 [node name="tree" type="StaticBody2D" parent="Props"]
-position = Vector2( 1071.53, 353.324 )
+position = Vector2( 1019.15, 331.1 )
+scale = Vector2( 1.16, 1.16 )
 collision_layer = 8
 __meta__ = {
 "_edit_group_": true
@@ -415,7 +418,8 @@ shape = SubResource( 7 )
 disabled = true
 
 [node name="tree_bird" type="StaticBody2D" parent="Props"]
-position = Vector2( 2295.82, 353.324 )
+position = Vector2( 2216.45, 335.863 )
+scale = Vector2( 1.28, 1.28 )
 collision_layer = 8
 __meta__ = {
 "_edit_group_": true
