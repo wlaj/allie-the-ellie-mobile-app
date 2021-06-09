@@ -8,4 +8,4 @@ func _physics_process(delta):
 	position += Vector2(0.7,0)
 
 func _on_TouchScreenButton_pressed():
-	get_tree().change_scene("res://scenes/minigames/flyingallie/Flyingallie.tscn")
+	get_tree().change_scene("res://scenes/minigames/fall/flyingallie/Flyingallie.tscn")

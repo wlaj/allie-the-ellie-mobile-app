@@ -1,13 +1,15 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://world_tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://autoloads/PauseButtonFall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/small/House-allie.gd" type="Script" id=2]
 [ext_resource path="res://scenes/Allie.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/props/house/house-drawer.png" type="Texture" id=4]
 [ext_resource path="res://assets/props/house/house-window.png" type="Texture" id=5]
 [ext_resource path="res://assets/props/house/house-bed.png" type="Texture" id=6]
 [ext_resource path="res://assets/backgrounds/christmashouse.png" type="Texture" id=7]
 [ext_resource path="res://assets/props/house/winter/bed_with_curtains_closed.png" type="Texture" id=8]
+[ext_resource path="res://assets/pause/Pauze-herfst.png" type="Texture" id=9]
+[ext_resource path="res://autoloads/PauseMobile.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 328.607, 156.608 )
@@ -24,6 +26,7 @@ extents = Vector2( 10, 145.014 )
 [sub_resource type="RectangleShape2D" id=5]
 
 [node name="House Allie" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -90,6 +93,7 @@ position = Vector2( -912.865, 397.424 )
 
 [node name="Camera2D" type="Camera2D" parent="Allie"]
 current = true
+zoom = Vector2( 0.8, 0.8 )
 limit_left = -1088
 limit_bottom = 700
 limit_smoothed = true
@@ -139,8 +143,23 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Endpoint"]
 shape = SubResource( 5 )
 
-[node name="PauseButton" parent="." instance=ExtResource( 2 )]
+[node name="PauseButton" type="CanvasLayer" parent="."]
+
+[node name="PauseMobile" type="TextureButton" parent="PauseButton"]
+pause_mode = 2
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -160.0
+margin_top = 30.0
+margin_bottom = 141.0
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseMobile" parent="." instance=ExtResource( 10 )]
 
 [connection signal="body_entered" from="Fallzone" to="Allie" method="_on_Fallzone_body_entered"]
 [connection signal="body_shape_entered" from="Startingpoint" to="Allie" method="_on_Startingpoint_body_shape_entered"]
 [connection signal="body_shape_entered" from="Endpoint" to="Allie" method="_on_Endpoint_body_shape_entered"]
+[connection signal="pressed" from="PauseButton/PauseMobile" to="." method="_on_PauseMobile_pressed"]

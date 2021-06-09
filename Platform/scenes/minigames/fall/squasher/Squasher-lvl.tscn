@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Allie.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/minigames/squasher/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/minigames/fall/squasher/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://world_tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://assets/backgrounds/Achtergrond-winter.png" type="Texture" id=4]
 [ext_resource path="res://assets/backgrounds/Wolk-winter.png" type="Texture" id=5]
