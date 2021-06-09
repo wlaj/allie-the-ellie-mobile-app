@@ -1,23 +1,47 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/minigames/fall/dragndrop/Dropzone.tscn" type="PackedScene" id=1]
 [ext_resource path="res://autoloads/CloseFall.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/minigames/fall/dragndrop/Draggable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/minigames/fall/dragndrop/Characters/Hedgehog.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/minigames/fall/dragndrop/Button.gd" type="Script" id=4]
 [ext_resource path="res://assets/props/drag/paddestoelbuitenkanthout.png" type="Texture" id=5]
+[ext_resource path="res://assets/backgrounds/draggame-background.png" type="Texture" id=6]
+[ext_resource path="res://scenes/minigames/fall/dragndrop/Characters/Mushroom.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/minigames/fall/dragndrop/Characters/Boots.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/minigames/fall/dragndrop/Characters/Fireplace.tscn" type="PackedScene" id=9]
 
 [node name="Node" type="Node2D"]
 
 [node name="CloseFall" parent="." instance=ExtResource( 2 )]
 
+[node name="Draggable" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1360.09, 392.524 )
+
+[node name="Draggable2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 478.105, 403.215 )
+
+[node name="Draggable3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1386.82, 672.266 )
+
+[node name="Draggable4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 483.45, 675.83 )
+
 [node name="Dropzone" parent="." instance=ExtResource( 1 )]
 position = Vector2( 915.844, 523.848 )
 
-[node name="Draggable" parent="." instance=ExtResource( 3 )]
-
 [node name="Button" type="TouchScreenButton" parent="."]
+visible = false
 position = Vector2( 834, 16 )
 normal = ExtResource( 5 )
 script = ExtResource( 4 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxBackground"]
+position = Vector2( 961.085, 540.615 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
 
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]

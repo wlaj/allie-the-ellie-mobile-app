@@ -20,3 +20,7 @@ func _on_PauseMobile_pressed():
 
 func _on_BunnyButton_pressed():
 	$Props/Bunny/AnimationPlayer.play("BunnyHop")
+
+
+func _on_IgloButton_pressed():
+	$BackProps/Iglo/AnimationPlayer.play("ReindeerUp")

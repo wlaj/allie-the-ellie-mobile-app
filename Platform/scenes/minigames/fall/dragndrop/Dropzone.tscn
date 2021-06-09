@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/props/drag/laarzenbinnenkanthout 1.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 81.1257, 162.02 )
+extents = Vector2( 29.0406, 42.2514 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 66.4228
@@ -34,24 +34,27 @@ scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 4 )
 
 [node name="Boots" type="Sprite" parent="."]
-position = Vector2( 96.7837, -103.834 )
+position = Vector2( 100.529, -106.83 )
+scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 6 )
 
 [node name="Mushroom" type="Sprite" parent="."]
 position = Vector2( -90.8168, -108.476 )
+scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -90.9742, -126.056 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 209.339, -4.48981 )
+position = Vector2( 94.5807, -101.41 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2( 196.431, -198.676 )
+position = Vector2( -103.249, 117.059 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
-position = Vector2( 166.686, 143.675 )
+position = Vector2( 84.6302, 109.783 )
 shape = SubResource( 2 )

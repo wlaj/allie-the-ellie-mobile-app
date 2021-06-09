@@ -54,3 +54,11 @@ func _on_ToiletHouseButton_pressed():
 
 func _on_ReindeerButton_pressed():
 	$FrontProps/FirstHill/AnimationPlayer.play("ReindeerIn")
+
+
+func _on_TreeBirdButton_pressed():
+	$FrontProps/TreeBird/AnimationPlayer.play("Birdhead")
+
+
+func _on_PumpkinButton_pressed():
+	$FrontProps/PumpkinWorm/AnimationPlayer.play("WormUp")

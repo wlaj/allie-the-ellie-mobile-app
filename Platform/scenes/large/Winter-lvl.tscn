@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://assets/props/nature/winter/bowling_ball.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Allie.tscn" type="PackedScene" id=2]
@@ -12,7 +12,7 @@
 [ext_resource path="res://assets/props/nature/winter/white_hill.png" type="Texture" id=10]
 [ext_resource path="res://assets/props/nature/winter/bird_in_tree.png" type="Texture" id=11]
 [ext_resource path="res://assets/props/nature/winter/snow_tree_with_hole.png" type="Texture" id=12]
-[ext_resource path="res://assets/props/nature/winter/boot_with_worm.png" type="Texture" id=13]
+[ext_resource path="res://assets/props/interactions/worm1.png" type="Texture" id=13]
 [ext_resource path="res://assets/props/nature/winter/holly.png" type="Texture" id=14]
 [ext_resource path="res://assets/props/nature/winter/pine_tree.png" type="Texture" id=15]
 [ext_resource path="res://assets/props/nature/winter/snowman.png" type="Texture" id=16]
@@ -20,16 +20,16 @@
 [ext_resource path="res://assets/props/nature/winter/puck.png" type="Texture" id=18]
 [ext_resource path="res://assets/props/nature/winter/stacked_presents.png" type="Texture" id=19]
 [ext_resource path="res://assets/props/nature/winter/mouse_with_cheese.png" type="Texture" id=20]
+[ext_resource path="res://assets/props/interactions/rendier.png" type="Texture" id=21]
 [ext_resource path="res://assets/props/nature/winter/theepotsneew.png" type="Texture" id=22]
 [ext_resource path="res://assets/props/nature/winter/teapot.png" type="Texture" id=23]
-[ext_resource path="res://assets/props/nature/winter/iglo.png" type="Texture" id=24]
+[ext_resource path="res://assets/props/interactions/iglo.png" type="Texture" id=24]
 [ext_resource path="res://assets/props/nature/winter/ton.png" type="Texture" id=25]
 [ext_resource path="res://assets/props/nature/winter/christmas_bells.png" type="Texture" id=26]
 [ext_resource path="res://assets/props/nature/winter/water.png" type="Texture" id=27]
-[ext_resource path="res://assets/props/nature/winter/laars 1.png" type="Texture" id=28]
+[ext_resource path="res://assets/props/interactions/schoen.png" type="Texture" id=28]
 [ext_resource path="res://assets/props/nature/winter/stacked_presents_closed.png" type="Texture" id=29]
 [ext_resource path="res://assets/props/nature/winter/kikker-opton.png" type="Texture" id=30]
-[ext_resource path="res://assets/props/nature/winter/iglo_show.png" type="Texture" id=31]
 [ext_resource path="res://autoloads/PauseMobile.tscn" type="PackedScene" id=32]
 [ext_resource path="res://scenes/large/Winter-lvl.gd" type="Script" id=33]
 [ext_resource path="res://assets/pause/Pauze-winter.png" type="Texture" id=34]
@@ -72,6 +72,42 @@ height = 158.39
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 3627.11, 108.818 )
+
+[sub_resource type="Animation" id=10]
+resource_name = "ReindeerUp"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Reindeer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 54.728, -82.7601 ), Vector2( 54.728, -201.561 ), Vector2( 54.728, -82.76 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=11]
+
+[sub_resource type="CircleShape2D" id=12]
+
+[sub_resource type="Animation" id=13]
+resource_name = "WormUp"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Worm:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -11.4973, -33.6524 ), Vector2( -11.4973, -51.7317 ), Vector2( -11.497, -33.652 ) ]
+}
 
 [node name="Winter level" type="Node2D"]
 script = ExtResource( 33 )
@@ -173,8 +209,7 @@ shape = SubResource( 6 )
 shape_centered = false
 
 [node name="bird_in_tree" type="StaticBody2D" parent="Props"]
-position = Vector2( 2132.94, 758.228 )
-scale = Vector2( 1.68, 1.68 )
+position = Vector2( 2302.48, 628.563 )
 z_index = 2
 collision_layer = 8
 __meta__ = {
@@ -193,8 +228,7 @@ shape = SubResource( 3 )
 disabled = true
 
 [node name="holly" type="StaticBody2D" parent="Props"]
-position = Vector2( 2089.4, 760.534 )
-scale = Vector2( 1, 1.12 )
+position = Vector2( 1941.77, 698.41 )
 z_index = 2
 collision_layer = 8
 __meta__ = {
@@ -211,24 +245,6 @@ texture = ExtResource( 14 )
 position = Vector2( -86.3925, -153.196 )
 shape = SubResource( 3 )
 disabled = true
-
-[node name="boot_with_worm" type="Control" parent="Props"]
-margin_left = 2303.47
-margin_top = 449.37
-margin_right = 2303.47
-margin_bottom = 449.37
-rect_scale = Vector2( 0.239985, 0.239985 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="TextureButton" type="TextureButton" parent="Props/boot_with_worm"]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_scale = Vector2( 0.499969, 0.499969 )
-texture_normal = ExtResource( 28 )
-texture_pressed = ExtResource( 13 )
 
 [node name="mouse_with_cheese" type="StaticBody2D" parent="Props"]
 position = Vector2( 3150.54, 742.435 )
@@ -250,7 +266,7 @@ shape = SubResource( 3 )
 disabled = true
 
 [node name="snowman" type="StaticBody2D" parent="Props"]
-position = Vector2( 2849.9, 663.385 )
+position = Vector2( 2881.99, 604.865 )
 z_index = 2
 collision_layer = 8
 __meta__ = {
@@ -258,9 +274,9 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Props/snowman"]
-position = Vector2( 62.8625, -179.308 )
+position = Vector2( 43.0533, -137.769 )
 rotation = -0.000366926
-scale = Vector2( 0.258878, 0.263871 )
+scale = Vector2( 0.174519, 0.177885 )
 texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/snowman"]
@@ -269,7 +285,7 @@ shape = SubResource( 3 )
 disabled = true
 
 [node name="tree_without_snow" type="StaticBody2D" parent="Props"]
-position = Vector2( 3857.15, 705.948 )
+position = Vector2( 3857.15, 691.677 )
 z_index = 2
 collision_layer = 8
 __meta__ = {
@@ -277,35 +293,15 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Props/tree_without_snow"]
-position = Vector2( 176.74, -346.817 )
+position = Vector2( 142.267, -292.911 )
 rotation = -0.000366926
-scale = Vector2( 1.93456, 1.97187 )
+scale = Vector2( 1.48071, 1.50927 )
 texture = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/tree_without_snow"]
 position = Vector2( 33.015, -132.174 )
 shape = SubResource( 3 )
 disabled = true
-
-[node name="iglo" type="Control" parent="Props"]
-margin_left = 5023.32
-margin_top = 234.932
-margin_right = 5023.32
-margin_bottom = 234.932
-rect_scale = Vector2( 0.559995, 0.559995 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="TextureButton" type="TextureButton" parent="Props/iglo"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture_normal = ExtResource( 24 )
-texture_pressed = ExtResource( 31 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="presents_in_snow" type="Control" parent="Props"]
 margin_left = 3796.97
@@ -394,12 +390,11 @@ __meta__ = {
 [node name="TextureButton" type="TextureButton" parent="Props/teapot"]
 margin_right = 40.0
 margin_bottom = 40.0
-texture_normal = ExtResource( 22 )
-texture_pressed = ExtResource( 23 )
+texture_normal = ExtResource( 23 )
+texture_pressed = ExtResource( 22 )
 
 [node name="tree" type="StaticBody2D" parent="Props"]
-position = Vector2( 1019.15, 331.1 )
-scale = Vector2( 1.16, 1.16 )
+position = Vector2( 1071.53, 353.324 )
 collision_layer = 8
 __meta__ = {
 "_edit_group_": true
@@ -418,8 +413,7 @@ shape = SubResource( 7 )
 disabled = true
 
 [node name="tree_bird" type="StaticBody2D" parent="Props"]
-position = Vector2( 2216.45, 335.863 )
-scale = Vector2( 1.28, 1.28 )
+position = Vector2( 2295.82, 353.324 )
 collision_layer = 8
 __meta__ = {
 "_edit_group_": true
@@ -515,6 +509,53 @@ tile_set = ExtResource( 4 )
 format = 1
 tile_data = PoolIntArray( 65518, 4, 0, 114, 17, 0, 129, 4, 0, 131054, 4, 0, 65650, 17, 0, 65665, 4, 0, 196590, 4, 0, 131186, 17, 0, 131201, 4, 0, 262126, 4, 0, 196722, 17, 0, 196737, 4, 0, 327662, 4, 0, 262258, 17, 0, 262273, 4, 0, 393198, 4, 0, 327794, 17, 0, 327809, 4, 0, 458734, 4, 0, 393330, 17, 0, 393345, 4, 0, 524270, 4, 0, 458866, 17, 0, 458881, 4, 0, 589806, 4, 0, 589807, 5, 0, 589808, 5, 0, 589809, 5, 0, 589810, 5, 0, 589811, 5, 0, 589812, 5, 0, 589813, 5, 0, 589814, 5, 0, 589815, 5, 0, 589816, 5, 0, 589817, 5, 0, 589818, 5, 0, 589819, 5, 0, 589820, 11, 0, 524301, 10, 0, 524302, 5, 0, 524303, 5, 0, 524304, 5, 0, 524305, 5, 0, 524306, 5, 0, 524307, 5, 0, 524308, 5, 0, 524309, 4, 0, 524310, 4, 0, 524311, 4, 0, 524312, 4, 0, 524313, 4, 0, 524314, 4, 0, 524315, 4, 0, 524316, 4, 0, 524317, 4, 0, 524318, 4, 0, 524319, 4, 0, 524320, 4, 0, 524321, 4, 0, 524322, 4, 0, 524323, 4, 0, 524324, 4, 0, 524325, 4, 0, 524326, 4, 0, 524327, 4, 0, 524328, 5, 0, 524329, 5, 0, 524330, 5, 0, 524331, 5, 0, 524332, 5, 0, 524333, 5, 0, 524334, 5, 0, 524335, 5, 0, 524336, 5, 0, 524337, 5, 0, 524338, 5, 0, 524339, 5, 0, 524340, 5, 0, 524341, 5, 0, 524342, 5, 0, 524343, 5, 0, 524344, 5, 0, 524345, 5, 0, 524346, 5, 0, 524347, 5, 0, 524348, 5, 0, 524349, 5, 0, 524350, 5, 0, 524351, 5, 0, 524352, 5, 0, 524353, 11, 0, 524363, 10, 0, 524364, 5, 0, 524365, 5, 0, 524366, 5, 0, 524367, 5, 0, 524368, 5, 0, 524369, 5, 0, 524370, 5, 0, 524371, 5, 0, 524372, 5, 0, 524373, 5, 0, 524374, 5, 0, 524375, 5, 0, 524376, 5, 0, 524377, 5, 0, 524378, 11, 0, 524380, 17, 0, 524381, 17, 0, 524382, 17, 0, 524383, 17, 0, 524384, 17, 0, 524392, 10, 0, 524393, 5, 0, 524394, 5, 0, 524395, 5, 0, 524396, 5, 0, 524397, 5, 0, 524398, 5, 0, 524399, 5, 0, 524400, 5, 0, 524401, 5, 0, 524402, 5, 0, 524403, 5, 0, 524404, 5, 0, 524405, 5, 0, 524406, 5, 0, 524407, 5, 0, 524408, 5, 0, 524409, 5, 0, 524410, 5, 0, 524411, 5, 0, 524412, 5, 0, 524413, 5, 0, 524414, 5, 0, 524415, 5, 0, 524416, 5, 0, 524417, 4, 0, 655342, 4, 0, 655343, 4, 0, 655344, 4, 0, 655345, 4, 0, 655346, 4, 0, 655347, 4, 0, 655348, 4, 0, 655349, 4, 0, 655350, 4, 0, 655351, 4, 0, 655352, 4, 0, 655353, 4, 0, 655354, 4, 0, 655355, 4, 0, 655356, 9, 0, 655357, 12, 0, 655358, 12, 0, 655359, 12, 0, 589824, 12, 0, 589825, 12, 0, 589826, 12, 0, 589827, 12, 0, 589828, 12, 0, 589829, 12, 0, 589830, 12, 0, 589831, 12, 0, 589832, 12, 0, 589833, 12, 0, 589834, 12, 0, 589835, 12, 0, 589836, 12, 0, 589837, 8, 0, 589838, 4, 0, 589839, 4, 0, 589840, 4, 0, 589841, 4, 0, 589842, 4, 0, 589843, 4, 0, 589844, 4, 0, 589845, 4, 0, 589846, 4, 0, 589847, 4, 0, 589848, 4, 0, 589849, 4, 0, 589850, 4, 0, 589851, 4, 0, 589852, 4, 0, 589853, 4, 0, 589854, 4, 0, 589855, 4, 0, 589856, 4, 0, 589857, 4, 0, 589858, 4, 0, 589859, 4, 0, 589860, 4, 0, 589861, 4, 0, 589862, 4, 0, 589863, 4, 0, 589864, 4, 0, 589865, 4, 0, 589866, 4, 0, 589867, 4, 0, 589868, 4, 0, 589869, 4, 0, 589870, 4, 0, 589871, 4, 0, 589872, 4, 0, 589873, 4, 0, 589874, 4, 0, 589875, 4, 0, 589876, 4, 0, 589877, 4, 0, 589878, 4, 0, 589879, 4, 0, 589880, 4, 0, 589881, 4, 0, 589882, 4, 0, 589883, 4, 0, 589884, 4, 0, 589885, 4, 0, 589886, 4, 0, 589887, 4, 0, 589888, 4, 0, 589889, 9, 0, 589890, 12, 0, 589891, 12, 0, 589892, 12, 0, 589893, 12, 0, 589894, 12, 0, 589895, 12, 0, 589896, 12, 0, 589897, 12, 0, 589898, 12, 0, 589899, 8, 0, 589900, 4, 0, 589901, 4, 0, 589902, 4, 0, 589903, 4, 0, 589904, 4, 0, 589905, 4, 0, 589906, 4, 0, 589907, 4, 0, 589908, 4, 0, 589909, 4, 0, 589910, 4, 0, 589911, 4, 0, 589912, 4, 0, 589913, 4, 0, 589914, 9, 0, 589928, 8, 0, 589929, 4, 0, 589930, 4, 0, 589931, 4, 0, 589932, 4, 0, 589933, 4, 0, 589934, 4, 0, 589935, 4, 0, 589936, 4, 0, 589937, 4, 0, 589938, 4, 0, 589939, 4, 0, 589940, 4, 0, 589941, 4, 0, 589942, 4, 0, 589943, 4, 0, 589944, 4, 0, 589945, 4, 0, 589946, 4, 0, 589947, 4, 0, 589948, 4, 0, 589949, 4, 0, 589950, 4, 0, 589951, 4, 0, 589952, 4, 0, 589953, 4, 0, 720878, 4, 0, 720879, 4, 0, 720880, 4, 0, 720881, 4, 0, 720882, 4, 0, 720883, 4, 0, 720884, 4, 0, 720885, 4, 0, 720886, 4, 0, 720887, 4, 0, 720888, 4, 0, 720889, 4, 0, 720890, 4, 0, 720891, 4, 0, 720892, 9, 0, 720893, 6, 0, 720894, 6, 0, 720895, 6, 0, 655360, 6, 0, 655361, 6, 0, 655362, 6, 0, 655363, 6, 0, 655364, 6, 0, 655365, 6, 0, 655366, 6, 0, 655367, 6, 0, 655368, 6, 0, 655369, 6, 0, 655370, 6, 0, 655371, 6, 0, 655372, 6, 0, 655373, 8, 0, 655374, 4, 0, 655375, 4, 0, 655376, 4, 0, 655377, 4, 0, 655378, 4, 0, 655379, 4, 0, 655380, 4, 0, 655381, 4, 0, 655382, 4, 0, 655383, 4, 0, 655384, 4, 0, 655385, 4, 0, 655386, 4, 0, 655387, 4, 0, 655388, 4, 0, 655389, 4, 0, 655390, 4, 0, 655391, 4, 0, 655392, 4, 0, 655393, 4, 0, 655394, 4, 0, 655395, 4, 0, 655396, 4, 0, 655397, 4, 0, 655398, 4, 0, 655399, 4, 0, 655400, 4, 0, 655401, 4, 0, 655402, 4, 0, 655403, 4, 0, 655404, 4, 0, 655405, 4, 0, 655406, 4, 0, 655407, 4, 0, 655408, 4, 0, 655409, 4, 0, 655410, 4, 0, 655411, 4, 0, 655412, 4, 0, 655413, 4, 0, 655414, 4, 0, 655415, 4, 0, 655416, 4, 0, 655417, 4, 0, 655418, 4, 0, 655419, 4, 0, 655420, 4, 0, 655421, 4, 0, 655422, 4, 0, 655423, 4, 0, 655424, 4, 0, 655425, 9, 0, 655426, 6, 0, 655427, 6, 0, 655428, 6, 0, 655429, 6, 0, 655430, 6, 0, 655431, 6, 0, 655432, 6, 0, 655433, 6, 0, 655434, 6, 0, 655435, 8, 0, 655436, 4, 0, 655437, 4, 0, 655438, 4, 0, 655439, 4, 0, 655440, 4, 0, 655441, 4, 0, 655442, 4, 0, 655443, 4, 0, 655444, 4, 0, 655445, 4, 0, 655446, 4, 0, 655447, 4, 0, 655448, 4, 0, 655449, 4, 0, 655450, 9, 0, 655451, 4, 0, 655452, 4, 0, 655453, 4, 0, 655454, 4, 0, 655455, 4, 0, 655456, 4, 0, 655457, 4, 0, 655458, 4, 0, 655459, 4, 0, 655460, 4, 0, 655461, 4, 0, 655462, 4, 0, 655463, 4, 0, 655464, 8, 0, 655465, 4, 0, 655466, 4, 0, 655467, 4, 0, 655468, 4, 0, 655469, 4, 0, 655470, 4, 0, 655471, 4, 0, 655472, 4, 0, 655473, 4, 0, 655474, 4, 0, 655475, 4, 0, 655476, 4, 0, 655477, 4, 0, 655478, 4, 0, 655479, 4, 0, 655480, 4, 0, 655481, 4, 0, 655482, 4, 0, 655483, 4, 0, 655484, 4, 0, 655485, 4, 0, 655486, 4, 0, 655487, 4, 0, 655488, 4, 0, 655489, 4, 0 )
 
+[node name="BackProps" type="Node2D" parent="."]
+
+[node name="Iglo" type="Node2D" parent="BackProps"]
+position = Vector2( 5317.24, 441.125 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Reindeer" type="Sprite" parent="BackProps/Iglo"]
+position = Vector2( 54.728, -82.76 )
+texture = ExtResource( 21 )
+
+[node name="Iglo" type="Sprite" parent="BackProps/Iglo"]
+texture = ExtResource( 24 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackProps/Iglo"]
+anims/ReindeerUp = SubResource( 10 )
+
+[node name="IgloButton" type="TouchScreenButton" parent="BackProps/Iglo"]
+position = Vector2( -178.976, -224.76 )
+scale = Vector2( 18.96, 18.96 )
+shape = SubResource( 11 )
+
+[node name="WormBoot" type="Node2D" parent="BackProps"]
+position = Vector2( 2284.6, 560.053 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Worm" type="Sprite" parent="BackProps/WormBoot"]
+position = Vector2( -11.4973, -33.6524 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 13 )
+
+[node name="Shoe" type="Sprite" parent="BackProps/WormBoot"]
+position = Vector2( 0, -1.41425 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 28 )
+
+[node name="WormBoot" type="TouchScreenButton" parent="BackProps/WormBoot"]
+position = Vector2( -56.7847, -60.0549 )
+scale = Vector2( 5.35514, 5.35514 )
+shape = SubResource( 12 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackProps/WormBoot"]
+anims/WormUp = SubResource( 13 )
+
 [node name="Allie" parent="." instance=ExtResource( 2 )]
 position = Vector2( -556.254, 398.118 )
 
@@ -550,6 +591,7 @@ __meta__ = {
 [node name="Snow" type="Node" parent="."]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Snow"]
+visible = false
 position = Vector2( 3109.75, -679.444 )
 amount = 200
 lifetime = 10.0
@@ -569,4 +611,6 @@ scale_amount = 0.01
 [connection signal="pressed" from="Props/Bunny/BunnyButton" to="." method="_on_BunnyButton_pressed"]
 [connection signal="pressed" from="Props/Snowflake/SnowflakeButton" to="." method="_on_SnowflakeButton_pressed"]
 [connection signal="body_entered" from="Fallzone" to="Allie" method="_on_Fallzone_body_entered"]
+[connection signal="pressed" from="BackProps/Iglo/IgloButton" to="." method="_on_IgloButton_pressed"]
+[connection signal="pressed" from="BackProps/WormBoot/WormBoot" to="." method="_on_IgloButton_pressed"]
 [connection signal="pressed" from="PauseButton/PauseMobile" to="." method="_on_PauseMobile_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://scenes/large/Fall-lvl.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Allie.tscn" type="PackedScene" id=2]
@@ -24,7 +24,7 @@
 [ext_resource path="res://assets/sounds/Piep.ogg" type="AudioStream" id=22]
 [ext_resource path="res://assets/sounds/Oehoe.ogg" type="AudioStream" id=23]
 [ext_resource path="res://assets/props/nature/mandappels.png" type="Texture" id=24]
-[ext_resource path="res://assets/props/nature/pompoen.png" type="Texture" id=25]
+[ext_resource path="res://assets/props/interactions/worm.png" type="Texture" id=25]
 [ext_resource path="res://assets/props/nature/toilethuis.png" type="Texture" id=26]
 [ext_resource path="res://assets/props/nature/rups-groot.png" type="Texture" id=27]
 [ext_resource path="res://assets/props/nature/ball.png" type="Texture" id=28]
@@ -38,6 +38,9 @@
 [ext_resource path="res://assets/props/nature/bladeren.png" type="Texture" id=36]
 [ext_resource path="res://assets/props/nature/bladeren2.png" type="Texture" id=37]
 [ext_resource path="res://assets/props/nature/hert.png" type="Texture" id=38]
+[ext_resource path="res://assets/props/interactions/boomstronk.png" type="Texture" id=39]
+[ext_resource path="res://assets/props/interactions/vogel.png" type="Texture" id=40]
+[ext_resource path="res://assets/props/interactions/pompoen.png" type="Texture" id=41]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -72,10 +75,44 @@ tracks/0/keys = {
 "values": [ Vector2( 2336.93, 423.614 ), Vector2( 2336.93, 410.159 ), Vector2( 2336.93, 380.728 ), Vector2( 2336.93, 358.865 ), Vector2( 2336.93, 338.683 ), Vector2( 2336.93, 423.614 ) ]
 }
 
+[sub_resource type="CircleShape2D" id=11]
+
+[sub_resource type="Animation" id=13]
+resource_name = "WormUp"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Worm:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 17.8174, -25.2819 ), Vector2( 17.8174, -41.7634 ), Vector2( 17.817, -25.282 ) ]
+}
+
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 130, 230 )
 
 [sub_resource type="CircleShape2D" id=9]
+
+[sub_resource type="Animation" id=12]
+resource_name = "Birdhead"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bird:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -34.1908 ), Vector2( 0, -55.002 ), Vector2( 0, -34.191 ) ]
+}
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 3627.11, 108.818 )
@@ -250,21 +287,29 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="FrontProps/BasketApples"]
 texture = ExtResource( 24 )
 
-[node name="Pumkin" type="Control" parent="FrontProps"]
-margin_left = 2404.49
-margin_top = 430.804
-margin_right = 2763.49
-margin_bottom = 701.804
-rect_scale = Vector2( 0.3, 0.3 )
+[node name="PumpkinWorm" type="Node2D" parent="FrontProps"]
+position = Vector2( 2452.74, 479.218 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
+"_edit_group_": true
 }
 
-[node name="TextureButton" type="TextureButton" parent="FrontProps/Pumkin"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture_normal = ExtResource( 25 )
+[node name="Worm" type="Sprite" parent="FrontProps/PumpkinWorm"]
+position = Vector2( 17.8174, -25.2819 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 25 )
+
+[node name="Pumpkin" type="Sprite" parent="FrontProps/PumpkinWorm"]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 41 )
+
+[node name="PumpkinButton" type="TouchScreenButton" parent="FrontProps/PumpkinWorm"]
+position = Vector2( -2.12109, -10.1014 )
+scale = Vector2( 6.32004, 6.32004 )
+shape = SubResource( 11 )
+shape_centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FrontProps/PumpkinWorm"]
+anims/WormUp = SubResource( 13 )
 
 [node name="ToiletHouse" type="Node2D" parent="FrontProps"]
 position = Vector2( 3323.81, 197.732 )
@@ -297,7 +342,7 @@ shape = SubResource( 9 )
 shape_centered = false
 
 [node name="Snail" type="Node2D" parent="FrontProps"]
-position = Vector2( 4723.86, 399.532 )
+position = Vector2( 4599.13, 399.532 )
 scale = Vector2( 0.1, 0.1 )
 __meta__ = {
 "_edit_group_": true
@@ -318,6 +363,30 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="FrontProps/MixLeaves"]
 texture = ExtResource( 37 )
+
+[node name="TreeBird" type="Node2D" parent="FrontProps"]
+position = Vector2( 4986.74, 413.568 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Bird" type="Sprite" parent="FrontProps/TreeBird"]
+position = Vector2( 0, -34.1908 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 40 )
+
+[node name="Tree" type="Sprite" parent="FrontProps/TreeBird"]
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 39 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FrontProps/TreeBird"]
+anims/Birdhead = SubResource( 12 )
+
+[node name="TreeBirdButton" type="TouchScreenButton" parent="FrontProps/TreeBird"]
+position = Vector2( -2.12109, -21.2132 )
+scale = Vector2( 6.32004, 6.32004 )
+shape = SubResource( 11 )
+shape_centered = false
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 4 )
@@ -525,7 +594,9 @@ position = Vector2( 2849.55, 459.005 )
 [connection signal="body_shape_entered" from="FrontProps/BirdHouse" to="." method="_on_BirdHouse_body_shape_entered"]
 [connection signal="body_shape_entered" from="FrontProps/OwlTree" to="." method="_on_OwlTree_body_shape_entered"]
 [connection signal="pressed" from="FrontProps/FirstHill/Reindeer/ReindeerButton" to="." method="_on_ReindeerButton_pressed"]
+[connection signal="pressed" from="FrontProps/PumpkinWorm/PumpkinButton" to="." method="_on_PumpkinButton_pressed"]
 [connection signal="pressed" from="FrontProps/ToiletHouse/ToiletHouseButton" to="." method="_on_ToiletHouseButton_pressed"]
 [connection signal="pressed" from="FrontProps/Cloud/SnowflakeButton" to="." method="_on_SnowflakeButton_pressed"]
+[connection signal="pressed" from="FrontProps/TreeBird/TreeBirdButton" to="." method="_on_TreeBirdButton_pressed"]
 [connection signal="body_entered" from="Fallzone" to="Allie" method="_on_Fallzone_body_entered"]
 [connection signal="pressed" from="PauseButton/PauseMobile" to="." method="_on_PauseMobile_pressed"]
