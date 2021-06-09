@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/close.png-620b2bea5e4b95a53e327140a82b963d.stex"
+path="res://.import/closebutton.png-453314482021cea1a73aee2f08749df1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pause/close.png"
-dest_files=[ "res://.import/close.png-620b2bea5e4b95a53e327140a82b963d.stex" ]
+source_file="res://assets/pause/closebutton.png"
+dest_files=[ "res://.import/closebutton.png-453314482021cea1a73aee2f08749df1.stex" ]
 
 [params]
 
