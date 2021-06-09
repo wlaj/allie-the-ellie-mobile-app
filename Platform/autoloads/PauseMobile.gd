@@ -27,3 +27,6 @@ func _on_HomeButton_pressed():
 	$Popup.hide()
 	get_tree().paused = false
 	get_tree().change_scene_to(target_scene)
+	if !target_scene:
+		print("no scene in this bitch")
+		get_tree().reload_current_scene()

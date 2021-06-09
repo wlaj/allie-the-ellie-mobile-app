@@ -54,11 +54,11 @@ extents = Vector2( 122.363, 212.381 )
 radius = 182.603
 height = 63.8796
 
-[sub_resource type="CircleShape2D" id=10]
+[sub_resource type="CircleShape2D" id=6]
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=7]
 resource_name = "ReindeerIn"
-length = 0.4
+length = 2.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Reindeer:position")
 tracks/0/interp = 1
@@ -66,18 +66,18 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2336.93, 423.614 ), Vector2( 2336.93, 410.159 ), Vector2( 2336.93, 380.728 ), Vector2( 2336.93, 358.865 ), Vector2( 2336.93, 338.683 ) ]
+"values": [ Vector2( 2336.93, 423.614 ), Vector2( 2336.93, 410.159 ), Vector2( 2336.93, 380.728 ), Vector2( 2336.93, 358.865 ), Vector2( 2336.93, 338.683 ), Vector2( 2336.93, 423.614 ) ]
 }
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 130, 230 )
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=9]
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 3627.11, 108.818 )
 
 [node name="Autumn level" type="Node2D"]
@@ -208,7 +208,7 @@ texture = ExtResource( 38 )
 [node name="ReindeerButton" type="TouchScreenButton" parent="FrontProps/FirstHill/Reindeer"]
 position = Vector2( 18.334, -680.726 )
 scale = Vector2( 70, 60 )
-shape = SubResource( 10 )
+shape = SubResource( 6 )
 shape_centered = false
 
 [node name="Sprite" type="Sprite" parent="FrontProps/FirstHill"]
@@ -217,7 +217,7 @@ scale = Vector2( 0.341115, 0.305709 )
 texture = ExtResource( 15 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FrontProps/FirstHill"]
-anims/ReindeerIn = SubResource( 9 )
+anims/ReindeerIn = SubResource( 7 )
 
 [node name="WaterBackground" type="Node2D" parent="FrontProps"]
 
@@ -239,9 +239,6 @@ texture = ExtResource( 9 )
 position = Vector2( 6000.11, 484.212 )
 scale = Vector2( 0.713095, 0.639079 )
 texture = ExtResource( 19 )
-
-[node name="Checkpoint" parent="FrontProps" instance=ExtResource( 3 )]
-position = Vector2( 2886.19, 460.334 )
 
 [node name="BasketApples" type="Node2D" parent="FrontProps"]
 position = Vector2( 2046.68, 362.381 )
@@ -296,7 +293,7 @@ texture = ExtResource( 8 )
 
 [node name="SnowflakeButton" type="TouchScreenButton" parent="FrontProps/Cloud"]
 scale = Vector2( 5, 5 )
-shape = SubResource( 6 )
+shape = SubResource( 9 )
 shape_centered = false
 
 [node name="Snail" type="Node2D" parent="FrontProps"]
@@ -405,6 +402,9 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="BackProps/GreenLeaves"]
 texture = ExtResource( 36 )
 
+[node name="Checkpoint" parent="BackProps" instance=ExtResource( 3 )]
+position = Vector2( 2886.19, 460.334 )
+
 [node name="Allie" parent="." instance=ExtResource( 2 )]
 position = Vector2( -526.06, -327.091 )
 z_index = 2
@@ -475,7 +475,7 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Fallzone"]
-shape = SubResource( 7 )
+shape = SubResource( 10 )
 
 [node name="Airplane" parent="." instance=ExtResource( 18 )]
 position = Vector2( 3013.53, -23.3301 )
@@ -498,7 +498,6 @@ __meta__ = {
 }
 
 [node name="PauseMobile" parent="." instance=ExtResource( 14 )]
-target_scene = null
 
 [node name="Rain" type="Node" parent="."]
 
