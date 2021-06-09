@@ -402,11 +402,8 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="BackProps/GreenLeaves"]
 texture = ExtResource( 36 )
 
-[node name="Checkpoint" parent="BackProps" instance=ExtResource( 3 )]
-position = Vector2( 2886.19, 460.334 )
-
 [node name="Allie" parent="." instance=ExtResource( 2 )]
-position = Vector2( -526.06, -327.091 )
+position = Vector2( 7699.01, -327.091 )
 z_index = 2
 
 [node name="Camera2D" type="Camera2D" parent="Allie"]
@@ -513,6 +510,9 @@ emission_shape = 2
 emission_rect_extents = Vector2( 8000, 1 )
 direction = Vector2( 0, 0 )
 scale_amount = 0.3
+
+[node name="Checkpoint" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2849.55, 459.005 )
 
 [connection signal="pressed" from="FrontProps/Starthouse/BedroomButton" to="." method="_on_BedroomButton_pressed"]
 [connection signal="pressed" from="FrontProps/Endhouse/BakinghouseButton" to="." method="_on_BakinghouseButton_pressed"]
