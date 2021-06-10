@@ -62,3 +62,7 @@ func _on_TreeBirdButton_pressed():
 
 func _on_PumpkinButton_pressed():
 	$FrontProps/PumpkinWorm/AnimationPlayer.play("WormUp")
+
+
+func _on_Snailbutton_pressed():
+	get_tree().change_scene("res://scenes/minigames/fall/dragndrop/Main.tscn")

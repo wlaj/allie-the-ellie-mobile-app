@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scenes/Allie.tscn" type="PackedScene" id=1]
 [ext_resource path="res://world_tileset.tres" type="TileSet" id=2]
@@ -24,6 +24,8 @@
 [ext_resource path="res://assets/props/house/winter/openhaardUit.png" type="Texture" id=22]
 [ext_resource path="res://assets/pause/Pauze-winter.png" type="Texture" id=23]
 [ext_resource path="res://autoloads/PauseMobile.tscn" type="PackedScene" id=24]
+
+[sub_resource type="CircleShape2D" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1155.34, 202.284 )
@@ -260,6 +262,11 @@ rotation = -0.261799
 scale = Vector2( 0.291206, 0.291207 )
 texture = ExtResource( 10 )
 
+[node name="BrushButton" type="TouchScreenButton" parent="Props/brush"]
+position = Vector2( -162.994, -173.118 )
+scale = Vector2( 26.7273, 26.7273 )
+shape = SubResource( 4 )
+
 [node name="Allie" parent="." instance=ExtResource( 1 )]
 position = Vector2( -912.865, 397.424 )
 
@@ -332,6 +339,7 @@ __meta__ = {
 
 [node name="PauseMobile" parent="." instance=ExtResource( 24 )]
 
+[connection signal="pressed" from="Props/brush/BrushButton" to="." method="_on_BrushButton_pressed"]
 [connection signal="body_entered" from="Fallzone" to="Allie" method="_on_Fallzone_body_entered"]
 [connection signal="body_entered" from="Startingpoint" to="." method="_on_Startingpoint_body_entered"]
 [connection signal="body_shape_entered" from="Endpoint" to="Allie" method="_on_Endpoint_body_shape_entered"]

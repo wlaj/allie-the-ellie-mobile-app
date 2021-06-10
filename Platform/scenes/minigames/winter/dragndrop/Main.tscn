@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/minigames/winter/dragndrop/Dropzone.tscn" type="PackedScene" id=1]
 [ext_resource path="res://autoloads/CloseWinter.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/minigames/winter/dragndrop/Characters/Cap.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/minigames/winter/dragndrop/Characters/Iglo.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/minigames/winter/dragndrop/Characters/Mittens.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/small/Christmas-House-lvl.tscn" type="PackedScene" id=10]
 
 [node name="Node" type="Node2D"]
 
@@ -27,6 +28,8 @@ position = Vector2( 961.085, 540.615 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 
+[node name="Dropzone" parent="." instance=ExtResource( 1 )]
+
 [node name="Draggable" parent="." instance=ExtResource( 7 )]
 position = Vector2( 487.014, 369.361 )
 
@@ -39,8 +42,7 @@ position = Vector2( 1344.06, 376.488 )
 [node name="Draggable4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1367.22, 613.467 )
 
-[node name="Dropzone" parent="." instance=ExtResource( 1 )]
-
 [node name="CloseWinter" parent="." instance=ExtResource( 2 )]
+target_scene = ExtResource( 10 )
 
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]

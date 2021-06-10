@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/minigames/fall/dragndrop/Dropzone.tscn" type="PackedScene" id=1]
-[ext_resource path="res://autoloads/PauseMobile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://autoloads/CloseFall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/minigames/fall/dragndrop/Characters/Hedgehog.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/minigames/fall/dragndrop/Button.gd" type="Script" id=4]
 [ext_resource path="res://assets/props/drag/paddestoelbuitenkanthout.png" type="Texture" id=5]
@@ -9,7 +9,7 @@
 [ext_resource path="res://scenes/minigames/fall/dragndrop/Characters/Mushroom.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/minigames/fall/dragndrop/Characters/Boots.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/minigames/fall/dragndrop/Characters/Fireplace.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/pause/Pauze-herfst.png" type="Texture" id=10]
+[ext_resource path="res://scenes/large/Fall-lvl.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/minigames/fall/dragndrop/Main.gd" type="Script" id=11]
 
 [node name="Dragndrop" type="Node2D"]
@@ -45,21 +45,7 @@ position = Vector2( 961.085, 540.615 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 
-[node name="PauseButton" type="CanvasLayer" parent="."]
-
-[node name="PauseMobile" type="TextureButton" parent="PauseButton"]
-pause_mode = 2
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -160.0
-margin_top = 30.0
-margin_bottom = 141.0
-texture_normal = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="PauseMobile" parent="." instance=ExtResource( 2 )]
+[node name="CloseFall" parent="." instance=ExtResource( 2 )]
+target_scene = ExtResource( 10 )
 
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
-[connection signal="pressed" from="PauseButton/PauseMobile" to="." method="_on_PauseMobile_pressed"]

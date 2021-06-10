@@ -29,8 +29,7 @@ extents = Vector2( 37.0078, 55.4176 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 56.2155, 69.513 )
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 29.3629, 87.1859 )
+[sub_resource type="RectangleShape2D" id=11]
 
 [sub_resource type="CircleShape2D" id=6]
 radius = 20.8327
@@ -141,21 +140,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="chocolate" type="StaticBody2D" parent="Props"]
-position = Vector2( -382.919, 196.481 )
+[node name="chocolate" type="Node2D" parent="Props"]
+position = Vector2( -556.671, 237.8 )
 scale = Vector2( 0.479998, 0.479998 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Props/chocolate"]
-position = Vector2( -362.122, 99.3124 )
 scale = Vector2( 0.579618, 0.579617 )
 texture = ExtResource( 11 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/chocolate"]
-position = Vector2( -359.119, 124.792 )
-shape = SubResource( 5 )
+[node name="ChocolateButton" type="TouchScreenButton" parent="Props/chocolate"]
+position = Vector2( -43.1041, -62.5708 )
+scale = Vector2( 4.42314, 5.83983 )
+shape = SubResource( 11 )
 
 [node name="egg1" type="StaticBody2D" parent="Props"]
 position = Vector2( -280.657, 164.958 )
@@ -312,6 +311,7 @@ __meta__ = {
 
 [node name="PauseMobile" parent="." instance=ExtResource( 16 )]
 
+[connection signal="pressed" from="Props/chocolate/ChocolateButton" to="." method="_on_ChocolateButton_pressed"]
 [connection signal="body_entered" from="Fallzone" to="Allie" method="_on_Fallzone_body_entered"]
 [connection signal="body_shape_entered" from="Startingpoint" to="Allie" method="_on_Startingpoint_body_shape_entered"]
 [connection signal="body_shape_entered" from="Endpoint" to="Allie" method="_on_Endpoint_body_shape_entered"]

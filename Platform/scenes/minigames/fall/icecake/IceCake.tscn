@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/props/cake/cake.png" type="Texture" id=1]
 [ext_resource path="res://autoloads/CloseFall.tscn" type="PackedScene" id=2]
@@ -6,8 +6,10 @@
 [ext_resource path="res://assets/backgrounds/Achtergrond.png" type="Texture" id=4]
 [ext_resource path="res://assets/props/cake/starfilled.png" type="Texture" id=5]
 [ext_resource path="res://assets/props/cake/star.png" type="Texture" id=6]
+[ext_resource path="res://scenes/minigames/fall/icecake/IceCake.gd" type="Script" id=7]
 
 [node name="Flyingallie" type="Node"]
+script = ExtResource( 7 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -377,4 +379,6 @@ scale = Vector2( 0.838919, 0.838919 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="Close" parent="." instance=ExtResource( 2 )]
+[node name="CloseFall" parent="." instance=ExtResource( 2 )]
+
+[connection signal="pressed" from="HBoxContainer/TextureRect/Stars/TextureButton2" to="." method="_on_TextureButton2_pressed"]

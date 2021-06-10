@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://scenes/large/Fall-lvl.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Allie.tscn" type="PackedScene" id=2]
@@ -100,6 +100,8 @@ tracks/0/keys = {
 extents = Vector2( 130, 230 )
 
 [sub_resource type="CircleShape2D" id=11]
+
+[sub_resource type="CircleShape2D" id=14]
 
 [sub_resource type="Animation" id=12]
 resource_name = "Birdhead"
@@ -356,6 +358,11 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="FrontProps/Snail"]
 texture = ExtResource( 29 )
+
+[node name="Snailbutton" type="TouchScreenButton" parent="FrontProps/Snail"]
+position = Vector2( -342.945, -288.146 )
+scale = Vector2( 33.3992, 33.3992 )
+shape = SubResource( 14 )
 
 [node name="swan" type="Node2D" parent="FrontProps"]
 position = Vector2( 4035.73, 460.077 )
@@ -717,6 +724,7 @@ position = Vector2( 2849.55, 459.005 )
 [connection signal="pressed" from="FrontProps/PumpkinWorm/PumpkinButton" to="." method="_on_PumpkinButton_pressed"]
 [connection signal="pressed" from="FrontProps/ToiletHouse/ToiletHouseButton" to="." method="_on_ToiletHouseButton_pressed"]
 [connection signal="pressed" from="FrontProps/Cloud/SnowflakeButton" to="." method="_on_SnowflakeButton_pressed"]
+[connection signal="pressed" from="FrontProps/Snail/Snailbutton" to="." method="_on_Snailbutton_pressed"]
 [connection signal="pressed" from="FrontProps/TreeBird/TreeBirdButton" to="." method="_on_TreeBirdButton_pressed"]
 [connection signal="body_entered" from="Fallzone" to="Allie" method="_on_Fallzone_body_entered"]
 [connection signal="pressed" from="PauseButton/PauseMobile" to="." method="_on_PauseMobile_pressed"]
