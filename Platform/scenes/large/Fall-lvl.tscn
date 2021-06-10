@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://scenes/large/Fall-lvl.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Allie.tscn" type="PackedScene" id=2]
@@ -41,6 +41,9 @@
 [ext_resource path="res://assets/props/interactions/boomstronk.png" type="Texture" id=39]
 [ext_resource path="res://assets/props/interactions/vogel.png" type="Texture" id=40]
 [ext_resource path="res://assets/props/interactions/pompoen.png" type="Texture" id=41]
+[ext_resource path="res://assets/props/nature/Parapludicht.png" type="Texture" id=42]
+[ext_resource path="res://assets/props/nature/zwaan.png" type="Texture" id=43]
+[ext_resource path="res://assets/props/nature/peer.png" type="Texture" id=44]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -75,9 +78,9 @@ tracks/0/keys = {
 "values": [ Vector2( 2336.93, 423.614 ), Vector2( 2336.93, 410.159 ), Vector2( 2336.93, 380.728 ), Vector2( 2336.93, 358.865 ), Vector2( 2336.93, 338.683 ), Vector2( 2336.93, 423.614 ) ]
 }
 
-[sub_resource type="CircleShape2D" id=11]
+[sub_resource type="CircleShape2D" id=8]
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=9]
 resource_name = "WormUp"
 length = 1.7
 tracks/0/type = "value"
@@ -93,10 +96,10 @@ tracks/0/keys = {
 "values": [ Vector2( 17.8174, -25.2819 ), Vector2( 17.8174, -41.7634 ), Vector2( 17.817, -25.282 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 130, 230 )
 
-[sub_resource type="CircleShape2D" id=9]
+[sub_resource type="CircleShape2D" id=11]
 
 [sub_resource type="Animation" id=12]
 resource_name = "Birdhead"
@@ -114,7 +117,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -34.1908 ), Vector2( 0, -55.002 ), Vector2( 0, -34.191 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 3627.11, 108.818 )
 
 [node name="Autumn level" type="Node2D"]
@@ -196,10 +199,12 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="FrontProps/BirdHouse"]
+position = Vector2( 6.26857, -12.0126 )
+scale = Vector2( 1.05246, 1.05246 )
 texture = ExtResource( 21 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FrontProps/BirdHouse"]
-position = Vector2( -1.59448, -19.9243 )
+position = Vector2( 13.1492, -19.9243 )
 shape = SubResource( 4 )
 
 [node name="SoundPiep" type="AudioStreamPlayer" parent="FrontProps/BirdHouse"]
@@ -213,8 +218,8 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="FrontProps/FirstTree"]
-position = Vector2( 0, -9.0629 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 11.8921, -23.6843 )
+scale = Vector2( 0.532492, 0.532492 )
 texture = ExtResource( 7 )
 
 [node name="OwlTree" type="Area2D" parent="FrontProps"]
@@ -224,7 +229,8 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="FrontProps/OwlTree"]
-scale = Vector2( 0.531681, 0.476496 )
+position = Vector2( -10.7029, -11.7934 )
+scale = Vector2( 0.560924, 0.502704 )
 texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FrontProps/OwlTree"]
@@ -305,11 +311,11 @@ texture = ExtResource( 41 )
 [node name="PumpkinButton" type="TouchScreenButton" parent="FrontProps/PumpkinWorm"]
 position = Vector2( -2.12109, -10.1014 )
 scale = Vector2( 6.32004, 6.32004 )
-shape = SubResource( 11 )
+shape = SubResource( 8 )
 shape_centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FrontProps/PumpkinWorm"]
-anims/WormUp = SubResource( 13 )
+anims/WormUp = SubResource( 9 )
 
 [node name="ToiletHouse" type="Node2D" parent="FrontProps"]
 position = Vector2( 3323.81, 197.732 )
@@ -322,7 +328,7 @@ __meta__ = {
 texture = ExtResource( 26 )
 
 [node name="ToiletHouseButton" type="TouchScreenButton" parent="FrontProps/ToiletHouse"]
-shape = SubResource( 8 )
+shape = SubResource( 10 )
 shape_centered = false
 
 [node name="Cloud" type="Node2D" parent="FrontProps"]
@@ -338,7 +344,7 @@ texture = ExtResource( 8 )
 
 [node name="SnowflakeButton" type="TouchScreenButton" parent="FrontProps/Cloud"]
 scale = Vector2( 5, 5 )
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 shape_centered = false
 
 [node name="Snail" type="Node2D" parent="FrontProps"]
@@ -350,6 +356,119 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="FrontProps/Snail"]
 texture = ExtResource( 29 )
+
+[node name="swan" type="Node2D" parent="FrontProps"]
+position = Vector2( 4035.73, 460.077 )
+scale = Vector2( 0.1, 0.1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="FrontProps/swan"]
+position = Vector2( -301, -280.757 )
+scale = Vector2( 1.88012, 1.88012 )
+texture = ExtResource( 43 )
+
+[node name="swan2" type="Node2D" parent="FrontProps"]
+position = Vector2( 4164.33, 460.077 )
+scale = Vector2( 0.1, 0.1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="FrontProps/swan2"]
+position = Vector2( -301, -280.757 )
+scale = Vector2( 1.88012, 1.88012 )
+texture = ExtResource( 43 )
+flip_h = true
+
+[node name="paraplu" type="Node2D" parent="FrontProps"]
+position = Vector2( 6066.63, 300.869 )
+rotation = 0.261799
+scale = Vector2( 0.1, 0.1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="FrontProps/paraplu"]
+position = Vector2( -134.145, -781.884 )
+scale = Vector2( 3.00372, 3.00372 )
+texture = ExtResource( 42 )
+
+[node name="peer" type="Node2D" parent="FrontProps"]
+position = Vector2( 7867.54, 538.725 )
+rotation = 0.261799
+scale = Vector2( 0.1, 0.1 )
+z_index = 3
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="FrontProps/peer"]
+position = Vector2( -3861.9, 601.63 )
+rotation = -0.261799
+scale = Vector2( 9.22219, 9.22219 )
+texture = ExtResource( 44 )
+
+[node name="bladeren_grot" type="Node2D" parent="FrontProps"]
+position = Vector2( 8474.44, 560.857 )
+rotation = 0.261799
+scale = Vector2( 0.1, 0.1 )
+z_index = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="FrontProps/bladeren_grot"]
+position = Vector2( -5708.2, 1907.4 )
+rotation = -0.261799
+scale = Vector2( 2.77433, 2.77433 )
+texture = ExtResource( 36 )
+
+[node name="bladeren_paraplu" type="Node2D" parent="FrontProps"]
+position = Vector2( 6433.44, 398.857 )
+rotation = 0.261799
+scale = Vector2( 0.1, 0.1 )
+z_index = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="FrontProps/bladeren_paraplu"]
+position = Vector2( -5708.2, 1907.4 )
+rotation = -0.261799
+scale = Vector2( 2.77433, 2.77433 )
+texture = ExtResource( 37 )
+
+[node name="bladeren_toilethuis" type="Node2D" parent="FrontProps"]
+position = Vector2( 4123.05, 398.857 )
+rotation = 0.261799
+scale = Vector2( 0.1, 0.1 )
+z_index = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="FrontProps/bladeren_toilethuis"]
+position = Vector2( -5708.2, 1907.4 )
+rotation = -0.261799
+scale = Vector2( 2.77433, 2.77433 )
+texture = ExtResource( 37 )
+
+[node name="bladeren_toilethuis2" type="Node2D" parent="FrontProps"]
+position = Vector2( 4446.69, 572.661 )
+rotation = 0.261799
+scale = Vector2( 0.1, 0.1 )
+z_index = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="FrontProps/bladeren_toilethuis2"]
+position = Vector2( -5260.72, 1787.49 )
+rotation = -0.261799
+scale = Vector2( 2.77433, 2.77433 )
+texture = ExtResource( 36 )
 
 [node name="Spider" parent="FrontProps" instance=ExtResource( 34 )]
 position = Vector2( 1852.53, 500.693 )
@@ -385,7 +504,7 @@ anims/Birdhead = SubResource( 12 )
 [node name="TreeBirdButton" type="TouchScreenButton" parent="FrontProps/TreeBird"]
 position = Vector2( -2.12109, -21.2132 )
 scale = Vector2( 6.32004, 6.32004 )
-shape = SubResource( 11 )
+shape = SubResource( 8 )
 shape_centered = false
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -427,11 +546,11 @@ __meta__ = {
 texture = ExtResource( 30 )
 
 [node name="Control" type="Control" parent="BackProps"]
-margin_left = -341.424
-margin_top = 456.158
-margin_right = 879.576
-margin_bottom = 1557.16
-rect_scale = Vector2( 0.15, 0.15 )
+margin_left = -388.567
+margin_top = 442.688
+margin_right = 832.433
+margin_bottom = 1543.69
+rect_scale = Vector2( 0.19, 0.19 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -440,15 +559,16 @@ __meta__ = {
 [node name="TextureButton" type="TextureButton" parent="BackProps/Control"]
 margin_right = 40.0
 margin_bottom = 40.0
+toggle_mode = true
 texture_normal = ExtResource( 31 )
 texture_pressed = ExtResource( 32 )
 
 [node name="Leavesbush" type="Control" parent="BackProps"]
 margin_left = 586.657
-margin_top = 428.443
+margin_top = 423.681
 margin_right = 811.657
-margin_bottom = 625.443
-rect_scale = Vector2( 0.5, 0.5 )
+margin_bottom = 620.681
+rect_scale = Vector2( 0.7, 0.7 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -542,7 +662,7 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Fallzone"]
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 
 [node name="Airplane" parent="." instance=ExtResource( 18 )]
 position = Vector2( 3013.53, -23.3301 )

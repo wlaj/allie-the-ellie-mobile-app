@@ -57,7 +57,7 @@ scale = Vector2( 0.723945, 0.723945 )
 texture = ExtResource( 7 )
 
 [node name="candy_cane" type="StaticBody2D" parent="Props"]
-position = Vector2( -776.141, 344.02 )
+position = Vector2( -776.141, 277.349 )
 scale = Vector2( 0.2, 0.2 )
 __meta__ = {
 "_edit_group_": true
@@ -70,9 +70,9 @@ texture = ExtResource( 17 )
 
 [node name="Fireplace" type="Control" parent="Props"]
 margin_left = -1046.27
-margin_top = 322.037
+margin_top = 241.311
 margin_right = -1046.27
-margin_bottom = 322.037
+margin_bottom = 241.311
 rect_scale = Vector2( 0.32, 0.32 )
 __meta__ = {
 "_edit_group_": true,
