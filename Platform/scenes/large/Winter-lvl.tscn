@@ -612,5 +612,5 @@ scale_amount = 0.01
 [connection signal="pressed" from="Props/Snowflake/SnowflakeButton" to="." method="_on_SnowflakeButton_pressed"]
 [connection signal="body_entered" from="Fallzone" to="Allie" method="_on_Fallzone_body_entered"]
 [connection signal="pressed" from="BackProps/Iglo/IgloButton" to="." method="_on_IgloButton_pressed"]
-[connection signal="pressed" from="BackProps/WormBoot/WormBoot" to="." method="_on_IgloButton_pressed"]
+[connection signal="pressed" from="BackProps/WormBoot/WormBoot" to="." method="_on_WormBoot_pressed"]
 [connection signal="pressed" from="PauseButton/PauseMobile" to="." method="_on_PauseMobile_pressed"]

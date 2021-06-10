@@ -96,6 +96,7 @@ position = Vector2( -912.865, 397.424 )
 [node name="Camera2D" type="Camera2D" parent="Allie"]
 current = true
 zoom = Vector2( 0.8, 0.8 )
+process_mode = 0
 limit_left = -1088
 limit_bottom = 700
 limit_smoothed = true

@@ -14,9 +14,9 @@ func _physics_process(delta):
 		direction = direction * -1
 		$Sprite.flip_h = not $Sprite.flip_h
 		
-	velocity.y += 20
+	velocity.y += 10
 	
-	velocity.x = 50 * direction
+	velocity.x = 20 * direction
 	
 	velocity =  move_and_slide(velocity,Vector2.UP)
 

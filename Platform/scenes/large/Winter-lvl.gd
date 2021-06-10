@@ -24,3 +24,7 @@ func _on_BunnyButton_pressed():
 
 func _on_IgloButton_pressed():
 	$BackProps/Iglo/AnimationPlayer.play("ReindeerUp")
+
+
+func _on_WormBoot_pressed():
+	$BackProps/WormBoot/AnimationPlayer.play("WormUp")
